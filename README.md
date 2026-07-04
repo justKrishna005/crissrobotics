@@ -1,32 +1,91 @@
-# React + TypeScript + Vite
+<div align="center">
+  <img src="public/logo.png" alt="CRISS Robotics Logo" width="120" />
+  <h1>CRISS Robotics Website</h1>
+  <p><strong>Official Web Portal for the CRISS Robotics Team</strong></p>
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#tech-stack">Tech Stack</a> •
+  <a href="#getting-started">Getting Started</a> •
+  <a href="#project-structure">Project Structure</a> •
+  <a href="#deployment">Deployment</a>
+</p>
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This repository contains the source code for the official [CRISS Robotics](https://www.criss-robotics.in/) website. It is designed to showcase our mission, engineering achievements, team members, past alumni, and provide information for potential sponsors. 
 
-## React Compiler
+The website is a modern Single Page Application (SPA) built with a custom dark-themed design system, smooth micro-animations, and glassmorphism elements to fit our aerospace and robotics identity.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the Oxlint configuration
+- **Framework:** React 18
+- **Build Tool:** Vite
+- **Language:** TypeScript
+- **Routing:** React Router v6
+- **Styling:** Custom Vanilla CSS (Design Tokens, Glassmorphism, CSS Modules)
+- **Icons:** Lucide React
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Getting Started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+To run this project locally, follow these steps:
+
+### Prerequisites
+
+- Node.js (v18 or higher recommended)
+- npm (or yarn / pnpm)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/CRISS-Robotics/Website.git
+   cd Website
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`.
+
+## Project Structure
+
+```text
+├── public/                 # Static assets (images, logos, favicon)
+├── src/
+│   ├── components/         # Reusable UI components (Navbar, Footer, etc.)
+│   ├── pages/              # Main page routes (Home, Sponsorship, Team, etc.)
+│   ├── App.tsx             # Main application router
+│   ├── index.css           # Global CSS variables and shared styles
+│   └── main.tsx            # Application entry point
+├── .gitignore
+├── package.json
+└── vite.config.ts          # Vite configuration
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Deployment
+
+This project is optimized for deployment on Vercel.
+
+1. Connect this GitHub repository to your Vercel account.
+2. Vercel will automatically detect the Vite + React setup.
+3. The build command will automatically run `npm run build` and publish the `dist` directory.
+
+Alternatively, you can manually build the project using:
+```bash
+npm run build
+```
+The optimized production bundle will be generated in the `dist/` directory, which can be hosted on any static web server.
+
+---
+<div align="center">
+  <i>Forging the next generation of aerospace engineers.</i>
+</div>
