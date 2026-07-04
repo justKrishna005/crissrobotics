@@ -1,10 +1,11 @@
 :root {
-  --bg-color: #0b0c10;
-  --bg-color-light: #1f2833;
+  --bg-color: #040814;
+  --bg-color-light: #0a1128;
   --text-primary: #ffffff;
   --text-secondary: #c5c6c7;
-  --accent: #001533;
-  --accent-light: #00275B;
+  --accent: #00275B;
+  --accent-light: #4da6ff;
+  --accent-glow: #00d2ff;
   
   --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }

@@ -26,14 +26,14 @@
 .hero-overlay-dark {
   position: absolute;
   inset: 0;
-  background-color: rgba(11, 12, 16, 0.6);
+  background-color: rgba(4, 8, 20, 0.6);
   z-index: 10;
 }
 
 .hero-overlay-gradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, #0b0c10, transparent);
+  background: linear-gradient(to top, var(--bg-color), transparent);
   z-index: 10;
 }
 
