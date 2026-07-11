@@ -12,23 +12,21 @@ const Home = () => {
           <div className="hero-overlay-gradient"></div>
         </div>
 
-        <div className="container hero-content animate-fade-in">
-          <div className="status-pill">
+        <div className="hero-content animate-fade-in">
+          {/* <div className="status-pill">
             <span className="status-dot animate-pulse"></span>
             <span className="status-text">Mission Control Active</span>
-          </div>
-          
-          <h1 className="hero-title animate-slide-up">
-            EXPLORING<br />
-            <span className="text-gradient">THE UNKNOWN</span>
+          </div> */}
+
+          <h1 className="hero-title-text animate-slide-up">
+            <span>CRISS</span>
+            <span>ROBOTICS</span>
           </h1>
-          
+
           <p className="hero-desc animate-slide-up delay-100">
-            We design, build, and operate advanced Mars-analog rovers. Forging 
-            the next generation of aerospace engineers through rigorous 
-            international competition.
+            Consortium of Research in Space Systems
           </p>
-          
+
           <div className="hero-actions animate-slide-up delay-200">
             <Link to="/competitions" className="btn btn-primary btn-lg">
               VIEW MISSIONS
@@ -81,7 +79,7 @@ const Home = () => {
               <p className="section-desc">
                 Our rovers are complex systems of systems, requiring seamless integration across mechanical, electrical, and software domains. From custom composite chassis design to autonomous navigation algorithms using ROS, we push the limits of undergraduate engineering.
               </p>
-              
+
               <ul className="features-list">
                 <li className="feature-item">
                   <div className="feature-icon bg-accent-light">
@@ -112,11 +110,11 @@ const Home = () => {
                 </li>
               </ul>
             </div>
-            
+
             <div className="engineering-image-wrapper">
               <div className="glow-effect"></div>
               <img src="/workshop.png" alt="Engineering Workshop" className="engineering-image" />
-              
+
               <div className="overlay-card">
                 <div className="overlay-header">
                   <span>SYS_TEMP</span>
