@@ -34,7 +34,7 @@ const Achievements = () => {
 
   return (
     <div className="animate-fade-in">
-      <header className="page-header">
+      <header className="page-header page-header--photo">
         <div className="container">
           <h1 className="page-title">
             OUR <span className="text-accent">LEGACY</span>

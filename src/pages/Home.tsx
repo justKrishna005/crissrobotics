@@ -1,32 +1,26 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Cpu, Globe, Rocket } from 'lucide-react';
+import { ArrowRight, ChevronDown } from 'lucide-react';
+import heroImg from '../images/good_photos/4.png';
 import './Home.css';
 
 const Home = () => {
   return (
     <div className="home-container">
-      {/* Hero Section */}
+      {/* ── Hero Section ── */}
       <section className="hero-section">
         <div className="hero-bg">
+          <img src={heroImg} alt="Hero background" className="hero-bg-img" />
           <div className="hero-overlay-dark"></div>
-          <div className="hero-overlay-gradient"></div>
         </div>
 
         <div className="hero-content animate-fade-in">
-          {/* <div className="status-pill">
-            <span className="status-dot animate-pulse"></span>
-            <span className="status-text">Mission Control Active</span>
-          </div> */}
-
           <h1 className="hero-title-text animate-slide-up">
             <span>CRISS</span>
             <span>ROBOTICS</span>
           </h1>
-
-          <p className="hero-desc animate-slide-up delay-100">
+          <p className="hero-subtitle animate-slide-up delay-100">
             Consortium of Research in Space Systems
           </p>
-
           <div className="hero-actions animate-slide-up delay-200">
             <Link to="/competitions" className="btn btn-primary btn-lg">
               VIEW MISSIONS
@@ -37,108 +31,69 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="coordinates hidden-mobile">
-          <div>LAT: 38.4069 N</div>
-          <div>LONG: 110.7937 W</div>
-          <div>ELEV: 1,304M</div>
+        <div className="scroll-indicator animate-bounce hidden-mobile">
+          <ChevronDown size={32} color="rgba(255,255,255,0.5)" />
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="stats-section">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat-card">
-              <h3 className="stat-number text-white">05+</h3>
-              <p className="stat-label">Rover Iterations</p>
-            </div>
-            <div className="stat-card">
-              <h3 className="stat-number text-white">50+</h3>
-              <p className="stat-label">Active Members</p>
-            </div>
-            <div className="stat-card">
-              <h3 className="stat-number text-accent">Top 10</h3>
-              <p className="stat-label">Global Ranking</p>
-            </div>
-            <div className="stat-card">
-              <h3 className="stat-number text-white">100+</h3>
-              <p className="stat-label">Alumni Network</p>
-            </div>
+      {/* ── Who Are We Section ── */}
+      <section className="about-section">
+        <div className="container about-grid">
+          <div className="about-text-content">
+            <h2 className="section-heading">WHO ARE WE?</h2>
+            <p className="section-paragraph">
+              CRISS Robotics is an entirely student-run organisation dedicated to designing, manufacturing, and operating next-generation Mars rovers. Comprised of passionate engineering, science, and business students, our team tackles the complex challenges of extra-terrestrial robotics.
+            </p>
+            <p className="section-paragraph">
+              We compete on the global stage at the University Rover Challenge and the European Rover Challenge, consistently ranking among the top university teams worldwide. Our mission is to bridge the gap between academic theory and industry-grade engineering, shaping the future leaders of the aerospace sector.
+            </p>
+            <Link to="/about" className="text-link">Read our full story <ArrowRight size={16} /></Link>
+          </div>
+          <div className="about-image-wrapper">
+            <img src="/good_photos/6.jpg" alt="Team at competition" className="about-image" />
           </div>
         </div>
       </section>
 
-      {/* Engineering Excellence Section */}
-      <section className="engineering-section">
+      {/* ── Our Latest Rover Section ── */}
+      <section className="rover-section">
         <div className="container">
-          <div className="engineering-grid">
-            <div className="engineering-text">
-              <h2 className="section-title text-white">
-                ENGINEERING<br />EXCELLENCE
-              </h2>
-              <p className="section-desc">
-                Our rovers are complex systems of systems, requiring seamless integration across mechanical, electrical, and software domains. From custom composite chassis design to autonomous navigation algorithms using ROS, we push the limits of undergraduate engineering.
-              </p>
-
-              <ul className="features-list">
-                <li className="feature-item">
-                  <div className="feature-icon bg-accent-light">
-                    <Cpu className="text-accent" />
-                  </div>
-                  <div className="feature-content">
-                    <h4 className="feature-title">AUTONOMY & VISION</h4>
-                    <p className="feature-desc">Advanced computer vision, SLAM, and sensor fusion for navigating harsh terrain without human intervention.</p>
-                  </div>
-                </li>
-                <li className="feature-item">
-                  <div className="feature-icon bg-secondary-light">
-                    <Rocket className="text-secondary" />
-                  </div>
-                  <div className="feature-content">
-                    <h4 className="feature-title">MOBILITY & CHASSIS</h4>
-                    <p className="feature-desc">Custom-machined rocker-bogie suspensions and lightweight composite structures designed for high-stress environments.</p>
-                  </div>
-                </li>
-                <li className="feature-item">
-                  <div className="feature-icon bg-white-light">
-                    <Globe className="text-white" />
-                  </div>
-                  <div className="feature-content">
-                    <h4 className="feature-title">TELECOMMUNICATIONS</h4>
-                    <p className="feature-desc">High-bandwidth, low-latency radio systems ensuring stable control links over kilometers of obstructed terrain.</p>
-                  </div>
-                </li>
-              </ul>
+          <div className="rover-header">
+            <h2 className="section-heading text-center">OUR LATEST ROVER</h2>
+          </div>
+          <div className="rover-showcase">
+            <div className="rover-image-container">
+              {/* Replace with actual isolated rover image if you have one */}
+              <img src="/workshop.png" alt="Latest Rover" className="rover-hero-img" />
             </div>
-
-            <div className="engineering-image-wrapper">
-              <div className="glow-effect"></div>
-              <img src="/workshop.png" alt="Engineering Workshop" className="engineering-image" />
-
-              <div className="overlay-card">
-                <div className="overlay-header">
-                  <span>SYS_TEMP</span>
-                  <span className="text-green">NOMINAL</span>
-                </div>
-                <div className="progress-bar-bg">
-                  <div className="progress-bar-fill w-45"></div>
-                </div>
+            <div className="rover-specs">
+              <div className="spec-card">
+                <h4 className="spec-title">CHASSIS</h4>
+                <p className="spec-desc">Custom carbon-fiber composite structure designed for maximum strength-to-weight ratio in high-stress environments.</p>
+              </div>
+              <div className="spec-card">
+                <h4 className="spec-title">AUTONOMY</h4>
+                <p className="spec-desc">Advanced ROS 2 stack utilizing LiDAR and stereo vision for fully autonomous obstacle avoidance and path planning.</p>
+              </div>
+              <div className="spec-card">
+                <h4 className="spec-title">ARM</h4>
+                <p className="spec-desc">6-DOF robotic manipulator capable of precise equipment servicing and heavy payload deployment.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Fuel The Mission Section */}
-      <section className="cta-section">
-        <div className="cta-bg"></div>
-        <div className="container cta-content">
-          <h2 className="cta-title">FUEL THE MISSION</h2>
-          <p className="cta-desc">
-            Our success relies on the support of industry leaders. Partner with CRISS Robotics and help shape the future of aerospace engineering.
+      {/* ── Support Us CTA Section ── */}
+      <section className="support-section">
+        <div className="support-bg"></div>
+        <div className="container support-content">
+          <h2 className="support-title">SUPPORT OUR MISSION</h2>
+          <p className="support-desc">
+            Building complex robotic systems requires significant resources. Partner with us to empower the next generation of engineers and gain unparalleled exposure to top-tier university talent.
           </p>
-          <Link to="/sponsorship" className="btn btn-white btn-lg cta-btn">
-            View Sponsorship Packet <ArrowRight size={16} />
+          <Link to="/sponsorship" className="btn btn-white btn-lg support-btn">
+            PARTNER WITH US
           </Link>
         </div>
       </section>

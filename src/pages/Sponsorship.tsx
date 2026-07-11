@@ -1,122 +1,131 @@
-import { CheckCircle2, Zap, Rocket, Star } from 'lucide-react';
+import { Download } from 'lucide-react';
+import './Sponsorship.css';
+
+// Sponsor list – replace label with <img> when real logos are ready
+const sponsors = [
+  { name: 'NITTE',         size: 'large' },
+  { name: 'NIDHI PRAYAS', size: 'large' },
+  { name: 'SOLVE',         size: 'large' },
+  { name: 'SolidWorks',   size: 'medium' },
+  { name: 'Altium',       size: 'medium' },
+  { name: 'Ansys',        size: 'medium' },
+  { name: 'ROS',          size: 'medium' },
+  { name: 'Arduino',      size: 'medium' },
+  { name: 'Raspberry Pi', size: 'medium' },
+];
 
 const Sponsorship = () => {
   return (
-    <div className="animate-fade-in">
-      <header className="page-header">
+    <div className="sponsorship-page">
+      {/* ── Header ── */}
+      <header className="page-header page-header--photo sponsorship-header">
         <div className="container">
-          <h1 className="page-title">
-            FUEL THE <span className="text-accent">MISSION</span>
-          </h1>
-          <p className="page-subtitle">
-            Partner with CRISS Robotics to build the future of aerospace engineering. 
-            Your support enables us to push boundaries on a global stage.
+          <h1 className="page-title animate-slide-up">PARTNER WITH US</h1>
+          <p className="page-subtitle animate-slide-up delay-100">
+            Join us in building the future of space exploration.
           </p>
         </div>
       </header>
 
-      <div className="container section-padding">
-        <div className="grid-3">
-          {/* Tier 1 */}
-          <div className="glass-card" style={{ position: 'relative', overflow: 'hidden' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Silver Partner</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>$1,000+</div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Small logo on team apparel</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Logo on website & social media</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Invitation to annual showcase</span>
-              </li>
-            </ul>
-            <button className="btn btn-outline" style={{ width: '100%' }}>Become Silver Partner</button>
-          </div>
-
-          {/* Tier 2 */}
-          <div className="glass-card" style={{ position: 'relative', overflow: 'hidden', borderColor: 'var(--accent)' }}>
-            <div style={{ position: 'absolute', top: 0, right: 0, background: 'var(--accent)', color: '#fff', padding: '0.25rem 1rem', fontSize: '0.75rem', fontWeight: 'bold', borderBottomLeftRadius: '1rem' }}>RECOMMENDED</div>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', color: '#fff' }}>Gold Partner</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 'bold', color: 'var(--accent)', marginBottom: '1.5rem' }}>$3,000+</div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Medium logo on rover & apparel</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Dedicated social media spotlight</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Resume book of team members</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>All Silver benefits</span>
-              </li>
-            </ul>
-            <button className="btn btn-primary" style={{ width: '100%' }}>Become Gold Partner</button>
-          </div>
-
-          {/* Tier 3 */}
-          <div className="glass-card" style={{ position: 'relative', overflow: 'hidden' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Platinum Partner</h3>
-            <div style={{ fontSize: '2rem', fontWeight: 'bold', color: '#fff', marginBottom: '1.5rem' }}>$5,000+</div>
-            <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Large dominant logo on rover</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Logo on main competition banner</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>Exclusive tech demonstration</span>
-              </li>
-              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                <CheckCircle2 size={18} className="text-accent" />
-                <span>All Gold benefits</span>
-              </li>
-            </ul>
-            <button className="btn btn-outline" style={{ width: '100%' }}>Become Platinum Partner</button>
-          </div>
-        </div>
-
-        <div style={{ marginTop: '4rem', padding: '3rem', background: 'rgba(255,255,255,0.02)', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-          <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>Why Sponsor Us?</h2>
-          <div className="grid-3">
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(0,39,91,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
-                <Star className="text-accent" />
-              </div>
-              <h4 style={{ marginBottom: '0.5rem' }}>Brand Visibility</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Exposure at international competitions across the US, Europe, and Asia.</p>
+      {/* ── Why Sponsor Us? ── */}
+      <section className="sponsor-section">
+        <div className="container">
+          <h2 className="section-heading text-center">WHY SPONSOR US?</h2>
+          <div className="why-sponsor-grid">
+            <div className="why-card why-card--1">
+              <div className="why-card-icon">🚀</div>
+              <h3 className="why-title">Empower Future Engineers</h3>
+              <p className="why-desc">
+                Your support directly funds the hands-on education of our student engineers, bridging the gap between academic theory and real-world aerospace challenges.
+              </p>
             </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(0,39,91,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
-                <Zap className="text-accent" />
-              </div>
-              <h4 style={{ marginBottom: '0.5rem' }}>Top Talent</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Direct access to recruit highly skilled, multidisciplinary engineering students.</p>
+            <div className="why-card why-card--2">
+              <div className="why-card-icon">🌐</div>
+              <h3 className="why-title">Brand Exposure</h3>
+              <p className="why-desc">
+                Gain international visibility at premier competitions in the US and Europe, and across university and social media channels.
+              </p>
             </div>
-            <div style={{ textAlign: 'center' }}>
-              <div style={{ width: '3rem', height: '3rem', borderRadius: '50%', background: 'rgba(0,39,91,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
-                <Rocket className="text-accent" />
-              </div>
-              <h4 style={{ marginBottom: '0.5rem' }}>Innovation</h4>
-              <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Align your brand with cutting-edge robotics and space exploration research.</p>
+            <div className="why-card why-card--3">
+              <div className="why-card-icon">🎓</div>
+              <h3 className="why-title">Recruitment Pipeline</h3>
+              <p className="why-desc">
+                Get priority access to our highly-skilled, multidisciplinary graduates with hands-on experience in cutting-edge robotics and system design.
+              </p>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* ── Current Sponsors – logo grid ── */}
+      <section className="sponsor-section logos-section">
+        <div className="container">
+          <p className="logos-eyebrow">With support from our partners</p>
+          <div className="logos-grid">
+            {sponsors.map((s, i) => (
+              <div className={`logo-cell logo-cell--${s.size}`} key={i}>
+                <span className="logo-text">{s.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Additional Funding ── */}
+      <section className="sponsor-section">
+        <div className="container">
+          <div className="funding-grid">
+            {/* Research Grants */}
+            <div className="funding-column">
+              <h2 className="section-heading text-center funding-title">Research Grants</h2>
+              <div className="funding-card">
+                <div className="funding-logos">
+                  <div className="funding-logo-placeholder">SOLVE</div>
+                  <div className="funding-logo-placeholder">NIDHI PRAYAS</div>
+                  <div className="funding-logo-placeholder">PI</div>
+                </div>
+                <ul className="funding-list">
+                  <li>SOLVE Research Grant to build Robotic End Manipulator for Warehouse Robotics.</li>
+                  <li>SPARKLE Research Grant to build in-house NIR Spectrophotometer.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Alumni Funding */}
+            <div className="funding-column">
+              <h2 className="section-heading text-center funding-title">Alumni Funding</h2>
+              <div className="funding-card">
+                <ul className="funding-list">
+                  <li>Mr. Goutham Kurra – Batch of 1998</li>
+                  <li>Mr. Siddhant Bhardwaj – Batch of 2010</li>
+                  <li>Mr. Sushwabhit Shadangi – Batch of 2025</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sponsorship Brochure ── */}
+      <section className="brochure-section">
+        <div className="container">
+          <div className="brochure-card">
+            <div className="brochure-content">
+              <h2 className="section-heading">SPONSORSHIP BROCHURE</h2>
+              <p className="section-paragraph">
+                For a detailed breakdown of our sponsorship tiers, benefits, and team goals, please download our official Sponsorship Prospectus.
+              </p>
+            </div>
+            <div className="brochure-action">
+              <a href="#" className="btn btn-primary btn-lg download-btn" onClick={(e) => e.preventDefault()}>
+                <Download size={20} />
+                DOWNLOAD PROSPECTUS
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 };

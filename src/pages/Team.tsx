@@ -371,8 +371,11 @@ const Team = () => {
 
   return (
     <div className="animate-fade-in">
-      <header className="page-header">
-        <div className="container">
+      <header className="page-header team-header">
+        <div className="team-header-bg">
+          <div className="team-header-overlay"></div>
+        </div>
+        <div className="container team-header-content">
           <h1 className="page-title">
             MEET THE <span className="text-accent">TEAM</span>
           </h1>

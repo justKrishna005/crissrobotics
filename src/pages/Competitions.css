@@ -1,9 +1,4 @@
 /* ── Page header ─────────────────────────────────────────────────────────── */
-.comp-page-header {
-  padding: 4rem 0 2.5rem;
-  text-align: center;
-  background-color: var(--bg-color);
-}
 
 .comp-page-title {
   font-family: var(--font-main);

@@ -69,7 +69,7 @@ const Competitions = () => {
 
   return (
     <div className="animate-fade-in">
-      <header className="comp-page-header">
+      <header className="page-header page-header--photo">
         <div className="container" style={{ textAlign: 'center' }}>
           <h1 className="comp-page-title">Competitions</h1>
           <p className="comp-page-subtitle">

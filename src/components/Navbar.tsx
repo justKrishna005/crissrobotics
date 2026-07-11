@@ -13,7 +13,7 @@ const Navbar = () => {
     { name: 'COMPETITIONS', path: '/competitions' },
     { name: 'ACHIEVEMENTS', path: '/achievements' },
     { name: 'TEAM', path: '/team' },
-    { name: 'ALUMNI', path: '/alumni' },
+    { name: 'CONTACT', path: '/contact' },
   ];
 
   return (

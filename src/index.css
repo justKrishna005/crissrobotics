@@ -23,15 +23,15 @@
 }
 
 :root {
-  --bg-color: #040814;
-  --bg-color-light: #0a1128;
+  --bg-color: #000000;
+  --bg-color-light: #0a0a0a;
   --text-primary: #ffffff;
-  --text-secondary: #c5c6c7;
-  --accent: #00275B;
-  --accent-light: #4da6ff;
-  --accent-glow: #00d2ff;
+  --text-secondary: #e2e8f0;
+  --accent: #1d4ed8;
+  --accent-light: #60a5fa;
+  --accent-glow: #38bdf8;
   
-  --font-main: 'Resolve Sans SemiBold', 'Resolve Sans Extra', 'Resolve Sans', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 * {
@@ -127,11 +127,39 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Internal Pages Global Styles */
 .page-header {
-  padding: 8rem 0 4rem;
+  position: relative;
+  padding: 12rem 0 6rem;
   text-align: center;
-  background: linear-gradient(to bottom, rgba(11, 12, 16, 1), rgba(31, 40, 51, 0.5));
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+/* Dark gradient fallback for pages without a bg image */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+  z-index: 0;
+}
+
+/* Add this class alongside page-header on any inner page to show the team photo */
+.page-header--photo {
+  background-image: url('/all-team.jpg');
+  background-size: cover;
+  background-position: center top;
+}
+
+/* Lighter overlay for photo variant — just enough for text legibility */
+.page-header--photo::before {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.35));
+}
+
+/* Ensure header children sit above the pseudo overlay */
+.page-header > * {
+  position: relative;
+  z-index: 1;
 }
 
 .page-title {

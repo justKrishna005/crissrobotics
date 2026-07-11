@@ -1,0 +1,95 @@
+import { Mail, MapPin, Send } from 'lucide-react';
+import './Contact.css';
+
+const Contact = () => {
+  return (
+    <div className="contact-page">
+      <header className="page-header page-header--photo contact-header">
+        <h1 className="page-title animate-slide-up">CONTACT US</h1>
+        <p className="page-subtitle animate-slide-up delay-100">
+          Reach out for sponsorships, collaborations, or general inquiries.
+        </p>
+      </header>
+
+      <section className="contact-section">
+        <div className="container">
+          <div className="contact-grid">
+            {/* Contact Form */}
+            <div className="contact-form-container glass-card animate-fade-in">
+              <h2 className="contact-form-title">Send a Message</h2>
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <div className="form-group">
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id="name" placeholder="John Doe" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Email</label>
+                  <input type="email" id="email" placeholder="john@example.com" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="subject">Subject</label>
+                  <input type="text" id="subject" placeholder="Sponsorship Inquiry" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea id="message" rows={5} placeholder="How can we help you?" required></textarea>
+                </div>
+                <button type="submit" className="btn btn-primary btn-submit">
+                  <Send size={18} /> Send Message
+                </button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="contact-info-container animate-fade-in delay-200">
+              <h2 className="contact-info-title">Get In Touch</h2>
+              <p className="contact-info-desc">
+                We are always looking to partner with industry leaders and connect with the community. Let's build the future of space exploration together.
+              </p>
+
+              <div className="info-item">
+                <div className="info-icon">
+                  <MapPin className="text-accent" />
+                </div>
+                <div>
+                  <h4 className="info-label">Address</h4>
+                  <p className="info-value">
+                    17 Alliance Lane<br />
+                    Monash University<br />
+                    VIC 3800, Australia
+                  </p>
+                </div>
+              </div>
+
+              <div className="info-item">
+                <div className="info-icon">
+                  <Mail className="text-accent" />
+                </div>
+                <div>
+                  <h4 className="info-label">Email</h4>
+                  <a href="mailto:outreach@crissrobotics.space" className="info-value info-link">
+                    outreach@crissrobotics.space
+                  </a>
+                </div>
+              </div>
+
+              <div className="social-links-section">
+                <h4 className="info-label">Follow Us</h4>
+                <div className="contact-social-links">
+                  <a href="#" className="social-link-item" aria-label="Instagram">
+                    IG
+                  </a>
+                  <a href="#" className="social-link-item" aria-label="LinkedIn">
+                    IN
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Contact;

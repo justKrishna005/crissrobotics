@@ -1,17 +1,22 @@
 .navbar {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 100;
-  background-color: rgba(11, 12, 16, 0.9);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 1.5rem 0;
+  background-color: rgba(11, 17, 32, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.85rem 0;
+  transition: all 0.3s ease;
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 95%; /* Push items further to edges */
+  margin: 0 auto;
 }
 
 .nav-logo {
@@ -81,8 +86,10 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: var(--bg-color);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: rgba(11, 17, 32, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1rem 0;
   }
 
@@ -95,7 +102,7 @@
 }
 
 .logo-image {
-  height: 60px;
+  height: 48px;
   width: auto;
   object-fit: contain;
 }
