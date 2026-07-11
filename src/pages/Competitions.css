@@ -1,0 +1,193 @@
+/* ── Page header ─────────────────────────────────────────────────────────── */
+.comp-page-header {
+  padding: 4rem 0 2.5rem;
+  text-align: center;
+  background-color: var(--bg-color);
+}
+
+.comp-page-title {
+  font-family: var(--font-main);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.comp-page-subtitle {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ── Tab bar (underline style — same as Team page) ───────────────────────── */
+.batch-bar {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 4rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.batch-bar::-webkit-scrollbar { display: none; }
+
+.batch-tab {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: rgba(255, 255, 255, 0.45);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
+  margin-bottom: -1px;
+  white-space: nowrap;
+}
+
+.batch-tab:hover { color: rgba(255, 255, 255, 0.75); }
+
+.batch-tab--active {
+  color: var(--accent-light);
+  border-bottom-color: var(--accent-light);
+  font-weight: 600;
+}
+
+/* ── Section wrapper ─────────────────────────────────────────────────────── */
+.comp-section {
+  padding: 2rem 0 8rem;
+  background-color: var(--bg-color);
+}
+
+/* ── Two-column competition info block ───────────────────────────────────── */
+.comp-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Left — large logo image */
+.comp-logo-wrap {
+  flex-shrink: 0;
+  width: 340px;
+  height: 240px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comp-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+/* Right column */
+.comp-info-body {
+  flex: 1;
+  min-width: 260px;
+  padding-top: 0.25rem;
+}
+
+/* Title row: small icon + acronym side by side */
+.comp-info-top {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Small inline logo — matches title text height */
+.comp-info-icon {
+  width: 1.75rem;
+  height: 1.75rem;
+  object-fit: contain;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.08);
+  padding: 2px;
+  flex-shrink: 0;
+}
+
+.comp-info-title {
+  font-family: var(--font-main);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* Full name — plain or as a hyperlink */
+.comp-info-full {
+  font-family: var(--font-main);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--accent-light);
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+  display: block;
+  text-decoration: none;
+}
+
+.comp-info-full--link:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Description text */
+.comp-info-tagline {
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  opacity: 0.78;
+}
+
+/* Website pill button — sits inline next to the title */
+.comp-info-link {
+  display: inline-block;
+  font-family: var(--font-main);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.85rem;
+  border-radius: 99px;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  white-space: nowrap;
+}
+
+.comp-info-link:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 640px) {
+  .comp-logo-wrap {
+    width: 100%;
+    height: 200px;
+  }
+}
+
