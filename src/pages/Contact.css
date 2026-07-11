@@ -3,24 +3,9 @@
   flex-direction: column;
 }
 
+/* contact-header background/overlay is handled by .page-header--photo in index.css */
 .contact-header {
-  background-image: url('../images/good_photos/1.jpg'); /* You can change this if you have a specific contact image */
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-
-.contact-header::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-color: rgba(11, 17, 32, 0.7);
-  z-index: 0;
-}
-
-.contact-header > * {
-  position: relative;
-  z-index: 10;
+  /* contact-specific tweaks only */
 }
 
 .contact-section {

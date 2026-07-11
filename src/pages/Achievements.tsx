@@ -1,4 +1,5 @@
 import { Trophy, Award, Medal, Star, Calendar } from 'lucide-react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Achievements.css';
 
 interface AchievementItem {
@@ -27,7 +28,7 @@ const achievementsData: AchievementItem[] = [
   {
     year: "2025",
     title: "International Rover Design Challenge 2025",
-    description: "At the International Rover Design Challenge 2025, our team secured 3rd Rank overall, showcasing strong advancements in rover mechanics, electronics integration, and mission strategy. This result reflects our team’s consistent growth and dedication to high-performance rover engineering.",
+    description: "At the International Rover Design Challenge 2025, our team secured 3rd Rank overall, showcasing strong advancements in rover mechanics, electronics integration, and mission strategy. This result reflects our team's consistent growth and dedication to high-performance rover engineering.",
     highlight: "3rd Rank Overall — IRDC 2025",
     icon: <Award size={20} />
   },
@@ -48,7 +49,7 @@ const achievementsData: AchievementItem[] = [
   {
     year: "2023",
     title: "European Rover Challenge 2023",
-    description: "At the European Rover Challenge 2023, our team demonstrated strong technical excellence and operational reliability, finishing 2nd in Asia and 5th Worldwide. Additionally, we were recognized with the Best in Maintenance award for our rover’s modular design, quick servicing capability, and sustained performance during missions.",
+    description: "At the European Rover Challenge 2023, our team demonstrated strong technical excellence and operational reliability, finishing 2nd in Asia and 5th Worldwide. Additionally, we were recognized with the Best in Maintenance award for our rover's modular design, quick servicing capability, and sustained performance during missions.",
     highlight: "2nd in Asia, 5th Worldwide, Best in Maintenance",
     icon: <Award size={20} />
   },
@@ -62,13 +63,12 @@ const achievementsData: AchievementItem[] = [
 ];
 
 const Achievements = () => {
+  useScrollReveal();
+
   return (
     <div className="achievements-page animate-fade-in">
-      <header className="achievements-header">
-        <div className="achievements-header-bg">
-          <div className="achievements-header-overlay"></div>
-        </div>
-        <div className="container achievements-header-content">
+      <header className="page-header page-header--photo">
+        <div className="container">
           <h1 className="page-title">
             OUR <span className="text-accent">ACHIEVEMENTS</span>
           </h1>
@@ -86,10 +86,11 @@ const Achievements = () => {
 
             {achievementsData.map((item, index) => {
               const isEven = index % 2 === 0;
+              const delayClass = `delay-${(index % 5) + 1}`;
               return (
-                <div 
-                  key={index} 
-                  className={`timeline-item ${isEven ? 'timeline-right' : 'timeline-left'}`}
+                <div
+                  key={index}
+                  className={`timeline-item ${isEven ? 'timeline-right' : 'timeline-left'} scroll-reveal ${delayClass}`}
                 >
                   {/* Timeline Year */}
                   <div className="timeline-year-label">

@@ -1,4 +1,5 @@
 import { Download } from 'lucide-react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
 
 // Sponsor list – replace label with <img> when real logos are ready
@@ -15,6 +16,7 @@ const sponsors = [
 ];
 
 const Sponsorship = () => {
+  useScrollReveal();
   return (
     <div className="sponsorship-page">
       {/* ── Header ── */}
@@ -32,21 +34,21 @@ const Sponsorship = () => {
         <div className="container">
           <h2 className="section-heading text-center">WHY SPONSOR US?</h2>
           <div className="why-sponsor-grid">
-            <div className="why-card why-card--1">
+            <div className="why-card why-card--1 scroll-reveal delay-1">
               <div className="why-card-icon">🚀</div>
               <h3 className="why-title">Empower Future Engineers</h3>
               <p className="why-desc">
                 Your support directly funds the hands-on education of our student engineers, bridging the gap between academic theory and real-world aerospace challenges.
               </p>
             </div>
-            <div className="why-card why-card--2">
+            <div className="why-card why-card--2 scroll-reveal delay-2">
               <div className="why-card-icon">🌐</div>
               <h3 className="why-title">Brand Exposure</h3>
               <p className="why-desc">
                 Gain international visibility at premier competitions in the US and Europe, and across university and social media channels.
               </p>
             </div>
-            <div className="why-card why-card--3">
+            <div className="why-card why-card--3 scroll-reveal delay-3">
               <div className="why-card-icon">🎓</div>
               <h3 className="why-title">Recruitment Pipeline</h3>
               <p className="why-desc">
@@ -60,8 +62,8 @@ const Sponsorship = () => {
       {/* ── Current Sponsors – logo grid ── */}
       <section className="sponsor-section logos-section">
         <div className="container">
-          <p className="logos-eyebrow">With support from our partners</p>
-          <div className="logos-grid">
+          <p className="logos-eyebrow scroll-reveal delay-1">With support from our partners</p>
+          <div className="logos-grid scroll-reveal delay-2">
             {sponsors.map((s, i) => (
               <div className={`logo-cell logo-cell--${s.size}`} key={i}>
                 <span className="logo-text">{s.name}</span>
@@ -76,7 +78,7 @@ const Sponsorship = () => {
         <div className="container">
           <div className="funding-grid">
             {/* Research Grants */}
-            <div className="funding-column">
+            <div className="funding-column scroll-reveal delay-1">
               <h2 className="section-heading text-center funding-title">Research Grants</h2>
               <div className="funding-card">
                 <div className="funding-logos">
@@ -92,7 +94,7 @@ const Sponsorship = () => {
             </div>
 
             {/* Alumni Funding */}
-            <div className="funding-column">
+            <div className="funding-column scroll-reveal delay-2">
               <h2 className="section-heading text-center funding-title">Alumni Funding</h2>
               <div className="funding-card">
                 <ul className="funding-list">
@@ -109,7 +111,7 @@ const Sponsorship = () => {
       {/* ── Sponsorship Brochure ── */}
       <section className="brochure-section">
         <div className="container">
-          <div className="brochure-card">
+          <div className="brochure-card scroll-reveal delay-1">
             <div className="brochure-content">
               <h2 className="section-heading">SPONSORSHIP BROCHURE</h2>
               <p className="section-paragraph">

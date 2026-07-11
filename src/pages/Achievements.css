@@ -6,36 +6,9 @@
 }
 
 /* ── Header ── */
+/* Height and overlay handled by shared .page-header & .page-header--photo rules */
 .achievements-header {
-  position: relative;
-  height: 50vh;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  overflow: hidden;
-}
-
-.achievements-header-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/all-team.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.achievements-header-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.35);
-  z-index: 1;
-}
-
-.achievements-header-content {
-  position: relative;
-  z-index: 2;
+  /* any achievements-specific tweaks go here */
 }
 
 /* ── Timeline Section ── */

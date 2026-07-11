@@ -59,37 +59,9 @@
 }
 
 /* ── Page Header ── */
+/* Height/overlay handled by shared .page-header & .page-header--photo rules */
 .team-header {
-  position: relative;
-  height: 50vh;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 2rem;
-  overflow: hidden;
-}
-
-.team-header-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/all-team.jpg');
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-.team-header-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-.team-header-content {
-  position: relative;
-  z-index: 2;
+  /* team-specific overrides if needed */
 }
 
 .team-section-title {

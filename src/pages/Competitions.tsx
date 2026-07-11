@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -66,6 +67,7 @@ type CompKey = typeof compKeys[number];
 const Competitions = () => {
   const [active, setActive] = useState<CompKey>("IRC");
   const comp = competitions[active];
+  useScrollReveal();
 
   return (
     <div className="animate-fade-in">
@@ -96,7 +98,7 @@ const Competitions = () => {
           </div>
 
           {/* ── Two-column competition info ── */}
-          <div className="comp-info">
+          <div className="comp-info scroll-reveal delay-1">
             {/* Left: logo image */}
             <div className="comp-logo-wrap">
               <img

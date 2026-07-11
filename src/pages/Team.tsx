@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail } from 'lucide-react';
 import eKrishna from '../images/team/e_krishna.png';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
 // Brand icons not in lucide-react v1.x — using inline SVG
@@ -336,8 +337,8 @@ const batchKeys = Object.keys(batches).sort((a, b) => b.localeCompare(a));
 
 // ─── Reusable member card ─────────────────────────────────────────────────────
 
-const MemberCard = ({ member, large = false }: { member: TeamMember; large?: boolean }) => (
-  <div className="member-card">
+const MemberCard = ({ member, large = false, index = 0 }: { member: TeamMember; large?: boolean; index?: number }) => (
+  <div className={`member-card scroll-reveal delay-${(index % 5) + 1}`}>
     <div className={`member-image-container${large ? ' member-image-large' : ''}`}>
       <img src={member.image} alt={member.name} className="member-photo" />
     </div>
@@ -368,14 +369,12 @@ const MemberCard = ({ member, large = false }: { member: TeamMember; large?: boo
 const Team = () => {
   const [activeBatch, setActiveBatch] = useState(batchKeys[0]);
   const { leaders, members } = batches[activeBatch];
+  useScrollReveal();
 
   return (
     <div className="animate-fade-in">
-      <header className="page-header team-header">
-        <div className="team-header-bg">
-          <div className="team-header-overlay"></div>
-        </div>
-        <div className="container team-header-content">
+      <header className="page-header page-header--photo">
+        <div className="container">
           <h1 className="page-title">
             MEET THE <span className="text-accent">TEAM</span>
           </h1>
@@ -406,7 +405,7 @@ const Team = () => {
           {leaders.length > 0 && (
             <div className="team-grid-leaders">
               {leaders.map((member, index) => (
-                <MemberCard key={index} member={member} large />
+                <MemberCard key={index} member={member} large index={index} />
               ))}
             </div>
           )}
@@ -415,7 +414,7 @@ const Team = () => {
           {members.length > 0 ? (
             <div className="team-grid-4">
               {members.map((member, index) => (
-                <MemberCard key={index} member={member} />
+                <MemberCard key={index} member={member} index={index} />
               ))}
             </div>
           ) : (

@@ -1,7 +1,9 @@
 import { Mail, MapPin, Send } from 'lucide-react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Contact.css';
 
 const Contact = () => {
+  useScrollReveal();
   return (
     <div className="contact-page">
       <header className="page-header page-header--photo contact-header">
@@ -15,7 +17,7 @@ const Contact = () => {
         <div className="container">
           <div className="contact-grid">
             {/* Contact Form */}
-            <div className="contact-form-container glass-card animate-fade-in">
+            <div className="contact-form-container glass-card scroll-reveal delay-1">
               <h2 className="contact-form-title">Send a Message</h2>
               <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
                 <div className="form-group">
@@ -41,7 +43,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="contact-info-container animate-fade-in delay-200">
+            <div className="contact-info-container scroll-reveal delay-2">
               <h2 className="contact-info-title">Get In Touch</h2>
               <p className="contact-info-desc">
                 We are always looking to partner with industry leaders and connect with the community. Let's build the future of space exploration together.
