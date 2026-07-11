@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import heroImg from '../images/good_photos/4.png';
 import './Home.css';
 
@@ -29,10 +29,6 @@ const Home = () => {
               PARTNER WITH US
             </Link>
           </div>
-        </div>
-
-        <div className="scroll-indicator animate-bounce hidden-mobile">
-          <ChevronDown size={32} color="rgba(255,255,255,0.5)" />
         </div>
       </section>
 
