@@ -9,6 +9,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
+
       {/* ── Hero Section ── */}
       <section className="hero-section">
         <div className="hero-bg">
@@ -30,10 +31,10 @@ const Home = () => {
           </p>
           <div className="hero-actions animate-slide-up delay-200">
             <Link to="/competitions" className="btn btn-primary btn-lg">
-              VIEW MISSIONS
+              View Missions
             </Link>
             <Link to="/achievements" className="btn btn-outline btn-lg">
-              OUR ACHIEVEMENTS
+              Our Achievements
             </Link>
           </div>
         </div>
@@ -68,7 +69,7 @@ const Home = () => {
       {/* ── Condensed Achievements ── */}
       <section className="home-achievements">
         <div className="container">
-          <h2 className="section-heading text-center">GLOBAL RECOGNITION</h2>
+          <h2 className="section-heading text-center">Global Recognition</h2>
           <div className="home-achievements-grid">
             <div className="home-achievement-card grain-overlay scroll-reveal delay-1">
               <div className="home-achievement-icon"><Medal size={32} /></div>
@@ -90,11 +91,27 @@ const Home = () => {
       </section>
 
 
+
+      {/* ── Thick Diagonal Stripe Divider ── */}
+      <div className="stripe-divider" aria-hidden="true">
+        <svg
+          className="stripe-divider-svg"
+          viewBox="0 0 1440 220"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Blue primary band — 60px thick */}
+          <polygon points="0,80  1440,0   1440,60  0,140" fill="#1d4ed8" opacity="0.9" />
+          {/* Mars rust band — 40px thick */}
+          <polygon points="0,140 1440,60  1440,100 0,180" fill="#C2410C" opacity="0.9" />
+        </svg>
+      </div>
+
       {/* ── Who Are We Section ── */}
       <section className="about-section">
         <div className="container about-grid">
           <div className="about-text-content">
-            <h2 className="section-heading">WHO ARE WE?</h2>
+            <h2 className="section-heading">Who Are We?</h2>
             <p className="section-paragraph">
               CRISS Robotics is a fully student-run team at BITS Pilani building autonomous Mars
               rovers, Martian-analog drones, and field-portable NIR spectrometers. These are
@@ -113,11 +130,12 @@ const Home = () => {
         </div>
       </section>
 
+
       {/* ── Our Latest Rover Section ── */}
       <section className="rover-section">
         <div className="container">
           <div className="rover-header">
-            <h2 className="section-heading text-center">OUR LATEST ROVER</h2>
+            <h2 className="section-heading text-center">Our Latest Rover</h2>
           </div>
           <div className="rover-showcase">
             <div className="rover-image-container">
@@ -126,15 +144,15 @@ const Home = () => {
             </div>
             <div className="rover-specs">
               <div className="spec-card">
-                <h4 className="spec-title">CHASSIS</h4>
+                <h4 className="spec-title">Chassis</h4>
                 <p className="spec-desc">Custom carbon-fiber composite structure designed for maximum strength-to-weight ratio in high-stress environments.</p>
               </div>
               <div className="spec-card">
-                <h4 className="spec-title">AUTONOMY</h4>
+                <h4 className="spec-title">Autonomy</h4>
                 <p className="spec-desc">Advanced ROS 2 stack utilizing LiDAR and stereo vision for fully autonomous obstacle avoidance and path planning.</p>
               </div>
               <div className="spec-card">
-                <h4 className="spec-title">ARM</h4>
+                <h4 className="spec-title">Arm</h4>
                 <p className="spec-desc">6-DOF robotic manipulator capable of precise equipment servicing and heavy payload deployment.</p>
               </div>
             </div>

@@ -2,20 +2,30 @@
 
 
 :root {
-  --bg-color: #000000;
-  --bg-color-light: #0a0a0a;
-  --text-primary: #ffffff;
-  --text-secondary: #e2e8f0;
-  --accent: #1d4ed8;
-  --accent-light: #60a5fa;
-  --accent-dark: #1E40AF;
-  --accent-glow: #38bdf8;
-  --accent-glow-subtle: rgba(96, 165, 250, 0.15);
-  --accent-glow-medium: rgba(96, 165, 250, 0.3);
-  --accent-secondary: #f59e0b; /* Amber/Gold secondary accent */
-  --accent-mars: #C2410C;
-  --accent-mars-light: #EA580C;
-  --accent-mars-glow: rgba(194, 65, 12, 0.15);
+  /* ── Brand Palette ── */
+  --color-black:       #09090b;   /* Softer dark background, not pure black */
+  --color-blue:        #1d4ed8;   /* CRISS dark blue */
+  --color-blue-mid:    #2563eb;
+  --color-blue-light:  #60a5fa;
+  --color-mars:        #C2410C;   /* Mars rust — rover surface color */
+  --color-mars-light:  #EA580C;
+  --color-mars-glow:   rgba(194, 65, 12, 0.18);
+
+  /* Legacy aliases (keep for backward compat across pages) */
+  --bg-color:              var(--color-black);
+  --bg-color-light:        #18181b;
+  --text-primary:          #f8fafc;
+  --text-secondary:        #e2e8f0;
+  --accent:                var(--color-blue);
+  --accent-light:          var(--color-blue-light);
+  --accent-dark:           #1E40AF;
+  --accent-glow:           #38bdf8;
+  --accent-glow-subtle:    rgba(96, 165, 250, 0.15);
+  --accent-glow-medium:    rgba(96, 165, 250, 0.3);
+  --accent-secondary:      #f59e0b;
+  --accent-mars:           var(--color-mars);
+  --accent-mars-light:     var(--color-mars-light);
+  --accent-mars-glow:      var(--color-mars-glow);
   
   --font-main: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
