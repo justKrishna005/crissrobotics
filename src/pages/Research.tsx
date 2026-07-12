@@ -1,4 +1,4 @@
-import { Microscope, Cpu, Radio, Rocket, FlaskConical, Navigation, ArrowRight } from 'lucide-react';
+import { Microscope, Cpu, Radio, Rocket, FlaskConical, Navigation, ArrowRight, FileText, Download } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
 
@@ -42,6 +42,32 @@ const rdFrontier = [
     description:
       'Full self-driving rover stacks leveraging ROS2, SLAM, and computer vision. Our autonomy pipeline enables GPS-denied waypoint navigation, obstacle avoidance, and dynamic path planning in unstructured terrain.',
   },
+];
+
+// ─── Research Reports ─────────────────────────────────────────────────────────
+
+const researchReports = [
+  {
+    title: 'Autonomous Navigation in Martian Analog Environments',
+    date: 'March 2025',
+    type: 'Conference Paper',
+    description: 'Detailed analysis of our custom ROS2 stack utilizing visual SLAM and LiDAR for GPS-denied navigation in extreme terrain.',
+    link: '#'
+  },
+  {
+    title: 'Design and Optimization of 6-DOF Robotic End-Effectors',
+    date: 'November 2024',
+    type: 'Technical Report',
+    description: 'A study on maximizing strength-to-weight ratio in 3D-printed composite manipulators for rover applications.',
+    link: '#'
+  },
+  {
+    title: 'In-Situ Soil Analysis via Compact NIR Spectroscopy',
+    date: 'June 2024',
+    type: 'Whitepaper',
+    description: 'Methodology and results from our in-house developed spectrometer identifying moisture and organics in analog regolith.',
+    link: '#'
+  }
 ];
 
 // ─── Rover Timeline Data ──────────────────────────────────────────────────────
@@ -138,6 +164,36 @@ const Research = () => {
                 <div className="frontier-card-icon">{item.icon}</div>
                 <h3 className="frontier-card-title">{item.title}</h3>
                 <p className="frontier-card-desc">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Research Reports / Publications ── */}
+      <section className="research-section">
+        <div className="container">
+          <div className="section-header-left">
+            <FileText size={20} className="section-icon" />
+            <h2 className="section-heading">REPORTS & PUBLICATIONS</h2>
+          </div>
+          <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
+            We believe in open-source engineering. Read our published technical reports, conference papers, and system design whitepapers.
+          </p>
+
+          <div className="reports-grid">
+            {researchReports.map((report, index) => (
+              <div key={index} className={`report-card scroll-reveal delay-${index + 1}`}>
+                <div className="report-card-header">
+                  <span className="report-type">{report.type}</span>
+                  <span className="report-date">{report.date}</span>
+                </div>
+                <h3 className="report-title">{report.title}</h3>
+                <p className="report-desc">{report.description}</p>
+                <a href={report.link} className="report-link">
+                  <Download size={16} />
+                  <span>Download PDF</span>
+                </a>
               </div>
             ))}
           </div>

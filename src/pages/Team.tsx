@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, ArrowLeft, ChevronRight } from 'lucide-react';
+import { Mail, ArrowLeft, ChevronRight, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
@@ -33,7 +33,7 @@ interface TeamMember {
 interface VerticalData {
   id: string;
   name: string;
-  icon: string;
+  icon: React.ReactNode;
   shortDesc: string;
   fullDesc: string;
   accent: string;
@@ -52,11 +52,11 @@ const verticals: VerticalData[] = [
   {
     id: 'mechanical',
     name: 'Mechanical',
-    icon: '⚙️',
+    icon: <Wrench size={28} />,
     shortDesc: 'Chassis, suspension & robotic arm',
     fullDesc:
       'The Mechanical subsystem is responsible for the structural design and fabrication of the rover — from the rocker-bogie suspension and chassis to the 5-DOF robotic arm and end-effector. Every component is engineered to withstand rugged terrains and Martian-analog environments.',
-    accent: 'var(--accent-light)',
+    accent: '#60a5fa',
     cardImage:
       'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=900&auto=format&fit=crop',
     heroImage:
@@ -109,11 +109,11 @@ const verticals: VerticalData[] = [
   {
     id: 'electrical',
     name: 'Electrical',
-    icon: '⚡',
+    icon: <Zap size={28} />,
     shortDesc: 'Power systems, PCBs & wiring',
     fullDesc:
       'The Electrical subsystem manages all power distribution, custom PCB design, motor driver integration, and embedded electronics aboard the rover. The team ensures reliable power flow and signal integrity across all subsystems under demanding field conditions.',
-    accent: 'var(--accent-light)',
+    accent: '#facc15',
     cardImage:
       'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop',
     heroImage:
@@ -167,11 +167,11 @@ const verticals: VerticalData[] = [
   {
     id: 'software',
     name: 'Software',
-    icon: '💻',
+    icon: <Code2 size={28} />,
     shortDesc: 'Autonomy, ROS & navigation',
     fullDesc:
       'The Software team develops all on-board and off-board systems: autonomous navigation, computer vision, ROS2-based control architecture, teleoperation interfaces, and mission planning algorithms. They bridge the gap between hardware and intelligent behavior.',
-    accent: 'var(--accent-light)',
+    accent: '#34d399',
     cardImage:
       'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=900&auto=format&fit=crop',
     heroImage:
@@ -227,11 +227,11 @@ const verticals: VerticalData[] = [
   {
     id: 'science',
     name: 'Science',
-    icon: '🔬',
+    icon: <FlaskConical size={28} />,
     shortDesc: 'Sample collection & spectroscopy',
     fullDesc:
       'The Science subsystem designs the scientific payload — including soil sample collection tools, in-house NIR spectrophotometry, life-detection instrumentation, and astrobiology protocols. They ensure the rover can accomplish real scientific objectives in the field.',
-    accent: 'var(--accent-light)',
+    accent: '#a78bfa',
     cardImage:
       'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=900&auto=format&fit=crop',
     heroImage:
@@ -283,11 +283,11 @@ const verticals: VerticalData[] = [
   {
     id: 'operations',
     name: 'Operations',
-    icon: '📊',
+    icon: <LayoutGrid size={28} />,
     shortDesc: 'Strategy, outreach & documentation',
     fullDesc:
       'The Operations team manages competition strategy, technical documentation, budget planning, sponsorship outreach, and public relations. They ensure the team is always competition-ready, legally compliant, and globally connected to the robotics community.',
-    accent: 'var(--accent-light)',
+    accent: '#fb923c',
     cardImage:
       'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=900&auto=format&fit=crop',
     heroImage:
@@ -405,7 +405,7 @@ const VerticalCard = ({
     <div className="vertical-card-accent-bar" />
 
     <div className="vertical-card-content">
-      <span className="vertical-card-icon">{vertical.icon}</span>
+      <div className="vertical-card-icon">{vertical.icon}</div>
       <h3 className="vertical-card-name">{vertical.name}</h3>
       <p className="vertical-card-desc">{vertical.shortDesc}</p>
       <div className="vertical-card-lead">
@@ -419,155 +419,163 @@ const VerticalCard = ({
   </div>
 );
 
-// ─── Vertical Detail page ─────────────────────────────────────────────────────
+// ─── Executive Committee (ExComm) ─────────────────────────────────────────────
+const excomm: TeamMember[] = [
+  {
+    name: 'Alex Mercer',
+    role: 'Team Captain',
+    image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=400&auto=format&fit=crop',
+    linkedin: 'https://linkedin.com',
+  },
+  {
+    name: 'Elena Rodriguez',
+    role: 'Technical Director',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop',
+    linkedin: 'https://linkedin.com',
+  },
+  {
+    name: 'David Kim',
+    role: 'Project Manager',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
+    linkedin: 'https://linkedin.com',
+  }
+];
 
-const VerticalDetail = ({
-  vertical,
-  onBack,
-}: {
-  vertical: VerticalData;
-  onBack: () => void;
-}) => {
-  useScrollReveal();
-
-  // Scroll to top of content when detail opens
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, []);
-
-  return (
-    <div className="vertical-detail">
-      {/* Back navigation */}
-      <div className="container">
-        <button className="vertical-back-btn" onClick={onBack} aria-label="Back to verticals">
-          <ArrowLeft size={16} />
-          All Verticals
-        </button>
-      </div>
-
-      {/* Hero banner */}
-      <div
-        className="vertical-hero"
-        style={{ '--v-accent': vertical.accent } as React.CSSProperties}
-      >
-        <img
-          src={vertical.heroImage}
-          alt={`${vertical.name} subsystem`}
-          className="vertical-hero-img"
-        />
-        <div className="vertical-hero-overlay" />
-        <div className="vertical-hero-content">
-          <span className="vertical-hero-icon">{vertical.icon}</span>
-          <h1 className="vertical-hero-title">{vertical.name}</h1>
-          <p className="vertical-hero-desc">{vertical.fullDesc}</p>
-        </div>
-        <div className="vertical-hero-bar" style={{ background: vertical.accent }} />
-      </div>
-
-      {/* Work photos */}
-      <div className="container">
-        <p className="vertical-work-label scroll-reveal delay-1">Work & Research</p>
-        <div className="vertical-work-grid">
-          {vertical.workImages.map((img, i) => (
-            <div key={i} className={`vertical-work-photo scroll-reveal delay-${i + 1}`}>
-              <img src={img} alt={`${vertical.name} work ${i + 1}`} />
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Members */}
-      <section className="vertical-members">
-        <div className="container">
-
-          {/* Leadership tier */}
-          <div className="members-tier">
-            <div className="members-tier-header">
-              <div className="members-tier-dot" style={{ background: vertical.accent }} />
-              <h2 className="members-tier-title">Leadership</h2>
-              <div className="members-tier-line" />
-            </div>
-            <div className="members-leads-row">
-              <MemberCard member={vertical.lead} size="large" index={0} />
-              <MemberCard member={vertical.viceLead} size="large" index={1} />
-            </div>
-          </div>
-
-          {/* Juniors tier */}
-          {vertical.juniors.length > 0 && (
-            <div className="members-tier">
-              <div className="members-tier-header">
-                <div className="members-tier-dot" style={{ background: vertical.accent }} />
-                <h2 className="members-tier-title">Junior Members</h2>
-                <div className="members-tier-line" />
-              </div>
-              <div className="members-juniors-grid">
-                {vertical.juniors.map((member, i) => (
-                  <MemberCard key={i} member={member} size="small" index={i} />
-                ))}
-              </div>
-            </div>
-          )}
-
-        </div>
-      </section>
-    </div>
-  );
-};
 
 // ─── Main Team Page ───────────────────────────────────────────────────────────
 
 const Team = () => {
-  const [activeId, setActiveId] = useState<string | null>(null);
+  const [activeNav, setActiveNav] = useState('structure');
   useScrollReveal();
 
-  const activeVertical = activeId ? verticals.find((v) => v.id === activeId) ?? null : null;
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['structure', 'leadership', 'subsystems'];
+      const scrollPosition = window.scrollY + 100; // offset for sticky nav
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element && element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
+          setActiveNav(section);
+        }
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
+    }
+  };
 
   return (
     <div className="team-page animate-fade-in">
-      {/* Persistent page header */}
-      <header className="page-header page-header--photo">
-        <div className="container">
-          <h1 className="page-title">
-            MEET THE <span className="text-accent">TEAM</span>
-          </h1>
-          <p className="page-subtitle">
-            {activeVertical
-              ? activeVertical.name + ' Subsystem'
-              : 'Five specialized verticals. One unified mission.'}
+      {/* ── Team Photo (Hero) ── */}
+      <header className="team-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', height: '60vh', position: 'relative' }}>
+        <div className="team-hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10, 15, 30, 0.9), rgba(10, 15, 30, 0.4))' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '3rem' }}>
+          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>MEET THE TEAM</h1>
+          <p className="page-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '600px' }}>
+            A diverse group of engineering students dedicated to building the next generation of space exploration robotics.
           </p>
         </div>
       </header>
 
-      {activeVertical ? (
-        <VerticalDetail
-          vertical={activeVertical}
-          onBack={() => setActiveId(null)}
-        />
-      ) : (
-        <div className="verticals-landing">
-          <div className="container">
-            <p className="verticals-intro scroll-reveal delay-1">
-              CRISS Robotics is structured around five specialized subsystem verticals, each driving
-              a critical dimension of our rover's capabilities — from the chassis to the code.
-            </p>
-          </div>
+      {/* ── Sticky Nav Bar ── */}
+      <nav className="team-sticky-nav" style={{ position: 'sticky', top: '70px', zIndex: 100, backgroundColor: 'rgba(10, 15, 30, 0.9)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'center', gap: '2rem', padding: '1rem' }}>
+        <button className={`team-nav-btn ${activeNav === 'structure' ? 'active' : ''}`} onClick={() => scrollToSection('structure')} style={{ background: 'none', border: 'none', color: activeNav === 'structure' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Structure</button>
+        <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')} style={{ background: 'none', border: 'none', color: activeNav === 'leadership' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Leadership</button>
+        <button className={`team-nav-btn ${activeNav === 'subsystems' ? 'active' : ''}`} onClick={() => scrollToSection('subsystems')} style={{ background: 'none', border: 'none', color: activeNav === 'subsystems' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Subsystems</button>
+      </nav>
 
-          <div className="verticals-grid">
-            {verticals.map((v, i) => (
-              <VerticalCard
-                key={v.id}
-                vertical={v}
-                index={i}
-                onClick={() => {
-                  setActiveId(v.id);
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              />
+      <div className="container" style={{ padding: '4rem 1rem' }}>
+        
+        {/* ── Structure Section ── */}
+        <section id="structure" className="team-section" style={{ marginBottom: '6rem' }}>
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-heading">TEAM STRUCTURE</h2>
+          </div>
+          <div className="flowchart-placeholder glass-card" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '12px', border: '1px dashed var(--border-light)' }}>
+            <div style={{ color: 'var(--accent-light)', marginBottom: '1rem' }}>
+              <LayoutGrid size={48} style={{ margin: '0 auto' }} />
+            </div>
+            <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Organizational Flowchart</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>[ Flowchart diagram displaying ExComm and the 5 Subsystems will be inserted here ]</p>
+          </div>
+        </section>
+
+        {/* ── Leadership Section (ExComm) ── */}
+        <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-heading">LEADERSHIP (EXCOMM)</h2>
+          </div>
+          <div className="members-tier-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+            {excomm.map((member, i) => (
+              <MemberCard key={i} member={member} size="large" index={i} />
             ))}
           </div>
-        </div>
-      )}
+        </section>
+
+        {/* ── Subsystems Section ── */}
+        <section id="subsystems" className="team-section">
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 className="section-heading">OUR SUBSYSTEMS</h2>
+          </div>
+          
+          <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+            {verticals.map((vertical, vIndex) => (
+              <div key={vertical.id} className="subsystem-block">
+                
+                {/* Subsystem Hero / Photos */}
+                <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
+                  <div className="subsystem-banner glass-card" style={{ position: 'relative', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem' }}>
+                    <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
+                    <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
+                      <div style={{ color: vertical.accent, marginBottom: '0.5rem' }}>{vertical.icon}</div>
+                      <h3 style={{ fontSize: '2.5rem', color: '#fff', fontFamily: 'var(--font-heading)', margin: 0 }}>{vertical.name}</h3>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', marginTop: '0.5rem' }}>{vertical.fullDesc}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Subsystem Leads */}
+                <div className="members-tier" style={{ marginBottom: '3rem' }}>
+                  <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                    <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
+                    <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Leads</h4>
+                    <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
+                  </div>
+                  <div className="members-leads-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '700px' }}>
+                    <MemberCard member={vertical.lead} size="normal" index={0} />
+                    <MemberCard member={vertical.viceLead} size="normal" index={1} />
+                  </div>
+                </div>
+
+                {/* Subsystem Juniors */}
+                {vertical.juniors.length > 0 && (
+                  <div className="members-tier">
+                    <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                      <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
+                      <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Junior Members</h4>
+                      <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
+                    </div>
+                    <div className="members-juniors-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
+                      {vertical.juniors.map((member, i) => (
+                        <MemberCard key={i} member={member} size="small" index={i} />
+                      ))}
+                    </div>
+                  </div>
+                )}
+                
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };

@@ -25,7 +25,7 @@
 }
 
 .section-icon {
-  color: #1E40AF;
+  color: var(--accent-dark);
 }
 
 .max-w-800 {
@@ -37,7 +37,7 @@
 .funded-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3px;
+  gap: 1.5rem;
 }
 
 .funded-card {
@@ -83,7 +83,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #1E40AF;
+  color: var(--accent-dark);
 }
 
 .funded-card-title {
@@ -106,7 +106,7 @@
 .frontier-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
+  gap: 1.5rem;
 }
 
 .frontier-card {
@@ -123,7 +123,7 @@
 }
 
 .frontier-card-icon {
-  color: #1E40AF;
+  color: var(--accent-dark);
   width: 56px;
   height: 56px;
   display: flex;
@@ -148,17 +148,90 @@
   opacity: 0.8;
 }
 
+/* ── Reports & Publications ── */
+
+.reports-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.report-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.report-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-light);
+  box-shadow: 0 10px 30px var(--accent-glow-subtle);
+}
+
+.report-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.report-type {
+  color: var(--accent-light);
+}
+
+.report-date {
+  color: var(--text-secondary);
+}
+
+.report-title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-family: var(--font-heading);
+}
+
+.report-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.report-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-light);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.report-link:hover {
+  color: #fff;
+}
+
 /* ── Rover Evolution Timeline ────────────────────────────────────────────── */
 
 .rover-timeline {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 1rem;
 }
 
 .rover-timeline-entry {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(180px, 300px) 1fr;
   background: #141A2E;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -189,7 +262,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  background: #1E40AF;
+  background: var(--accent-dark);
   color: #ffffff;
   font-family: var(--font-main);
   font-size: 0.85rem;
@@ -231,11 +304,21 @@
 }
 
 .rover-timeline-milestones li svg {
-  color: #1E40AF;
+  color: var(--accent-dark);
   flex-shrink: 0;
 }
 
 /* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .rover-timeline-entry {
+    grid-template-columns: 1fr;
+  }
+
+  .rover-timeline-image {
+    aspect-ratio: 16 / 9;
+  }
+}
 
 @media (max-width: 768px) {
   .funded-grid {

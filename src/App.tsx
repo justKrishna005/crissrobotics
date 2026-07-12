@@ -9,6 +9,7 @@ import Team from './pages/Team';
 import Research from './pages/Research';
 import Alumni from './pages/Alumni';
 import Contact from './pages/Contact';
+import SupportUs from './pages/SupportUs';
 import './App.css';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/research" element={<Research />} />
             <Route path="/alumni" element={<Alumni />} />
+            <Route path="/support-us" element={<SupportUs />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

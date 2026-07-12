@@ -1,19 +1,22 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, Trophy, Medal } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import heroImg from '../images/good_photos/4.png';
+import heroImg from '../images/good_photos/3.png';
 import './Home.css';
 
 const Home = () => {
   useScrollReveal();
-
 
   return (
     <div className="home-container">
       {/* ── Hero Section ── */}
       <section className="hero-section">
         <div className="hero-bg">
-          <img src={heroImg} alt="Hero background" className="hero-bg-img" />
+          <img 
+            src={heroImg} 
+            alt="CRISS Robotics Hero" 
+            className="hero-bg-image" 
+          />
           <div className="hero-overlay-dark"></div>
         </div>
 
@@ -23,14 +26,14 @@ const Home = () => {
             <span>ROBOTICS</span>
           </h1>
           <p className="hero-subtitle animate-slide-up delay-100">
-            Consortium of Research in Space Systems
+            A BITS Pilani student team building autonomous Mars rovers, Martian-analog drones, and in-house spectrometers.
           </p>
           <div className="hero-actions animate-slide-up delay-200">
             <Link to="/competitions" className="btn btn-primary btn-lg">
               VIEW MISSIONS
             </Link>
-            <Link to="/partners" className="btn btn-outline btn-lg">
-              PARTNER WITH US
+            <Link to="/achievements" className="btn btn-outline btn-lg">
+              OUR ACHIEVEMENTS
             </Link>
           </div>
         </div>
@@ -40,20 +43,24 @@ const Home = () => {
       <section className="stats-band">
         <div className="container stats-grid">
           <div className="stat-item scroll-reveal delay-1">
-            <h3 className="stat-number">40+</h3>
-            <p className="stat-label">Active Members</p>
+            <h3 className="stat-number">6+</h3>
+            <p className="stat-label">Intl. Competitions</p>
           </div>
           <div className="stat-item scroll-reveal delay-2">
-            <h3 className="stat-number">5+</h3>
-            <p className="stat-label">Years of Innovation</p>
+            <h3 className="stat-number">1st</h3>
+            <p className="stat-label">@ IRDC 2023</p>
           </div>
           <div className="stat-item scroll-reveal delay-3">
-            <h3 className="stat-number">6</h3>
-            <p className="stat-label">Global Awards</p>
+            <h3 className="stat-number">2nd</h3>
+            <p className="stat-label">In Asia @ ERC 2025</p>
           </div>
           <div className="stat-item scroll-reveal delay-4">
-            <h3 className="stat-number">#1</h3>
-            <p className="stat-label">Indian Team at ARC</p>
+            <h3 className="stat-number">1st</h3>
+            <p className="stat-label">Indian Team @ ARCh '26</p>
+          </div>
+          <div className="stat-item scroll-reveal delay-5">
+            <h3 className="stat-number">₹2.5L</h3>
+            <p className="stat-label">Grant Won</p>
           </div>
         </div>
       </section>
@@ -89,10 +96,14 @@ const Home = () => {
           <div className="about-text-content">
             <h2 className="section-heading">WHO ARE WE?</h2>
             <p className="section-paragraph">
-              CRISS Robotics is an entirely student-run organisation dedicated to designing, manufacturing, and operating next-generation extra-terrestrial robotics. Comprised of passionate engineering, science, and business students, our team tackles complex aerospace challenges by developing autonomous Martian drones, in-house near-infrared spectrometers, and highly advanced rovers.
+              CRISS Robotics is a fully student-run team at BITS Pilani building autonomous Mars
+              rovers, Martian-analog drones, and field-portable NIR spectrometers. These are
+              systems that don't exist commercially at this scale — we build them from scratch.
             </p>
             <p className="section-paragraph">
-              We compete on the global stage at the University Rover Challenge and the European Rover Challenge, consistently ranking among the top university teams worldwide. Our mission is to bridge the gap between academic theory and industry-grade engineering, shaping the future leaders of the aerospace sector.
+              We finished 3rd internationally at ERC 2025, 1st worldwide at IRDC 2023, and
+              became the first and only Indian team invited to the Australian Rover Challenge 2026.
+              Our engineers compete across three continents in the same season.
             </p>
             <Link to="/about" className="text-link">Read our full story <ArrowRight size={16} /></Link>
           </div>
@@ -110,8 +121,8 @@ const Home = () => {
           </div>
           <div className="rover-showcase">
             <div className="rover-image-container">
-              {/* Replace with actual isolated rover image if you have one */}
-              <img src="/workshop.png" alt="Latest Rover" className="rover-hero-img" />
+              {/* Replace with actual isolated rover hardware image */}
+              <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop" alt="Latest Hardware Showcase" className="rover-hero-img" style={{ borderRadius: '8px' }} />
             </div>
             <div className="rover-specs">
               <div className="spec-card">

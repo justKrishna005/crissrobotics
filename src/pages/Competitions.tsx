@@ -316,20 +316,32 @@ const Competitions = () => {
         </div>
       </header>
 
-      {/* ── Tab Navigation ── */}
-      <nav className="comp-nav-bar" aria-label="Competition navigation">
-        {competitions.map((comp) => (
-          <button
-            key={comp.id}
-            className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
-            onClick={() => setActiveCompId(comp.id)}
-          >
-            {comp.acronym}
-          </button>
-        ))}
-      </nav>
+      {/* ── Competition Cards Grid ── */}
+      <section className="comp-cards-section container">
+        <div className="comp-cards-grid">
+          {competitions.map((comp) => (
+            <div
+              key={comp.id}
+              className={`comp-card glass-card ${activeCompId === comp.id ? 'comp-card--active' : ''}`}
+              onClick={() => {
+                setActiveCompId(comp.id);
+                document.getElementById('comp-details-area')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              <div className="comp-card-bg">
+                <img src={comp.gallery[0].src} alt={comp.acronym} />
+                <div className="comp-card-overlay"></div>
+              </div>
+              <div className="comp-card-content">
+                <h3 className="comp-card-acronym">{comp.acronym}</h3>
+                <p className="comp-card-name">{comp.fullName}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
-      <div className="comp-sections-wrapper">
+      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '4rem' }}>
         <CompetitionSection key={activeComp.id} comp={activeComp} index={activeIndex} />
       </div>
     </div>

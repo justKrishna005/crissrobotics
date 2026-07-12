@@ -1,8 +1,23 @@
 /* ── Achievements Page ── */
 .achievements-page {
+  padding-top: 80px;
   background-color: var(--bg-color);
   min-height: 100vh;
   color: var(--text-primary);
+}
+
+.news-card {
+  transition: all 0.3s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-light);
+  box-shadow: 0 10px 30px var(--accent-glow-subtle);
+}
+
+.news-card:hover .news-read-more {
+  color: #fff;
 }
 
 /* ── Header ── */
@@ -34,8 +49,8 @@
   background: linear-gradient(
     to bottom,
     var(--accent-light) 0%,
-    rgba(77, 166, 255, 0.4) 50%,
-    rgba(77, 166, 255, 0.1) 100%
+    rgba(96, 165, 250, 0.4) 50%,
+    rgba(96, 165, 250, 0.1) 100%
   );
   transform: translateX(-50%);
   z-index: 1;
@@ -67,7 +82,7 @@
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 0 15px rgba(77, 166, 255, 0.3);
+  box-shadow: 0 0 15px var(--accent-glow-medium);
 }
 
 .node-inner {
@@ -91,8 +106,8 @@
 
 .timeline-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(77, 166, 255, 0.3);
-  box-shadow: 0 15px 35px rgba(77, 166, 255, 0.15);
+  border-color: var(--accent-glow-medium);
+  box-shadow: 0 15px 35px var(--accent-glow-subtle);
 }
 
 .timeline-card-header {
@@ -120,8 +135,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(77, 166, 255, 0.08);
-  border: 1px solid rgba(77, 166, 255, 0.15);
+  background: var(--accent-glow-subtle);
+  border: 1px solid var(--accent-glow-medium);
   padding: 0.5rem 1rem;
   border-radius: 6px;
 }
@@ -148,7 +163,7 @@
   font-family: var(--font-main);
   font-size: 1.5rem;
   font-weight: 800;
-  color: var(--accent-light);
+  color: var(--accent-mars-light);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -178,7 +193,7 @@
   right: -6px;
   width: 12px;
   height: 12px;
-  background: inherit;
+  background: #12172a;
   border-right: 1px solid rgba(255, 255, 255, 0.07);
   border-top: 1px solid rgba(255, 255, 255, 0.07);
   transform: rotate(45deg);
@@ -205,7 +220,7 @@
   left: -6px;
   width: 12px;
   height: 12px;
-  background: inherit;
+  background: #12172a;
   border-left: 1px solid rgba(255, 255, 255, 0.07);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   transform: rotate(45deg);

@@ -18,7 +18,7 @@ const sponsors = [
 
 const tiers = [
   {
-    name: 'Silver Partner',
+    name: 'Bronze Partner',
     amount: '₹50,000+',
     desc: 'Support foundational engineering and subsystem prototyping.',
     perks: [
@@ -29,7 +29,7 @@ const tiers = [
     ]
   },
   {
-    name: 'Gold Partner',
+    name: 'Silver Partner',
     amount: '₹1,50,000+',
     desc: 'Fund critical competition logistics and advanced sensor suites.',
     isPopular: true,
@@ -42,7 +42,7 @@ const tiers = [
     ]
   },
   {
-    name: 'Platinum Partner',
+    name: 'Gold Partner',
     amount: '₹3,00,000+',
     desc: 'Become a cornerstone partner fueling our global operations.',
     perks: [
@@ -77,15 +77,15 @@ const Sponsorship = () => {
           <div className="metrics-grid">
             <div className="metric-item scroll-reveal delay-1">
               <h3 className="metric-number">40+</h3>
-              <p className="metric-label">Multidisciplinary Students</p>
+              <p className="metric-label">Engineers on the Team</p>
             </div>
             <div className="metric-item scroll-reveal delay-2">
-              <h3 className="metric-number">5+</h3>
-              <p className="metric-label">Years of Engineering Excellence</p>
+              <h3 className="metric-number">6</h3>
+              <p className="metric-label">International Competitions</p>
             </div>
             <div className="metric-item scroll-reveal delay-3">
               <h3 className="metric-number">3</h3>
-              <p className="metric-label">Continents Competed In</p>
+              <p className="metric-label">Continents Competed</p>
             </div>
             <div className="metric-item scroll-reveal delay-4">
               <h3 className="metric-number">#1</h3>
@@ -132,7 +132,7 @@ const Sponsorship = () => {
           </div>
           
           <div className="text-center mt-12 scroll-reveal delay-4">
-            <Link to="/contact" className="btn btn-primary btn-lg donate-cta">
+            <Link to="/support-us" className="btn btn-primary btn-lg donate-cta">
               DONATE TO US <ArrowRight size={20} />
             </Link>
           </div>
@@ -212,8 +212,8 @@ const Sponsorship = () => {
           </div>
 
           <div className="text-center mt-16 scroll-reveal delay-5">
-            <Link to="/contact" className="btn btn-primary btn-lg donate-cta">
-              BECOME A PARTNER <ArrowRight size={20} />
+            <Link to="/support-us" className="btn btn-primary btn-lg donate-cta">
+              JOIN OUR 2025–26 SEASON →
             </Link>
           </div>
         </div>

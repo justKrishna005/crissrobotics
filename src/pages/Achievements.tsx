@@ -1,4 +1,5 @@
-import { Trophy, Award, Medal, Star, Calendar } from 'lucide-react';
+import { Trophy, Award, Medal, Star, Calendar, ArrowRight, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Achievements.css';
 
@@ -116,10 +117,51 @@ const Achievements = () => {
                       <span className="highlight-dot"></span>
                       <span className="highlight-text">{item.highlight}</span>
                     </div>
+                    <div style={{ marginTop: '1.5rem' }}>
+                      <Link to="/competitions" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                        View Competition Details <ArrowRight size={16} />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── News Coverage ── */}
+      <section className="news-coverage-section grain-overlay" style={{ padding: '6rem 0' }}>
+        <div className="container">
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 className="section-heading">IN THE NEWS</h2>
+            <p className="section-paragraph max-w-800" style={{ margin: '0 auto' }}>
+              Our engineering achievements have caught the attention of national media and global technology publications.
+            </p>
+          </div>
+
+          <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            <a href="#" className="news-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
+              <div className="news-source" style={{ color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>The Hindu</div>
+              <h3 className="news-title" style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>BITS Pilani Team Creates History, Invited to Australian Rover Challenge</h3>
+              <p className="news-excerpt" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
+                CRISS Robotics becomes the first Indian team to qualify for the prestigious ARC, showcasing their custom-built Martian rover...
+              </p>
+              <div className="news-read-more" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem' }}>
+                <ExternalLink size={16} /> Read Full Article
+              </div>
+            </a>
+
+            <a href="#" className="news-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
+              <div className="news-source" style={{ color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Times of India</div>
+              <h3 className="news-title" style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Students Build Rs 2.5 Lakh Autonomous Drone for Planetary Exploration</h3>
+              <p className="news-excerpt" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
+                Winning the Gujarat Robofest ideation phase, the team is now developing an autonomous aerial system for extra-terrestrial environments...
+              </p>
+              <div className="news-read-more" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem' }}>
+                <ExternalLink size={16} /> Read Full Article
+              </div>
+            </a>
           </div>
         </div>
       </section>
