@@ -19,170 +19,383 @@
   line-height: 1.65;
 }
 
-/* ── Tab bar (underline style — same as Team page) ───────────────────────── */
-.batch-bar {
+/* ── Jump Navigation ─────────────────────────────────────────────────────── */
+
+.comp-jump-nav {
   display: flex;
   align-items: center;
-  width: fit-content;
-  margin: 0 auto;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  margin-bottom: 4rem;
+  justify-content: center;
+  gap: 0;
+  background: #141A2E;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
   overflow-x: auto;
   scrollbar-width: none;
 }
 
-.batch-bar::-webkit-scrollbar { display: none; }
+.comp-jump-nav::-webkit-scrollbar { display: none; }
 
-.batch-tab {
+.comp-jump-link {
   flex-shrink: 0;
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid transparent;
-  color: rgba(255, 255, 255, 0.45);
+  padding: 1rem 1.75rem;
   font-family: var(--font-main);
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  padding: 0.75rem 1.5rem;
-  cursor: pointer;
-  transition: color 0.2s ease, border-color 0.2s ease;
-  margin-bottom: -1px;
-  white-space: nowrap;
-}
-
-.batch-tab:hover { color: rgba(255, 255, 255, 0.75); }
-
-.batch-tab--active {
-  color: var(--accent-light);
-  border-bottom-color: var(--accent-light);
+  font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-/* ── Section wrapper ─────────────────────────────────────────────────────── */
-.comp-section {
-  padding: 2rem 0 8rem;
-  background-color: var(--bg-color);
+.comp-jump-link:hover {
+  color: #ffffff;
+  border-bottom-color: #1E40AF;
 }
 
-/* ── Two-column competition info block ───────────────────────────────────── */
-.comp-info {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
+/* ── Tab Navigation ───────────────────────────────────────────────────────── */
 
-/* Left — large logo image */
-.comp-logo-wrap {
-  flex-shrink: 0;
-  width: 340px;
-  height: 240px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  overflow: hidden;
+.comp-nav-bar {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  background: #141A2E;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
 
-.comp-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 1rem;
+.comp-nav-bar::-webkit-scrollbar { display: none; }
+
+.comp-nav-tab {
+  flex-shrink: 0;
+  padding: 1rem 1.75rem;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
 
-/* Right column */
-.comp-info-body {
-  flex: 1;
-  min-width: 260px;
-  padding-top: 0.25rem;
+.comp-nav-tab:hover {
+  color: #ffffff;
 }
 
-/* Title row: small icon + acronym side by side */
-.comp-info-top {
+.comp-nav-tab--active {
+  color: #ffffff;
+  border-bottom-color: #1E40AF;
+}
+
+/* ── Competition Sections ────────────────────────────────────────────────── */
+
+.comp-sections-wrapper {
+  background: var(--bg-color);
+}
+
+.comp-block {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.comp-block--alt {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* ── Section Header (not clickable) ──────────────────────────────────────────── */
+
+.comp-block-header {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-bottom: 0.5rem;
-  flex-wrap: wrap;
-}
-
-/* Small inline logo — matches title text height */
-.comp-info-icon {
-  width: 1.75rem;
-  height: 1.75rem;
-  object-fit: contain;
-  border-radius: 4px;
-  background: rgba(255,255,255,0.08);
-  padding: 2px;
-  flex-shrink: 0;
-}
-
-.comp-info-title {
-  font-family: var(--font-main);
-  font-size: 2.25rem;
-  font-weight: 700;
+  justify-content: space-between;
+  width: 100%;
+  padding: 3rem 0;
+  background: none;
+  border: none;
   color: var(--text-primary);
-  letter-spacing: -0.03em;
-  line-height: 1;
 }
 
-/* Full name — plain or as a hyperlink */
-.comp-info-full {
+.comp-block-header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.comp-block-index {
   font-family: var(--font-main);
-  font-size: 0.875rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #1E40AF;
+  line-height: 1;
+  opacity: 0.4;
+  letter-spacing: -0.04em;
+}
+
+.comp-block-acronym {
+  font-family: var(--font-main);
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.comp-block-fullname {
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+.comp-block-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.comp-website-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-main);
+  font-size: 0.8rem;
   font-weight: 500;
-  color: var(--accent-light);
-  letter-spacing: 0.01em;
-  margin-bottom: 1rem;
-  opacity: 0.8;
-  display: block;
+  color: rgba(255, 255, 255, 0.5);
   text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 0.4rem 0.85rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
 }
 
-.comp-info-full--link:hover {
+.comp-website-link:hover {
+  border-color: #1E40AF;
+  color: #ffffff;
+}
+
+.comp-toggle-icon {
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+}
+
+/* ── Expandable Content ──────────────────────────────────────────────────── */
+
+.comp-block-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  opacity: 0;
+}
+
+.comp-block-content--open {
+  max-height: 3000px;
   opacity: 1;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  padding-bottom: 4rem;
 }
 
-/* Description text */
-.comp-info-tagline {
+/* ── Photo Gallery ───────────────────────────────────────────────────────── */
+
+.comp-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-bottom: 3rem;
+}
+
+.comp-gallery-item {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  position: relative;
+}
+
+.comp-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease, transform 0.5s ease;
+}
+
+.comp-gallery-item:hover img {
+  filter: brightness(1);
+  transform: scale(1.03);
+}
+
+/* ── Details + Specs Grid ────────────────────────────────────────────────── */
+
+.comp-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-bottom: 3rem;
+}
+
+.comp-subsection-title {
+  font-family: var(--font-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1E40AF;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.comp-description {
+  background: #141A2E;
+  padding: 2.5rem;
+}
+
+.comp-description-text {
   font-family: var(--font-main);
   font-size: 0.95rem;
   color: var(--text-secondary);
-  line-height: 1.75;
-  opacity: 0.78;
+  line-height: 1.8;
+  opacity: 0.85;
 }
 
-/* Website pill button — sits inline next to the title */
-.comp-info-link {
-  display: inline-block;
+.comp-specs-card {
+  background: #141A2E;
+  padding: 2.5rem;
+}
+
+.comp-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.comp-specs-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   font-family: var(--font-main);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
+}
+
+.comp-specs-list li:last-child {
+  border-bottom: none;
+}
+
+.comp-spec-icon {
+  color: #1E40AF;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.comp-spec-label {
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.65);
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.3rem 0.85rem;
-  border-radius: 99px;
-  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-  white-space: nowrap;
+  min-width: 120px;
 }
 
-.comp-info-link:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.4);
-  color: #fff;
+.comp-spec-value {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-left: auto;
 }
 
-/* Responsive: stack on small screens */
-@media (max-width: 640px) {
-  .comp-logo-wrap {
-    width: 100%;
-    height: 200px;
+/* ── SAR Video Embed ─────────────────────────────────────────────────────── */
+
+.comp-sar {
+  margin-bottom: 3rem;
+}
+
+.comp-sar-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  background: #141A2E;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comp-sar-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ── Achievements ────────────────────────────────────────────────────────── */
+
+.comp-achievements {
+  margin-bottom: 2rem;
+}
+
+.comp-achievements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.comp-achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 2rem;
+  background: #141A2E;
+  border-left: 3px solid #1E40AF;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.comp-achievement-icon {
+  color: #1E40AF;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .comp-block-header-left {
+    gap: 1rem;
+  }
+
+  .comp-block-index {
+    font-size: 2rem;
+  }
+
+  .comp-block-acronym {
+    font-size: 1.5rem;
+  }
+
+  .comp-website-link {
+    display: none;
+  }
+
+  .comp-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comp-jump-link {
+    padding: 0.75rem 1rem;
+    font-size: 0.75rem;
   }
 }
-

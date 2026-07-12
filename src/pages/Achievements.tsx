@@ -106,7 +106,7 @@ const Achievements = () => {
                   </div>
 
                   {/* Card Content */}
-                  <div className="timeline-card glass-card">
+                  <div className="timeline-card glass-card grain-overlay">
                     <div className="timeline-card-arrow"></div>
                     <div className="timeline-card-header">
                       <h3 className="achievement-title">{item.title}</h3>

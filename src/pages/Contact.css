@@ -32,7 +32,7 @@
 .contact-form-title {
   font-size: 2rem;
   margin-bottom: 2rem;
-  font-family: 'Mortend', sans-serif;
+  font-family: var(--font-main);
   letter-spacing: 0.05em;
 }
 
@@ -102,7 +102,7 @@
 
 .contact-info-title {
   font-size: 2rem;
-  font-family: 'Mortend', sans-serif;
+  font-family: var(--font-main);
   letter-spacing: 0.05em;
 }
 

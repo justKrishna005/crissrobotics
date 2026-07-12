@@ -6,6 +6,8 @@ import Sponsorship from './pages/Sponsorship';
 import Competitions from './pages/Competitions';
 import Achievements from './pages/Achievements';
 import Team from './pages/Team';
+import Research from './pages/Research';
+import Alumni from './pages/Alumni';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -17,10 +19,12 @@ function App() {
         <main style={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/sponsorship" element={<Sponsorship />} />
+            <Route path="/partners" element={<Sponsorship />} />
             <Route path="/competitions" element={<Competitions />} />
             <Route path="/achievements" element={<Achievements />} />
             <Route path="/team" element={<Team />} />
+            <Route path="/research" element={<Research />} />
+            <Route path="/alumni" element={<Alumni />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

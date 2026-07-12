@@ -8,12 +8,14 @@ const Navbar = () => {
   const location = useLocation();
 
   const links = [
-    { name: 'MISSION', path: '/' },
-    { name: 'SPONSORSHIP', path: '/sponsorship' },
-    { name: 'COMPETITIONS', path: '/competitions' },
-    { name: 'ACHIEVEMENTS', path: '/achievements' },
-    { name: 'TEAM', path: '/team' },
-    { name: 'CONTACT', path: '/contact' },
+    { name: 'Mission', path: '/' },
+    { name: 'Partners', path: '/partners' },
+    { name: 'Competitions', path: '/competitions' },
+    { name: 'Achievements', path: '/achievements' },
+    { name: 'Research', path: '/research' },
+    { name: 'Team', path: '/team' },
+    { name: 'Alumni', path: '/alumni' },
+    { name: 'Contact', path: '/contact' },
   ];
 
   return (
