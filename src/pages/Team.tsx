@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, ArrowLeft, ChevronRight, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
+import { Mail, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
@@ -7,15 +7,15 @@ import './Team.css';
 
 const LinkedinIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-    <rect x="2" y="9" width="4" height="12"/>
-    <circle cx="4" cy="4" r="2"/>
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+    <rect x="2" y="9" width="4" height="12" />
+    <circle cx="4" cy="4" r="2" />
   </svg>
 );
 
 const GithubIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
   </svg>
 );
 
@@ -41,7 +41,7 @@ interface VerticalData {
   heroImage: string;
   workImages: string[];
   lead: TeamMember;
-  viceLead: TeamMember;
+  viceLead?: TeamMember;
   juniors: TeamMember[];
 }
 
@@ -225,12 +225,12 @@ const verticals: VerticalData[] = [
     ],
   },
   {
-    id: 'science',
-    name: 'Science',
+    id: 'payload',
+    name: 'Payload',
     icon: <FlaskConical size={28} />,
     shortDesc: 'Sample collection & spectroscopy',
     fullDesc:
-      'The Science subsystem designs the scientific payload — including soil sample collection tools, in-house NIR spectrophotometry, life-detection instrumentation, and astrobiology protocols. They ensure the rover can accomplish real scientific objectives in the field.',
+      'The Payload subsystem designs the scientific payload — including soil sample collection tools, in-house NIR spectrophotometry, life-detection instrumentation, and astrobiology protocols. They ensure the rover can accomplish real scientific objectives in the field.',
     accent: '#a78bfa',
     cardImage:
       'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=900&auto=format&fit=crop',
@@ -242,15 +242,9 @@ const verticals: VerticalData[] = [
       'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=800&auto=format&fit=crop',
     ],
     lead: {
-      name: 'Aisha Patel',
-      role: 'Science Lead',
+      name: 'Jhanvi Matta',
+      role: 'Payload Lead',
       image: 'https://images.unsplash.com/photo-1598550874175-4d0ef436c909?q=80&w=400&auto=format&fit=crop',
-      linkedin: 'https://linkedin.com',
-    },
-    viceLead: {
-      name: 'Chloe Martin',
-      role: 'Vice Lead',
-      image: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=400&auto=format&fit=crop',
       linkedin: 'https://linkedin.com',
     },
     juniors: [
@@ -375,72 +369,24 @@ const MemberCard = ({
   </div>
 );
 
-// ─── Vertical Card (landing grid) ─────────────────────────────────────────────
-
-const VerticalCard = ({
-  vertical,
-  onClick,
-  index,
-}: {
-  vertical: VerticalData;
-  onClick: () => void;
-  index: number;
-}) => (
-  <div
-    id={`vertical-card-${vertical.id}`}
-    className="vertical-card grain-overlay"
-    style={{ '--card-accent': vertical.accent, animationDelay: `${index * 0.07}s` } as React.CSSProperties}
-    onClick={onClick}
-    role="button"
-    tabIndex={0}
-    onKeyDown={(e) => e.key === 'Enter' && onClick()}
-    aria-label={`View ${vertical.name} subsystem`}
-  >
-    <div
-      className="vertical-card-bg"
-      style={{ backgroundImage: `url(${vertical.cardImage})` }}
-    />
-    <div className="vertical-card-overlay" />
-    <div className="vertical-card-glow" />
-    <div className="vertical-card-accent-bar" />
-
-    <div className="vertical-card-content">
-      <div className="vertical-card-icon">{vertical.icon}</div>
-      <h3 className="vertical-card-name">{vertical.name}</h3>
-      <p className="vertical-card-desc">{vertical.shortDesc}</p>
-      <div className="vertical-card-lead">
-        <span className="vertical-card-lead-dot" />
-        <span>Lead: {vertical.lead.name}</span>
-      </div>
-      <div className="vertical-card-cta">
-        Explore <ChevronRight size={13} />
-      </div>
-    </div>
-  </div>
-);
-
 // ─── Executive Committee (ExComm) ─────────────────────────────────────────────
-const excomm: TeamMember[] = [
-  {
-    name: 'Alex Mercer',
-    role: 'Team Captain',
-    image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=400&auto=format&fit=crop',
-    linkedin: 'https://linkedin.com',
-  },
-  {
-    name: 'Elena Rodriguez',
-    role: 'Technical Director',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop',
-    linkedin: 'https://linkedin.com',
-  },
-  {
-    name: 'David Kim',
-    role: 'Project Manager',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=400&auto=format&fit=crop',
-    linkedin: 'https://linkedin.com',
-  }
-];
 
+const leadership = {
+  row1: [
+    {
+      name: 'Krishna Dubey',
+      role: 'Team Captain',
+      image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=400&auto=format&fit=crop',
+      linkedin: 'https://linkedin.com',
+    },
+    {
+      name: 'Ayush Girish Bhandary',
+      role: 'Vice Captain',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop',
+      linkedin: 'https://linkedin.com',
+    },
+  ],
+};
 
 // ─── Main Team Page ───────────────────────────────────────────────────────────
 
@@ -477,7 +423,7 @@ const Team = () => {
       <header className="team-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', height: '60vh', position: 'relative' }}>
         <div className="team-hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10, 15, 30, 0.9), rgba(10, 15, 30, 0.4))' }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '3rem' }}>
-          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>MEET THE TEAM</h1>
+          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>Meet the Team</h1>
           <p className="page-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '600px' }}>
             A diverse group of engineering students dedicated to building the next generation of space exploration robotics.
           </p>
@@ -492,13 +438,13 @@ const Team = () => {
       </nav>
 
       <div className="container" style={{ padding: '4rem 1rem' }}>
-        
+
         {/* ── Structure Section ── */}
         <section id="structure" className="team-section" style={{ marginBottom: '6rem' }}>
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">TEAM STRUCTURE</h2>
+            <h2 className="section-heading">Team Structure</h2>
           </div>
-          <div className="flowchart-placeholder glass-card" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '12px', border: '1px dashed var(--border-light)' }}>
+          <div className="flowchart-placeholder" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
             <div style={{ color: 'var(--accent-light)', marginBottom: '1rem' }}>
               <LayoutGrid size={48} style={{ margin: '0 auto' }} />
             </div>
@@ -509,11 +455,13 @@ const Team = () => {
 
         {/* ── Leadership Section (ExComm) ── */}
         <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">LEADERSHIP (EXCOMM)</h2>
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 className="section-heading">Leadership</h2>
           </div>
-          <div className="members-tier-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            {excomm.map((member, i) => (
+
+          {/* Row 1: Team Captain + Vice Captain (large circles) */}
+          <div className="leadership-row leadership-row--top">
+            {leadership.row1.map((member, i) => (
               <MemberCard key={i} member={member} size="large" index={i} />
             ))}
           </div>
@@ -522,16 +470,16 @@ const Team = () => {
         {/* ── Subsystems Section ── */}
         <section id="subsystems" className="team-section">
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">OUR SUBSYSTEMS</h2>
+            <h2 className="section-heading">Our Subsystems</h2>
           </div>
-          
+
           <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-            {verticals.map((vertical, vIndex) => (
+            {verticals.map((vertical) => (
               <div key={vertical.id} className="subsystem-block">
-                
+
                 {/* Subsystem Hero / Photos */}
                 <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
-                  <div className="subsystem-banner glass-card" style={{ position: 'relative', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem' }}>
+                  <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '4px', overflow: 'hidden', marginBottom: '2rem' }}>
                     <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
                     <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
@@ -545,13 +493,12 @@ const Team = () => {
                 {/* Subsystem Leads */}
                 <div className="members-tier" style={{ marginBottom: '3rem' }}>
                   <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                    <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
                     <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Leads</h4>
                     <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
                   </div>
                   <div className="members-leads-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '700px' }}>
                     <MemberCard member={vertical.lead} size="normal" index={0} />
-                    <MemberCard member={vertical.viceLead} size="normal" index={1} />
+                    {vertical.viceLead && <MemberCard member={vertical.viceLead} size="normal" index={1} />}
                   </div>
                 </div>
 
@@ -559,8 +506,7 @@ const Team = () => {
                 {vertical.juniors.length > 0 && (
                   <div className="members-tier">
                     <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                      <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
-                      <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Junior Members</h4>
+                      <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Core Members</h4>
                       <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
                     </div>
                     <div className="members-juniors-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
@@ -570,7 +516,7 @@ const Team = () => {
                     </div>
                   </div>
                 )}
-                
+
               </div>
             ))}
           </div>

@@ -3,10 +3,6 @@
   flex-direction: column;
 }
 
-/* contact-header background/overlay is handled by .page-header--photo in index.css */
-.contact-header {
-  /* contact-specific tweaks only */
-}
 
 .contact-section {
   padding: 6rem 0;
@@ -27,6 +23,8 @@
 /* Form Styles */
 .contact-form-container {
   padding: 2.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .contact-form-title {
@@ -178,7 +176,6 @@
 }
 
 .social-link-item:hover {
-  background-color: var(--accent);
-  border-color: var(--accent);
-  transform: translateY(-3px);
+  background-color: transparent;
+  border-color: var(--text-primary);
 }

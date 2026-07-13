@@ -71,7 +71,7 @@ const Achievements = () => {
       <header className="page-header page-header--photo">
         <div className="container">
           <h1 className="page-title">
-            OUR <span className="text-accent">ACHIEVEMENTS</span>
+            Our <span className="text-accent">Achievements</span>
           </h1>
           <p className="page-subtitle">
             A history of excellence, innovation, and pushing the boundaries of what undergraduate engineers can achieve.
@@ -107,7 +107,7 @@ const Achievements = () => {
                   </div>
 
                   {/* Card Content */}
-                  <div className="timeline-card glass-card grain-overlay">
+                  <div className="timeline-card">
                     <div className="timeline-card-arrow"></div>
                     <div className="timeline-card-header">
                       <h3 className="achievement-title">{item.title}</h3>
@@ -118,7 +118,7 @@ const Achievements = () => {
                       <span className="highlight-text">{item.highlight}</span>
                     </div>
                     <div style={{ marginTop: '1.5rem' }}>
-                      <Link to="/competitions" className="btn btn-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1rem', fontSize: '0.9rem' }}>
+                      <Link to="/competitions" className="btn-openai" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
                         View Competition Details <ArrowRight size={16} />
                       </Link>
                     </div>
@@ -131,17 +131,17 @@ const Achievements = () => {
       </section>
 
       {/* ── News Coverage ── */}
-      <section className="news-coverage-section grain-overlay" style={{ padding: '6rem 0' }}>
+      <section className="news-coverage-section" style={{ padding: '6rem 0' }}>
         <div className="container">
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 className="section-heading">IN THE NEWS</h2>
+            <h2 className="section-heading">In the News</h2>
             <p className="section-paragraph max-w-800" style={{ margin: '0 auto' }}>
               Our engineering achievements have caught the attention of national media and global technology publications.
             </p>
           </div>
 
           <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-            <a href="#" className="news-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
+            <a href="#" className="news-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div className="news-source" style={{ color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>The Hindu</div>
               <h3 className="news-title" style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>BITS Pilani Team Creates History, Invited to Australian Rover Challenge</h3>
               <p className="news-excerpt" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
@@ -152,7 +152,7 @@ const Achievements = () => {
               </div>
             </a>
 
-            <a href="#" className="news-card glass-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
+            <a href="#" className="news-card" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div className="news-source" style={{ color: 'var(--accent-light)', fontWeight: 600, fontSize: '0.9rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Times of India</div>
               <h3 className="news-title" style={{ color: 'var(--text-primary)', fontSize: '1.25rem', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>Students Build Rs 2.5 Lakh Autonomous Drone for Planetary Exploration</h3>
               <p className="news-excerpt" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>

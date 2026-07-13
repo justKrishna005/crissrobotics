@@ -64,7 +64,7 @@ const Sponsorship = () => {
       {/* ── Header ── */}
       <header className="page-header page-header--photo sponsorship-header">
         <div className="container">
-          <h1 className="page-title animate-slide-up">PARTNER WITH US</h1>
+          <h1 className="page-title animate-slide-up">Partner with Us</h1>
           <p className="page-subtitle animate-slide-up delay-100">
             Fuel the next generation of aerospace engineers.
           </p>
@@ -72,7 +72,7 @@ const Sponsorship = () => {
       </header>
 
       {/* ── Impact Metrics ── */}
-      <section className="impact-metrics grain-overlay">
+      <section className="impact-metrics">
         <div className="container">
           <div className="metrics-grid">
             <div className="metric-item scroll-reveal delay-1">
@@ -99,7 +99,7 @@ const Sponsorship = () => {
       <section className="sponsor-section tech-bg">
         <div className="container">
           <div className="section-header-centered">
-            <h2 className="section-heading">WHY SPONSOR US?</h2>
+            <h2 className="section-heading">Why Sponsor Us?</h2>
             <p className="section-paragraph max-w-800">
               Building autonomous rovers for extra-terrestrial analogs requires immense resources, cutting-edge hardware, and world-class testing facilities. We rely on industry partners to push the boundaries of what undergraduate engineers can accomplish.
             </p>
@@ -132,8 +132,8 @@ const Sponsorship = () => {
           </div>
           
           <div className="text-center mt-12 scroll-reveal delay-4">
-            <Link to="/support-us" className="btn btn-primary btn-lg donate-cta">
-              DONATE TO US <ArrowRight size={20} />
+            <Link to="/support-us" className="btn-openai">
+              Donate to Us <ArrowRight size={20} />
             </Link>
           </div>
         </div>
@@ -143,7 +143,7 @@ const Sponsorship = () => {
       <section className="sponsor-section bg-darker">
         <div className="container">
           <div className="section-header-centered">
-            <h2 className="section-heading">WHAT WE OFFER</h2>
+            <h2 className="section-heading">What We Offer</h2>
             <p className="section-paragraph">
               We offer structured partnership tiers designed to maximize ROI for your brand, providing everything from logo placement to direct recruitment access.
             </p>
@@ -165,7 +165,7 @@ const Sponsorship = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className={`btn ${tier.isPopular ? 'btn-primary' : 'btn-outline'} w-full mt-auto`}>
+                <Link to="/contact" className="btn-openai w-full mt-auto" style={{justifyContent: 'center'}}>
                   Select Tier
                 </Link>
               </div>
@@ -178,7 +178,7 @@ const Sponsorship = () => {
       <section className="sponsor-section tech-bg">
         <div className="container">
           <div className="section-header-centered">
-            <h2 className="section-heading">HOW TO SPONSOR US</h2>
+            <h2 className="section-heading">How to Sponsor Us</h2>
           </div>
           
           <div className="steps-container">
@@ -212,17 +212,17 @@ const Sponsorship = () => {
           </div>
 
           <div className="text-center mt-16 scroll-reveal delay-5">
-            <Link to="/support-us" className="btn btn-primary btn-lg donate-cta">
-              JOIN OUR 2025–26 SEASON →
+            <Link to="/support-us" className="btn-openai">
+              Join Our 2025–26 Season <ArrowRight size={20} />
             </Link>
           </div>
         </div>
       </section>
 
       {/* ── Current Sponsors – logo grid ── */}
-      <section className="sponsor-section logos-section grain-overlay">
+      <section className="sponsor-section logos-section">
         <div className="container">
-          <p className="logos-eyebrow scroll-reveal delay-1">TRUSTED BY INDUSTRY LEADERS</p>
+          <p className="logos-eyebrow scroll-reveal delay-1">Trusted by Industry Leaders</p>
           <div className="logos-grid scroll-reveal delay-2">
             {sponsors.map((s, i) => (
               <div className={`logo-cell logo-cell--${s.size}`} key={i}>

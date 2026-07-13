@@ -7,24 +7,19 @@
 }
 
 .news-card {
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .news-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-light);
-  box-shadow: 0 10px 30px var(--accent-glow-subtle);
+  border-color: var(--text-primary);
 }
 
 .news-card:hover .news-read-more {
   color: #fff;
 }
 
-/* ── Header ── */
-/* Height and overlay handled by shared .page-header & .page-header--photo rules */
-.achievements-header {
-  /* any achievements-specific tweaks go here */
-}
 
 /* ── Timeline Section ── */
 .timeline-section {
@@ -77,12 +72,11 @@
   height: 44px;
   border-radius: 50%;
   background: var(--bg-color-light);
-  border: 3px solid var(--accent-light);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 0 15px var(--accent-glow-medium);
 }
 
 .node-inner {
@@ -97,17 +91,14 @@
   width: 90%;
   position: relative;
   padding: 2rem;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 4px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
 }
 
 .timeline-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-glow-medium);
-  box-shadow: 0 15px 35px var(--accent-glow-subtle);
+  border-color: var(--text-primary);
 }
 
 .timeline-card-header {
@@ -135,25 +126,24 @@
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: var(--accent-glow-subtle);
-  border: 1px solid var(--accent-glow-medium);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: 4px;
 }
 
 .highlight-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--accent-light);
-  box-shadow: 0 0 8px var(--accent-light);
+  background-color: var(--text-primary);
 }
 
 .highlight-text {
   font-family: var(--font-main);
   font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--accent-light);
+  font-weight: 500;
+  color: var(--text-secondary);
 }
 
 /* Year Label opposite side style */
