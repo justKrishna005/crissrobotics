@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, ArrowLeft, ChevronRight, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
+import { Mail, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
@@ -229,50 +229,6 @@ const MemberCard = ({
   </div>
 );
 
-// ─── Vertical Card (landing grid) ─────────────────────────────────────────────
-
-const VerticalCard = ({
-  vertical,
-  onClick,
-  index,
-}: {
-  vertical: VerticalData;
-  onClick: () => void;
-  index: number;
-}) => (
-  <div
-    id={`vertical-card-${vertical.id}`}
-    className="vertical-card grain-overlay"
-    style={{ '--card-accent': vertical.accent, animationDelay: `${index * 0.07}s` } as React.CSSProperties}
-    onClick={onClick}
-    role="button"
-    tabIndex={0}
-    onKeyDown={(e) => e.key === 'Enter' && onClick()}
-    aria-label={`View ${vertical.name} subsystem`}
-  >
-    <div
-      className="vertical-card-bg"
-      style={{ backgroundImage: `url(${vertical.cardImage})` }}
-    />
-    <div className="vertical-card-overlay" />
-    <div className="vertical-card-glow" />
-    <div className="vertical-card-accent-bar" />
-
-    <div className="vertical-card-content">
-      <div className="vertical-card-icon">{vertical.icon}</div>
-      <h3 className="vertical-card-name">{vertical.name}</h3>
-      <p className="vertical-card-desc">{vertical.shortDesc}</p>
-      <div className="vertical-card-lead">
-        <span className="vertical-card-lead-dot" />
-        <span>Lead: {vertical.lead.name}</span>
-      </div>
-      <div className="vertical-card-cta">
-        Explore <ChevronRight size={13} />
-      </div>
-    </div>
-  </div>
-);
-
 // ─── Executive Committee (ExComm) ─────────────────────────────────────────────
 const excomm: TeamMember[] = [
   {
@@ -325,7 +281,7 @@ const Team = () => {
       <header className="team-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', height: '60vh', position: 'relative' }}>
         <div className="team-hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10, 15, 30, 0.9), rgba(10, 15, 30, 0.4))' }}></div>
         <div className="container" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '3rem' }}>
-          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>MEET THE TEAM</h1>
+          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>Meet the Team</h1>
           <p className="page-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '600px' }}>
             A diverse group of engineering students dedicated to building the next generation of space exploration robotics.
           </p>
@@ -344,9 +300,9 @@ const Team = () => {
         {/* ── Structure Section ── */}
         <section id="structure" className="team-section" style={{ marginBottom: '6rem' }}>
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">TEAM STRUCTURE</h2>
+            <h2 className="section-heading">Team Structure</h2>
           </div>
-          <div className="flowchart-placeholder glass-card" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '12px', border: '1px dashed var(--border-light)' }}>
+          <div className="flowchart-placeholder" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
             <div style={{ color: 'var(--accent-light)', marginBottom: '1rem' }}>
               <LayoutGrid size={48} style={{ margin: '0 auto' }} />
             </div>
@@ -357,11 +313,13 @@ const Team = () => {
 
         {/* ── Leadership Section (ExComm) ── */}
         <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">LEADERSHIP (EXCOMM)</h2>
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 className="section-heading">Leadership</h2>
           </div>
-          <div className="members-tier-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
-            {excomm.map((member, i) => (
+
+          {/* Row 1: Team Captain + Vice Captain (large circles) */}
+          <div className="leadership-row leadership-row--top">
+            {leadership.row1.map((member, i) => (
               <MemberCard key={i} member={member} size="large" index={i} />
             ))}
           </div>
@@ -370,16 +328,16 @@ const Team = () => {
         {/* ── Subsystems Section ── */}
         <section id="subsystems" className="team-section">
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">OUR SUBSYSTEMS</h2>
+            <h2 className="section-heading">Our Subsystems</h2>
           </div>
 
           <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-            {verticals.map((vertical, vIndex) => (
+            {verticals.map((vertical) => (
               <div key={vertical.id} className="subsystem-block">
 
                 {/* Subsystem Hero / Photos */}
                 <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
-                  <div className="subsystem-banner glass-card" style={{ position: 'relative', height: '300px', borderRadius: '12px', overflow: 'hidden', marginBottom: '2rem' }}>
+                  <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '4px', overflow: 'hidden', marginBottom: '2rem' }}>
                     <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
                     <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
@@ -393,13 +351,12 @@ const Team = () => {
                 {/* Subsystem Leads */}
                 <div className="members-tier" style={{ marginBottom: '3rem' }}>
                   <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                    <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
                     <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Leads</h4>
                     <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
                   </div>
                   <div className="members-leads-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '700px' }}>
                     <MemberCard member={vertical.lead} size="normal" index={0} />
-                    {vertical.viceLead && <MemberCard member={vertical.viceLead} size="normal" index={1} />}
+                    <MemberCard member={vertical.viceLead} size="normal" index={1} />
                   </div>
                 </div>
 

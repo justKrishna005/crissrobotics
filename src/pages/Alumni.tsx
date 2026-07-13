@@ -152,7 +152,7 @@ const Alumni = () => {
             The engineers and leaders who built the foundation of CRISS Robotics.
           </p>
           <div className="mt-6">
-            <Link to="/support-us" className="btn btn-primary">
+            <Link to="/support-us" className="btn-openai">
               Support Our Alumni Campaign
             </Link>
           </div>

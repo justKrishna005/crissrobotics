@@ -9,12 +9,12 @@ const Navbar = () => {
 
   const links = [
     { name: 'Mission', path: '/' },
-    { name: 'Partners', path: '/partners' },
+    { name: 'Research', path: '/research' },
     { name: 'Competitions', path: '/competitions' },
     { name: 'Achievements', path: '/achievements' },
-    { name: 'Research', path: '/research' },
     { name: 'Team', path: '/team' },
     { name: 'Alumni', path: '/alumni' },
+    { name: 'Partners', path: '/partners' },
     { name: 'Support Us', path: '/support-us' },
     { name: 'Contact', path: '/contact' },
   ];

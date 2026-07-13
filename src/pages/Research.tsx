@@ -127,7 +127,7 @@ const Research = () => {
         <div className="container">
           <div className="section-header-left">
             <Microscope size={20} className="section-icon" />
-            <h2 className="section-heading">FUNDED PROJECTS</h2>
+            <h2 className="section-heading">Funded Projects</h2>
           </div>
 
           <div className="funded-grid">
@@ -148,11 +148,11 @@ const Research = () => {
       </section>
 
       {/* ── R&D Frontier ── */}
-      <section className="research-section research-section--alt grain-overlay">
+      <section className="research-section research-section--alt">
         <div className="container">
           <div className="section-header-left">
             <Cpu size={20} className="section-icon" />
-            <h2 className="section-heading">WHAT WE'RE BUILDING NEXT</h2>
+            <h2 className="section-heading">What We're Building Next</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
             Beyond competitions, our team is actively researching and developing technologies that push the limits of what student-built systems can achieve.
@@ -175,7 +175,7 @@ const Research = () => {
         <div className="container">
           <div className="section-header-left">
             <FileText size={20} className="section-icon" />
-            <h2 className="section-heading">REPORTS & PUBLICATIONS</h2>
+            <h2 className="section-heading">Reports & Publications</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
             We believe in open-source engineering. Read our published technical reports, conference papers, and system design whitepapers.
@@ -205,7 +205,7 @@ const Research = () => {
         <div className="container">
           <div className="section-header-left">
             <Radio size={20} className="section-icon" />
-            <h2 className="section-heading">ROVER EVOLUTION</h2>
+            <h2 className="section-heading">Rover Evolution</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
             From our first prototype to a globally competitive rover, trace the engineering journey that defines CRISS Robotics.

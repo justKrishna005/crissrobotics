@@ -23,7 +23,7 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <header className="page-header page-header--photo contact-header">
-        <h1 className="page-title animate-slide-up">CONTACT US</h1>
+        <h1 className="page-title animate-slide-up">Contact Us</h1>
         <p className="page-subtitle animate-slide-up delay-100">
           Reach out for sponsorships, collaborations, or general inquiries.
         </p>
@@ -33,7 +33,7 @@ const Contact = () => {
         <div className="container">
           <div className="contact-grid">
             {/* Contact Form */}
-            <div className="contact-form-container glass-card scroll-reveal delay-1">
+            <div className="contact-form-container scroll-reveal delay-1">
               <h2 className="contact-form-title">Send a Message</h2>
               <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
                 <div className="form-group">
@@ -52,7 +52,7 @@ const Contact = () => {
                   <label htmlFor="message">Message</label>
                   <textarea id="message" rows={5} placeholder="How can we help you?" required></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary btn-submit">
+                <button type="submit" className="btn-openai btn-submit">
                   <Send size={18} /> Send Message
                 </button>
               </form>

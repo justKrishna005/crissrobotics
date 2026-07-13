@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ExternalLink, Trophy, Award, Medal, Star, ChevronDown, ChevronUp, Play, Cpu, Weight, Radio, Gauge } from 'lucide-react';
+import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gauge } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
@@ -322,7 +322,7 @@ const Competitions = () => {
           {competitions.map((comp) => (
             <div
               key={comp.id}
-              className={`comp-card glass-card ${activeCompId === comp.id ? 'comp-card--active' : ''}`}
+              className={`comp-card ${activeCompId === comp.id ? 'comp-card--active' : ''}`}
               onClick={() => {
                 setActiveCompId(comp.id);
                 document.getElementById('comp-details-area')?.scrollIntoView({ behavior: 'smooth' });

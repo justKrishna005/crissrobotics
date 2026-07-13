@@ -59,14 +59,16 @@
   color: var(--text-primary);
   margin-bottom: 3rem;
   letter-spacing: -0.02em;
+  text-align: center;
 }
 
 /* ── Alumni Grid ─────────────────────────────────────────────────────────── */
 
 .alumni-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3.5rem 2rem;
 }
 
 /* ── Alumni Card (Circular Style) ────────────────────────────────────────── */
@@ -78,11 +80,6 @@
   align-items: center;
   text-align: center;
   padding: 1.5rem 1rem;
-  transition: transform 0.3s ease;
-}
-
-.alumni-card:hover {
-  transform: translateY(-4px);
 }
 
 .alumni-card-image {
@@ -91,8 +88,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.25rem;
-  border: 2px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
 }
 

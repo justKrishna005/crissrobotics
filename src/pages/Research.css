@@ -41,15 +41,16 @@
 }
 
 .funded-card {
-  background: #141A2E;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .funded-card:hover {
-  transform: translateY(-4px);
+  border-color: var(--text-primary);
 }
 
 .funded-card-image {
@@ -110,16 +111,17 @@
 }
 
 .frontier-card {
-  background: #141A2E;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: transform 0.3s ease;
+  transition: border-color 0.3s ease;
 }
 
 .frontier-card:hover {
-  transform: translateY(-4px);
+  border-color: var(--text-primary);
 }
 
 .frontier-card-icon {
@@ -157,19 +159,17 @@
 }
 
 .report-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-light);
-  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
   padding: 2rem;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .report-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--accent-light);
-  box-shadow: 0 10px 30px var(--accent-glow-subtle);
+  border-color: var(--text-primary);
 }
 
 .report-card-header {

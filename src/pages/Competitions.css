@@ -35,21 +35,19 @@
 .comp-card {
   position: relative;
   height: 200px;
-  border-radius: 12px;
+  border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .comp-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  border-color: var(--text-primary);
 }
 
 .comp-card--active {
-  border-color: var(--accent-light);
-  box-shadow: 0 0 20px var(--accent-glow-subtle);
+  border-color: var(--text-primary);
 }
 
 .comp-card-bg {
