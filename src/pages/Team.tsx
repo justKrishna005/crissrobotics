@@ -319,7 +319,7 @@ const Team = () => {
 
           {/* Row 1: Team Captain + Vice Captain (large circles) */}
           <div className="leadership-row leadership-row--top">
-            {leadership.row1.map((member, i) => (
+            {excomm.map((member, i) => (
               <MemberCard key={i} member={member} size="large" index={i} />
             ))}
           </div>
@@ -356,7 +356,7 @@ const Team = () => {
                   </div>
                   <div className="members-leads-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '700px' }}>
                     <MemberCard member={vertical.lead} size="normal" index={0} />
-                    <MemberCard member={vertical.viceLead} size="normal" index={1} />
+                    {vertical.viceLead && <MemberCard member={vertical.viceLead} size="normal" index={1} />}
                   </div>
                 </div>
 

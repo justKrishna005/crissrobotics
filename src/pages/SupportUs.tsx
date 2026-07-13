@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, TrendingUp, Users } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';

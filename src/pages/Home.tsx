@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, Trophy, Medal } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import heroImg from '../images/good_photos/3.png';
 import './Home.css';
