@@ -196,14 +196,12 @@ const verticals: VerticalData[] = [
 
 const MemberCard = ({
   member,
-  size = 'normal',
   index = 0,
 }: {
   member: TeamMember;
-  size?: 'large' | 'normal' | 'small';
   index?: number;
 }) => (
-  <div className={`member-card member-card--${size} scroll-reveal delay-${(index % 5) + 1}`}>
+  <div className={`member-card scroll-reveal delay-${(index % 5) + 1}`}>
     <div className="member-image-container">
       <img src={member.image} alt={member.name} className="member-photo" />
     </div>
@@ -252,10 +250,17 @@ const Team = () => {
   const [activeNav, setActiveNav] = useState('structure');
   useScrollReveal();
 
+  const allLeads = verticals.map(v => v.lead);
+  const allViceLeads = verticals.flatMap(v => v.viceLead ? [v.viceLead] : []);
+  const allSystemsEngineers = verticals.flatMap(v => v.systemsEngineers || []);
+
+  const otherLeadershipRaw = [...allLeads, ...allViceLeads, ...allSystemsEngineers];
+  const excommNames = new Set(excomm.map(m => m.name));
+  const otherLeadership = Array.from(new Map(otherLeadershipRaw.filter(m => !excommNames.has(m.name)).map(m => [m.name, m])).values());
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['structure', 'leadership', 'subsystems'];
-      const scrollPosition = window.scrollY + 100; // offset for sticky nav
+      const sections = ['structure', 'leadership', ...verticals.map(v => v.id)];
+      const scrollPosition = window.scrollY + 160; // offset for sticky nav + global nav
 
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -271,7 +276,7 @@ const Team = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      window.scrollTo({ top: element.offsetTop - 80, behavior: 'smooth' });
+      window.scrollTo({ top: element.offsetTop - 140, behavior: 'smooth' });
     }
   };
 
@@ -289,10 +294,12 @@ const Team = () => {
       </header>
 
       {/* ── Sticky Nav Bar ── */}
-      <nav className="team-sticky-nav" style={{ position: 'sticky', top: '70px', zIndex: 100, backgroundColor: 'rgba(10, 15, 30, 0.9)', backdropFilter: 'blur(10px)', borderBottom: '1px solid var(--border-light)', display: 'flex', justifyContent: 'center', gap: '2rem', padding: '1rem' }}>
-        <button className={`team-nav-btn ${activeNav === 'structure' ? 'active' : ''}`} onClick={() => scrollToSection('structure')} style={{ background: 'none', border: 'none', color: activeNav === 'structure' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Structure</button>
-        <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')} style={{ background: 'none', border: 'none', color: activeNav === 'leadership' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Leadership</button>
-        <button className={`team-nav-btn ${activeNav === 'subsystems' ? 'active' : ''}`} onClick={() => scrollToSection('subsystems')} style={{ background: 'none', border: 'none', color: activeNav === 'subsystems' ? 'var(--accent-light)' : 'var(--text-secondary)', fontWeight: 600, fontSize: '1.1rem', cursor: 'pointer', transition: 'color 0.3s ease' }}>Subsystems</button>
+      <nav className="team-sticky-nav">
+        <button className={`team-nav-btn ${activeNav === 'structure' ? 'active' : ''}`} onClick={() => scrollToSection('structure')}>Structure</button>
+        <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')}>Leadership</button>
+        {verticals.map(v => (
+          <button key={v.id} className={`team-nav-btn ${activeNav === v.id ? 'active' : ''}`} onClick={() => scrollToSection(v.id)}>{v.name}</button>
+        ))}
       </nav>
 
       <div className="container" style={{ padding: '4rem 1rem' }}>
@@ -317,23 +324,26 @@ const Team = () => {
             <h2 className="section-heading">Leadership</h2>
           </div>
 
-          {/* Row 1: Team Captain + Vice Captain (large circles) */}
+          {/* Row 1: Team Captain + Vice Captain */}
           <div className="leadership-row leadership-row--top">
             {excomm.map((member, i) => (
-              <MemberCard key={i} member={member} size="large" index={i} />
+              <MemberCard key={i} member={member} index={i} />
+            ))}
+          </div>
+
+          {/* Row 2: Leads, Vice Leads, and Systems Engineers */}
+          <div className="leadership-row leadership-row--mid" style={{ marginTop: '3rem' }}>
+            {otherLeadership.map((member, i) => (
+              <MemberCard key={i} member={member} index={i + excomm.length} />
             ))}
           </div>
         </section>
 
         {/* ── Subsystems Section ── */}
         <section id="subsystems" className="team-section">
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">Our Subsystems</h2>
-          </div>
-
           <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
             {verticals.map((vertical) => (
-              <div key={vertical.id} className="subsystem-block">
+              <div key={vertical.id} id={vertical.id} className="subsystem-block">
 
                 {/* Subsystem Hero / Photos */}
                 <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
@@ -348,33 +358,20 @@ const Team = () => {
                   </div>
                 </div>
 
-                {/* Subsystem Leads */}
-                <div className="members-tier" style={{ marginBottom: '3rem' }}>
-                  <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                    <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Leads</h4>
-                    <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
+                {/* Subsystem Members Centered */}
+                <div className="subsystem-members" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
+                  <div className="members-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+                    <MemberCard member={vertical.lead} index={0} />
+                    {vertical.viceLead && <MemberCard member={vertical.viceLead} index={1} />}
                   </div>
-                  <div className="members-leads-row" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', maxWidth: '700px' }}>
-                    <MemberCard member={vertical.lead} size="normal" index={0} />
-                    {vertical.viceLead && <MemberCard member={vertical.viceLead} size="normal" index={1} />}
-                  </div>
-                </div>
-
-                {/* Subsystem Juniors */}
-                {vertical.systemsEngineers && vertical.systemsEngineers.length > 0 && (
-                  <div className="members-tier">
-                    <div className="members-tier-header" style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-                      <div className="members-tier-dot" style={{ width: '8px', height: '8px', borderRadius: '50%', background: vertical.accent }} />
-                      <h4 className="members-tier-title" style={{ fontSize: '1.5rem', color: 'var(--text-primary)', margin: 0 }}>Systems Engineers</h4>
-                      <div className="members-tier-line" style={{ flexGrow: 1, height: '1px', background: 'var(--border-light)' }} />
-                    </div>
-                    <div className="members-juniors-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.5rem' }}>
+                  {vertical.systemsEngineers && vertical.systemsEngineers.length > 0 && (
+                    <div className="members-juniors-grid" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                       {vertical.systemsEngineers.map((member, i) => (
-                        <MemberCard key={i} member={member} size="small" index={i} />
+                        <MemberCard key={i} member={member} index={i} />
                       ))}
                     </div>
-                  </div>
-                )}
+                  )}
+                </div>
 
               </div>
             ))}

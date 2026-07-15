@@ -472,16 +472,6 @@
   transition: border-color 0.3s ease;
 }
 
-.member-card--large .member-image-container {
-  width: 220px;
-  height: 220px;
-}
-
-.member-card--small .member-image-container {
-  width: 150px;
-  height: 150px;
-}
-
 .member-card:hover .member-image-container {
   border-color: var(--text-primary);
 }
@@ -509,20 +499,12 @@
   letter-spacing: -0.01em;
 }
 
-.member-card--small .member-name {
-  font-size: 1rem;
-}
-
 .member-role {
   font-family: var(--font-main);
   font-size: 0.875rem;
   color: var(--text-secondary);
   opacity: 0.78;
   margin-bottom: 0.8rem;
-}
-
-.member-card--small .member-role {
-  font-size: 0.8rem;
 }
 
 /* Social icons row */
@@ -608,4 +590,39 @@
   .vertical-hero-desc {
     display: none; /* hide on very small screens — too cramped */
   }
+}
+
+/* ── Sticky Nav Bar ── */
+.team-sticky-nav {
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  background: transparent;
+}
+
+.team-nav-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-main);
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.team-nav-btn:hover {
+  color: var(--text-primary);
+}
+
+.team-nav-btn.active {
+  color: var(--accent-light);
+  border-bottom: 2px solid var(--accent-light);
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.5); /* lights up the selected one */
 }
