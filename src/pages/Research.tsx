@@ -1,4 +1,3 @@
-import { Microscope, Cpu, Radio, Rocket, FlaskConical, Navigation, ArrowRight, FileText, Download } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
 
@@ -25,19 +24,16 @@ const fundedProjects = [
 
 const rdFrontier = [
   {
-    icon: <Rocket size={32} />,
     title: 'Martian Drones',
     description:
       'Autonomous aerial systems designed for extra-terrestrial exploration. We are developing lightweight, rotor-based UAVs capable of operating in thin atmospheric conditions for terrain mapping and sample site identification.',
   },
   {
-    icon: <FlaskConical size={32} />,
     title: 'In-House Spectrometers',
     description:
       'Custom NIR spectrophotometry instruments for real-time soil composition analysis. Our spectrometers are designed to be compact, rover-mountable, and capable of identifying organic compounds in analog environments.',
   },
   {
-    icon: <Navigation size={32} />,
     title: 'Autonomous Navigation',
     description:
       'Full self-driving rover stacks leveraging ROS2, SLAM, and computer vision. Our autonomy pipeline enables GPS-denied waypoint navigation, obstacle avoidance, and dynamic path planning in unstructured terrain.',
@@ -126,7 +122,6 @@ const Research = () => {
       <section className="research-section">
         <div className="container">
           <div className="section-header-left">
-            <Microscope size={20} className="section-icon" />
             <h2 className="section-heading">Funded Projects</h2>
           </div>
 
@@ -151,7 +146,6 @@ const Research = () => {
       <section className="research-section research-section--alt">
         <div className="container">
           <div className="section-header-left">
-            <Cpu size={20} className="section-icon" />
             <h2 className="section-heading">What We're Building Next</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
@@ -161,7 +155,6 @@ const Research = () => {
           <div className="frontier-grid">
             {rdFrontier.map((item, index) => (
               <div key={index} className={`frontier-card scroll-reveal delay-${index + 1}`}>
-                <div className="frontier-card-icon">{item.icon}</div>
                 <h3 className="frontier-card-title">{item.title}</h3>
                 <p className="frontier-card-desc">{item.description}</p>
               </div>
@@ -174,7 +167,6 @@ const Research = () => {
       <section className="research-section">
         <div className="container">
           <div className="section-header-left">
-            <FileText size={20} className="section-icon" />
             <h2 className="section-heading">Reports & Publications</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
@@ -191,7 +183,6 @@ const Research = () => {
                 <h3 className="report-title">{report.title}</h3>
                 <p className="report-desc">{report.description}</p>
                 <a href={report.link} className="report-link">
-                  <Download size={16} />
                   <span>Download PDF</span>
                 </a>
               </div>
@@ -204,7 +195,6 @@ const Research = () => {
       <section className="research-section">
         <div className="container">
           <div className="section-header-left">
-            <Radio size={20} className="section-icon" />
             <h2 className="section-heading">Rover Evolution</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
@@ -223,7 +213,6 @@ const Research = () => {
                   <ul className="rover-timeline-milestones">
                     {rover.milestones.map((m, i) => (
                       <li key={i}>
-                        <ArrowRight size={12} />
                         <span>{m}</span>
                       </li>
                     ))}

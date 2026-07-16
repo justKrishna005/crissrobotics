@@ -96,7 +96,7 @@ const Sponsorship = () => {
       </section>
 
       {/* ── Why Sponsor Us? ── */}
-      <section className="sponsor-section tech-bg">
+      <section className="sponsor-section">
         <div className="container">
           <div className="section-header-centered">
             <h2 className="section-heading">Why Sponsor Us?</h2>
@@ -140,7 +140,7 @@ const Sponsorship = () => {
       </section>
 
       {/* ── What We Offer (Tiers) ── */}
-      <section className="sponsor-section bg-darker">
+      <section className="sponsor-section">
         <div className="container">
           <div className="section-header-centered">
             <h2 className="section-heading">What We Offer</h2>
@@ -175,7 +175,7 @@ const Sponsorship = () => {
       </section>
 
       {/* ── How to Sponsor Us ── */}
-      <section className="sponsor-section tech-bg">
+      <section className="sponsor-section">
         <div className="container">
           <div className="section-header-centered">
             <h2 className="section-heading">How to Sponsor Us</h2>

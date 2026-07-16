@@ -194,10 +194,8 @@ const competitions: CompetitionData[] = [
 
 const CompetitionSection = ({
   comp,
-  index,
 }: {
   comp: CompetitionData;
-  index: number;
 }) => {
   return (
     <section id={comp.id} className="comp-block animate-fade-in">
@@ -205,7 +203,6 @@ const CompetitionSection = ({
         {/* ── Section Header ── */}
         <div className="comp-block-header">
           <div className="comp-block-header-left">
-            <span className="comp-block-index">{String(index + 1).padStart(2, '0')}</span>
             <div>
               <h2 className="comp-block-acronym">{comp.acronym}</h2>
               <p className="comp-block-fullname">{comp.fullName}</p>
@@ -257,34 +254,39 @@ const CompetitionSection = ({
             </div>
           </div>
 
-          {/* SAR Video */}
-          {comp.sarVideoUrl && (
-            <div className="comp-sar scroll-reveal delay-3">
-              <h3 className="comp-subsection-title">
-                <Play size={18} />
-                System Acceptance Review
-              </h3>
-              <div className="comp-sar-embed">
-                <iframe
-                  src={comp.sarVideoUrl}
-                  title={`${comp.acronym} SAR Video`}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-            </div>
-          )}
-
-          {/* Achievements */}
-          <div className="comp-achievements scroll-reveal delay-4">
-            <h3 className="comp-subsection-title">Achievements & Rankings</h3>
-            <div className="comp-achievements-list">
-              {comp.achievements.map((ach, i) => (
-                <div key={i} className="comp-achievement-item">
-                  <span className="comp-achievement-icon">{ach.icon}</span>
-                  <span>{ach.text}</span>
+          {/* Video + Achievements Grid */}
+          <div className="comp-video-achievements-grid">
+            {/* SAR Video */}
+            {comp.sarVideoUrl ? (
+              <div className="comp-sar scroll-reveal delay-3">
+                <h3 className="comp-subsection-title">
+                  <Play size={18} />
+                  System Acceptance Review
+                </h3>
+                <div className="comp-sar-embed">
+                  <iframe
+                    src={comp.sarVideoUrl}
+                    title={`${comp.acronym} SAR Video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
                 </div>
-              ))}
+              </div>
+            ) : (
+              <div />
+            )}
+
+            {/* Achievements */}
+            <div className="comp-achievements scroll-reveal delay-4">
+              <h3 className="comp-subsection-title">Achievements & Rankings</h3>
+              <div className="comp-achievements-list">
+                {comp.achievements.map((ach, i) => (
+                  <div key={i} className="comp-achievement-item">
+                    <span className="comp-achievement-icon">{ach.icon}</span>
+                    <span>{ach.text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -300,7 +302,6 @@ const CompetitionSection = ({
 const Competitions = () => {
   const [activeCompId, setActiveCompId] = useState(competitions[0].id);
   const activeComp = competitions.find((c) => c.id === activeCompId) || competitions[0];
-  const activeIndex = competitions.findIndex((c) => c.id === activeCompId);
 
   useScrollReveal();
 
@@ -328,21 +329,18 @@ const Competitions = () => {
                 document.getElementById('comp-details-area')?.scrollIntoView({ behavior: 'smooth' });
               }}
             >
-              <div className="comp-card-bg">
-                <img src={comp.gallery[0].src} alt={comp.acronym} />
-                <div className="comp-card-overlay"></div>
+              <div className="comp-card-img-wrapper">
+                <img src={comp.gallery[0].src} alt={comp.acronym} loading="lazy" />
               </div>
-              <div className="comp-card-content">
-                <h3 className="comp-card-acronym">{comp.acronym}</h3>
-                <p className="comp-card-name">{comp.fullName}</p>
-              </div>
+              <h3 className="comp-card-title">{comp.acronym}</h3>
+              <p className="comp-card-subtitle">{comp.fullName}</p>
             </div>
           ))}
         </div>
       </section>
 
       <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '4rem' }}>
-        <CompetitionSection key={activeComp.id} comp={activeComp} index={activeIndex} />
+        <CompetitionSection key={activeComp.id} comp={activeComp} />
       </div>
     </div>
   );

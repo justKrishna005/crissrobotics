@@ -13,15 +13,7 @@
   padding: 6rem 0;
 }
 
-.bg-darker {
-  background-color: #141A2E;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
 
-.tech-bg {
-  background-color: var(--bg-color);
-}
 
 .section-header-centered {
   text-align: center;
@@ -42,7 +34,7 @@
 
 /* ── Impact Metrics ── */
 .impact-metrics {
-  background: linear-gradient(135deg, #141A2E 0%, #0a0d17 100%);
+  background: transparent;
   padding: 4rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -52,7 +44,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -64,26 +56,25 @@
 .metric-item {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 .metric-number {
   font-family: var(--font-main);
   font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--accent-mars-light);
+  font-weight: 500;
+  color: var(--text-primary);
   line-height: 1;
   margin-bottom: 0.5rem;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  letter-spacing: -0.04em;
 }
 
 .metric-label {
   font-family: var(--font-main);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
   letter-spacing: 0.05em;
 }
 
@@ -116,15 +107,15 @@
 }
 
 .tech-card-icon {
-  color: var(--accent-dark);
-  background: rgba(30, 64, 175, 0.1);
+  color: var(--text-primary);
+  background: transparent;
   width: 64px;
   height: 64px;
-  border-radius: 0;
+  border-radius: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(30, 64, 175, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tech-card-title {
@@ -319,17 +310,17 @@
   .step-connector {
     display: block;
     flex: 0.5;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(30, 64, 175, 0.1) 0%, rgba(30, 64, 175, 0.5) 50%, rgba(30, 64, 175, 0.1) 100%);
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
     margin-top: 40px; /* aligns with middle of the 80px icon */
   }
 }
 
 /* ── Current Sponsors – Logo Grid ── */
 .logos-section {
-  background: #000000;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logos-eyebrow {

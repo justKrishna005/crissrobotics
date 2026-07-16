@@ -58,10 +58,6 @@ const Home = () => {
             <h3 className="stat-number">1st</h3>
             <p className="stat-label">Indian Team @ ARCh '26</p>
           </div>
-          <div className="stat-item scroll-reveal delay-5">
-            <h3 className="stat-number">₹2.5L</h3>
-            <p className="stat-label">Grant Won</p>
-          </div>
         </div>
       </section>
 
