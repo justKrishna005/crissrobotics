@@ -248,6 +248,7 @@ const excomm: TeamMember[] = [
 
 const Team = () => {
   const [activeNav, setActiveNav] = useState('structure');
+  const [isSticky, setIsSticky] = useState(false);
   useScrollReveal();
 
   const allLeads = verticals.map(v => v.lead);
@@ -267,6 +268,12 @@ const Team = () => {
         if (element && element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
           setActiveNav(section);
         }
+      }
+
+      if (window.scrollY > window.innerHeight * 0.6 - 70) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
       }
     };
     window.addEventListener('scroll', handleScroll);
@@ -294,7 +301,7 @@ const Team = () => {
       </header>
 
       {/* ── Sticky Nav Bar ── */}
-      <nav className="team-sticky-nav">
+      <nav className={`team-sticky-nav ${isSticky ? 'scrolled' : ''}`}>
         <button className={`team-nav-btn ${activeNav === 'structure' ? 'active' : ''}`} onClick={() => scrollToSection('structure')}>Structure</button>
         <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')}>Leadership</button>
         {verticals.map(v => (

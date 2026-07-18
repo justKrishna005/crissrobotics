@@ -458,6 +458,7 @@
   align-items: center;
   text-align: center;
   background: transparent;
+  width: 240px; /* fixed width ensures photo circles are always spaced equally */
 }
 
 /* Image circle */
@@ -602,6 +603,11 @@
   gap: 2rem;
   padding: 1rem;
   background: transparent;
+  transition: background 0.3s ease;
+}
+
+.team-sticky-nav.scrolled {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
 .team-nav-btn {
