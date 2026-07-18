@@ -159,7 +159,7 @@ const Alumni = () => {
   return (
     <div className="alumni-page animate-fade-in">
       {/* ── Header ── */}
-      <header className="page-header page-header--photo">
+      <header className="page-header page-header--photo" style={{ marginBottom: 0 }}>
         <div className="container">
           <h1 className="page-title">Alumni</h1>
           <p className="page-subtitle">
