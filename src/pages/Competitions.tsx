@@ -300,9 +300,6 @@ const CompetitionSection = ({
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 const Competitions = () => {
-  const [activeCompId, setActiveCompId] = useState(competitions[0].id);
-  const activeComp = competitions.find((c) => c.id === activeCompId) || competitions[0];
-
   useScrollReveal();
 
   return (
@@ -323,10 +320,13 @@ const Competitions = () => {
           {competitions.map((comp) => (
             <div
               key={comp.id}
-              className={`comp-card ${activeCompId === comp.id ? 'comp-card--active' : ''}`}
+              className="comp-card"
               onClick={() => {
-                setActiveCompId(comp.id);
-                document.getElementById('comp-details-area')?.scrollIntoView({ behavior: 'smooth' });
+                const element = document.getElementById(comp.id);
+                if (element) {
+                   const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                   window.scrollTo({ top: y, behavior: 'smooth' });
+                }
               }}
             >
               <div className="comp-card-img-wrapper">
@@ -340,7 +340,11 @@ const Competitions = () => {
       </section>
 
       <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '4rem' }}>
-        <CompetitionSection key={activeComp.id} comp={activeComp} />
+        {competitions.map((comp) => (
+          <div key={comp.id} style={{ marginBottom: '6rem' }}>
+            <CompetitionSection comp={comp} />
+          </div>
+        ))}
       </div>
     </div>
   );

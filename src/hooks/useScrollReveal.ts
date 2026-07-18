@@ -21,8 +21,8 @@ const useScrollReveal = () => {
         });
       },
       {
-        threshold: 0.12,          // trigger when 12% of the element is visible
-        rootMargin: '0px 0px -40px 0px', // slightly before the bottom edge
+        threshold: 0.02,          // trigger almost immediately when it enters
+        rootMargin: '0px 0px 150px 0px', // trigger 150px before it even enters the viewport for an early fade-in
       }
     );
 
