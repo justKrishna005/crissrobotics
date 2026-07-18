@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Alumni.css';
@@ -138,9 +138,23 @@ const yearOptions = alumniBatches.map((b) => b.year);
 
 const Alumni = () => {
   const [activeYear, setActiveYear] = useState(yearOptions[0]);
+  const [isSticky, setIsSticky] = useState(false);
   const activeBatch = alumniBatches.find((b) => b.year === activeYear);
 
   useScrollReveal();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Add background when scrolled past the page header
+      if (window.scrollY > window.innerHeight * 0.4 - 70) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div className="alumni-page animate-fade-in">
@@ -160,7 +174,7 @@ const Alumni = () => {
       </header>
 
       {/* ── Year Selector ── */}
-      <div className="alumni-year-bar">
+      <div className={`alumni-year-bar ${isSticky ? 'scrolled' : ''}`}>
         {yearOptions.map((year) => (
           <button
             key={year}
