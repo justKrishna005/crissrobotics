@@ -71,21 +71,21 @@ const Home = () => {
           <div className="home-achievements-grid">
             <div className="home-achievement-card scroll-reveal delay-1">
               <div className="home-achievement-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1541873676-a18131494184?q=80&w=600&auto=format&fit=crop" alt="ERC 2025" />
+                <img src="/erc_logo_white.png" alt="ERC 2025" />
               </div>
               <h3 className="home-achievement-title">ERC 2025</h3>
               <p className="home-achievement-highlight">2nd in Asia, 3rd Internationally</p>
             </div>
             <div className="home-achievement-card scroll-reveal delay-2">
               <div className="home-achievement-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop" alt="IRDC 2023" />
+                <img src="/irc_irdc_logo-removebg-preview.png" alt="IRDC 2023" />
               </div>
               <h3 className="home-achievement-title">IRDC 2023</h3>
               <p className="home-achievement-highlight">1st Rank Worldwide</p>
             </div>
             <div className="home-achievement-card scroll-reveal delay-3">
               <div className="home-achievement-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1614729939124-03290b56c9ce?q=80&w=600&auto=format&fit=crop" alt="ARCh 2026" />
+                <img src="/arch_logo-removebg-preview.png" alt="ARCh 2026" />
               </div>
               <h3 className="home-achievement-title">ARCh 2026</h3>
               <p className="home-achievement-highlight">First Indian Team Invited</p>
@@ -115,7 +115,7 @@ const Home = () => {
             <Link to="/about" className="btn-openai">Read our full story <ArrowRight size={18} /></Link>
           </div>
           <div className="about-image-wrapper">
-            <img src="/good_photos/6.jpg" alt="Team at competition" className="about-image" />
+            <img src="/team_at_competition.png" alt="Team at competition" className="about-image" />
           </div>
         </div>
       </section>

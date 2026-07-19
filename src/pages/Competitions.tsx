@@ -52,7 +52,7 @@ const competitions: CompetitionData[] = [
       { label: 'Comms', value: '900 MHz + 2.4 GHz', icon: <Radio size={16} /> },
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop', alt: 'Rover field testing' },
+      { src: '/Icarus_1.jpeg', alt: 'Rover field testing' },
       { src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop', alt: 'Team at competition' },
       { src: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop', alt: 'Rover arm operation' },
     ],
@@ -78,7 +78,7 @@ const competitions: CompetitionData[] = [
       { label: 'Comms', value: 'LoRa + WiFi', icon: <Radio size={16} /> },
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop', alt: 'Mars analog terrain' },
+      { src: '/20260327_165848.jpg', alt: 'Mars analog terrain' },
       { src: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=800&auto=format&fit=crop', alt: 'Rover on Martian track' },
       { src: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop', alt: 'Software development' },
     ],
@@ -91,7 +91,7 @@ const competitions: CompetitionData[] = [
   },
   {
     id: 'arch',
-    acronym: 'ARC',
+    acronym: 'ARCh',
     fullName: 'Australian Rover Challenge',
     website: 'https://www.aiaa.org/arch',
     description:
@@ -104,7 +104,7 @@ const competitions: CompetitionData[] = [
       { label: 'Comms', value: '900 MHz + LoRa', icon: <Radio size={16} /> },
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop', alt: 'Australian outback terrain' },
+      { src: '/20260327_165848.jpg', alt: 'Australian outback terrain' },
       { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop', alt: 'Rover assembly' },
       { src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop', alt: 'Testing environment' },
     ],
@@ -128,7 +128,7 @@ const competitions: CompetitionData[] = [
       { label: 'Sensors', value: 'NIR Spectrometer', icon: <Radio size={16} /> },
     ],
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop', alt: 'Design documentation' },
+      { src: '/CRISS_Unlabelled.png', alt: 'Design documentation' },
       { src: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop', alt: 'CAD modeling' },
       { src: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=800&auto=format&fit=crop', alt: 'Rover prototype' },
     ],
@@ -324,8 +324,8 @@ const Competitions = () => {
               onClick={() => {
                 const element = document.getElementById(comp.id);
                 if (element) {
-                   const y = element.getBoundingClientRect().top + window.scrollY - 100;
-                   window.scrollTo({ top: y, behavior: 'smooth' });
+                  const y = element.getBoundingClientRect().top + window.scrollY - 100;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
                 }
               }}
             >
