@@ -3,30 +3,33 @@
 
 :root {
   /* ── Brand Palette ── */
-  --color-black:       #09090b;   /* Softer dark background, not pure black */
-  --color-blue:        #1d4ed8;   /* CRISS dark blue */
-  --color-blue-mid:    #2563eb;
-  --color-blue-light:  #60a5fa;
-  --color-mars:        #C2410C;   /* Mars rust — rover surface color */
-  --color-mars-light:  #EA580C;
-  --color-mars-glow:   rgba(194, 65, 12, 0.18);
+  --color-black: #09090b;
+  /* Softer dark background, not pure black */
+  --color-blue: #1d4ed8;
+  /* CRISS dark blue */
+  --color-blue-mid: #2563eb;
+  --color-blue-light: #60a5fa;
+  --color-mars: #C2410C;
+  /* Mars rust — rover surface color */
+  --color-mars-light: #EA580C;
+  --color-mars-glow: rgba(194, 65, 12, 0.18);
 
   /* Legacy aliases (keep for backward compat across pages) */
-  --bg-color:              #F0F2F8;
-  --bg-color-light:        #FFFFFF;
-  --text-primary:          #003380;
-  --text-secondary:        #6C85A1;
-  --accent:                #003380;
-  --accent-light:          #1d4ed8;
-  --accent-dark:           #002255;
-  --accent-glow:           rgba(0, 51, 128, 0.2);
-  --accent-glow-subtle:    rgba(0, 51, 128, 0.05);
-  --accent-glow-medium:    rgba(0, 51, 128, 0.1);
-  --accent-secondary:      #f59e0b;
-  --accent-mars:           var(--color-mars);
-  --accent-mars-light:     var(--color-mars-light);
-  --accent-mars-glow:      var(--color-mars-glow);
-  
+  --bg-color: var(--color-black);
+  --bg-color-light: #18181b;
+  --text-primary: #f8fafc;
+  --text-secondary: #e2e8f0;
+  --accent: var(--color-blue);
+  --accent-light: var(--color-blue-light);
+  --accent-dark: #1E40AF;
+  --accent-glow: #38bdf8;
+  --accent-glow-subtle: rgba(96, 165, 250, 0.15);
+  --accent-glow-medium: rgba(96, 165, 250, 0.3);
+  --accent-secondary: #f59e0b;
+  --accent-mars: var(--color-mars);
+  --accent-mars-light: var(--color-mars-light);
+  --accent-mars-glow: var(--color-mars-glow);
+
   --font-main: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-heading: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
@@ -56,12 +59,18 @@ ul {
 }
 
 /* Typography */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--font-main);
   letter-spacing: 0.05em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
 }
@@ -93,30 +102,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: var(--accent);
-  color: #FFFFFF;
+  background-color: var(--accent-light);
+  color: var(--bg-color);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-dark);
+  background-color: var(--text-primary);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .btn-outline:hover {
-  border-color: var(--accent);
-  background-color: var(--accent);
-  color: #FFFFFF;
+  border-color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade-in {
@@ -142,7 +157,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--bg-color);
+  background: rgba(0, 0, 0, 0.45);
   z-index: 0;
 }
 
@@ -155,11 +170,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Overlay for photo variant */
 .page-header--photo::before {
-  background: rgba(240, 242, 248, 0.85);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* Ensure header children sit above the pseudo overlay */
-.page-header > * {
+.page-header>* {
   position: relative;
   z-index: 1;
 }
@@ -198,17 +213,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-card {
-  background: var(--bg-color-light);
-  border: none;
-  border-radius: 0;
+  background: rgba(31, 40, 51, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
   padding: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px rgba(0, 51, 128, 0.15);
+  border-color: rgba(0, 39, 91, 0.5);
+  /* using the blue accent */
+  box-shadow: 0 10px 30px -10px rgba(0, 39, 91, 0.3);
 }
 
 .section-padding {
@@ -229,11 +246,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Staggered delay helpers */
-.scroll-reveal.delay-1 { transition-delay: 0.08s; }
-.scroll-reveal.delay-2 { transition-delay: 0.16s; }
-.scroll-reveal.delay-3 { transition-delay: 0.24s; }
-.scroll-reveal.delay-4 { transition-delay: 0.32s; }
-.scroll-reveal.delay-5 { transition-delay: 0.40s; }
+.scroll-reveal.delay-1 {
+  transition-delay: 0.08s;
+}
+
+.scroll-reveal.delay-2 {
+  transition-delay: 0.16s;
+}
+
+.scroll-reveal.delay-3 {
+  transition-delay: 0.24s;
+}
+
+.scroll-reveal.delay-4 {
+  transition-delay: 0.32s;
+}
+
+.scroll-reveal.delay-5 {
+  transition-delay: 0.40s;
+}
 
 /* Grain Texture Utility */
 .grain-overlay {
