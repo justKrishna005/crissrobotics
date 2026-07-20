@@ -16,7 +16,7 @@
 /* ── Glass Panel Utility ── */
 .glass-panel {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   transition: all 0.3s ease;
 }
@@ -46,7 +46,7 @@
   top: 0;
   bottom: 0;
   width: 1px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
@@ -73,7 +73,7 @@
   height: 16px;
   border-radius: 50%;
   background: var(--bg-color-light);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -104,7 +104,7 @@
   top: calc(2rem + 8px);
   width: calc(3.5rem - 10px);
   height: 2px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   z-index: 1;
 }
 
@@ -138,7 +138,7 @@
 
 .compact-timeline-card:hover .achievement-icon-wrapper {
   background: rgba(167, 139, 250, 0.2);
-  color: #fff;
+  color: var(--text-primary);
   border-color: rgba(167, 139, 250, 0.4);
 }
 
@@ -146,14 +146,14 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.05);
   padding: 0.4rem 0.8rem;
   border-radius: 8px;
   font-family: var(--font-heading);
   font-size: 1rem;
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .year-calendar-icon {
@@ -164,7 +164,7 @@
   font-family: var(--font-heading);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: -0.01em;
   margin-bottom: 1rem;
   line-height: 1.3;
@@ -184,7 +184,7 @@
   display: inline-flex;
   align-items: center;
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   margin-bottom: 1.5rem;
@@ -201,7 +201,7 @@
 /* Card Link */
 .achievement-link-container {
   margin-top: auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
   padding-top: 1rem;
 }
 
@@ -221,7 +221,7 @@
 }
 
 .achievement-link:hover {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .achievement-link:hover .arrow-icon {
@@ -263,7 +263,7 @@
 }
 
 .news-title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.35rem;
   margin-bottom: 1rem;
   font-family: var(--font-heading);
@@ -293,7 +293,7 @@
 }
 
 .news-card:hover .news-read-more {
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .news-card:hover .external-icon {

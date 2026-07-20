@@ -96,7 +96,7 @@
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   position: relative;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .alumni-card-linkedin {
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(0, 0, 0, 0.35);
   transition: color 0.2s ease, transform 0.2s ease;
 }
 

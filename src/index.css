@@ -12,16 +12,16 @@
   --color-mars-glow:   rgba(194, 65, 12, 0.18);
 
   /* Legacy aliases (keep for backward compat across pages) */
-  --bg-color:              var(--color-black);
-  --bg-color-light:        #18181b;
-  --text-primary:          #f8fafc;
-  --text-secondary:        #e2e8f0;
-  --accent:                var(--color-blue);
-  --accent-light:          var(--color-blue-light);
-  --accent-dark:           #1E40AF;
-  --accent-glow:           #38bdf8;
-  --accent-glow-subtle:    rgba(96, 165, 250, 0.15);
-  --accent-glow-medium:    rgba(96, 165, 250, 0.3);
+  --bg-color:              #F0F2F8;
+  --bg-color-light:        #FFFFFF;
+  --text-primary:          #003380;
+  --text-secondary:        #6C85A1;
+  --accent:                #003380;
+  --accent-light:          #1d4ed8;
+  --accent-dark:           #002255;
+  --accent-glow:           rgba(0, 51, 128, 0.2);
+  --accent-glow-subtle:    rgba(0, 51, 128, 0.05);
+  --accent-glow-medium:    rgba(0, 51, 128, 0.1);
   --accent-secondary:      #f59e0b;
   --accent-mars:           var(--color-mars);
   --accent-mars-light:     var(--color-mars-light);
@@ -93,23 +93,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background-color: var(--accent-light);
-  color: var(--bg-color);
+  background-color: var(--accent);
+  color: #FFFFFF;
 }
 
 .btn-primary:hover {
-  background-color: var(--text-primary);
+  background-color: var(--accent-dark);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .btn-outline:hover {
-  border-color: var(--text-primary);
-  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent);
+  background-color: var(--accent);
+  color: #FFFFFF;
 }
 
 /* Animations */
@@ -141,7 +142,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--bg-color);
   z-index: 0;
 }
 
@@ -154,7 +155,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Overlay for photo variant */
 .page-header--photo::before {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(240, 242, 248, 0.85);
 }
 
 /* Ensure header children sit above the pseudo overlay */
@@ -197,18 +198,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-card {
-  background: rgba(31, 40, 51, 0.4);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 1rem;
+  background: var(--bg-color-light);
+  border: none;
+  border-radius: 0;
   padding: 2rem;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .glass-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 39, 91, 0.5); /* using the blue accent */
-  box-shadow: 0 10px 30px -10px rgba(0, 39, 91, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(0, 51, 128, 0.15);
 }
 
 .section-padding {
