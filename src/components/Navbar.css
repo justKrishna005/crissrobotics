@@ -3,12 +3,18 @@
   width: 100%;
   top: 0;
   z-index: 100;
-  background-color: rgba(11, 17, 32, 0.3);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.85rem 0;
+  background-color: transparent;
+  padding: 1.5rem 0;
   transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
@@ -16,38 +22,34 @@
   justify-content: space-between;
   align-items: center;
   max-width: 95%;
-  /* Push items further to edges */
   margin: 0 auto;
 }
 
+/* ── Logo ── */
 .nav-logo {
+  flex: 1; /* Helps centering the middle menu */
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  background-color: var(--accent);
-  border-radius: 50%;
-  display: inline-block;
-  /* Add actual image background later */
-  background-image: linear-gradient(135deg, var(--accent-light), var(--accent));
+.logo-image {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
 }
 
+/* ── Desktop Menu (Center) ── */
 .desktop-menu {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
+  flex: 2;
+  justify-content: center;
 }
 
 .nav-link {
   font-size: 0.8125rem;
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-weight: 300;
+  letter-spacing: 0.05em;
   color: var(--text-secondary);
   transition: color 0.2s ease;
 }
@@ -57,29 +59,31 @@
   color: var(--text-primary);
 }
 
-.nav-link.active {
-  color: var(--accent-light);
-}
 
+/* ── Mobile View ── */
 .mobile-toggle {
   display: none;
   background: none;
   border: none;
   color: var(--text-primary);
   cursor: pointer;
+  flex: 1;
+  text-align: right;
 }
 
 .mobile-menu {
   display: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .desktop-menu {
     display: none;
   }
 
   .mobile-toggle {
     display: block;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .mobile-menu {
@@ -88,11 +92,10 @@
     top: 100%;
     left: 0;
     width: 100%;
-    background-color: rgba(11, 17, 32, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 1rem 0;
+    padding: 2rem 0;
   }
 
   .nav-links-mobile {
@@ -101,10 +104,4 @@
     align-items: center;
     gap: 1.5rem;
   }
-}
-
-.logo-image {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
 }

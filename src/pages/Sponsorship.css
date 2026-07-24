@@ -36,8 +36,8 @@
 .impact-metrics {
   background: transparent;
   padding: 4rem 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .metrics-grid {
@@ -92,10 +92,10 @@
 }
 
 .tech-card {
-  border-radius: 4px;
+  border-radius: 0;
   padding: 2.5rem;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -111,11 +111,11 @@
   background: transparent;
   width: 64px;
   height: 64px;
-  border-radius: 4px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tech-card-title {
@@ -152,8 +152,8 @@
 .tier-card {
   position: relative;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0;
   padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
@@ -218,7 +218,7 @@
 
 .tier-divider {
   height: 1px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   margin-bottom: 2rem;
 }
 
@@ -279,7 +279,7 @@
   width: 80px;
   height: 80px;
   background: transparent;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -311,7 +311,7 @@
     display: block;
     flex: 0.5;
     height: 1px;
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.1);
     margin-top: 40px; /* aligns with middle of the 80px icon */
   }
 }
@@ -319,8 +319,8 @@
 /* ── Current Sponsors – Logo Grid ── */
 .logos-section {
   background: transparent;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logos-eyebrow {
@@ -329,7 +329,7 @@
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.85rem;
   margin-bottom: 3rem;
 }

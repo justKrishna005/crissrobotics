@@ -22,7 +22,7 @@
 .fundraising-card {
   background: var(--bg-card);
   border: 1px solid var(--border-light);
-  border-radius: 12px;
+  border-radius: 0;
   padding: 3rem;
   max-width: 900px;
   margin: 0 auto;
@@ -63,8 +63,8 @@
 .progress-bar-wrapper {
   width: 100%;
   height: 24px;
-  background: rgba(0, 0, 0, 0.05);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0;
   overflow: hidden;
   border: 1px solid var(--border-light);
 }
@@ -72,7 +72,7 @@
 .progress-bar-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--accent-dark), var(--accent-light));
-  border-radius: 12px;
+  border-radius: 0;
   transition: width 1s ease-in-out;
   position: relative;
 }
@@ -86,11 +86,11 @@
   bottom: 0;
   background: linear-gradient(
     45deg,
-    rgba(0, 0, 0, 0.15) 25%,
+    rgba(255, 255, 255, 0.15) 25%,
     transparent 25%,
     transparent 50%,
-    rgba(0, 0, 0, 0.15) 50%,
-    rgba(0, 0, 0, 0.15) 75%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
     transparent 75%,
     transparent
   );
@@ -113,8 +113,8 @@
 
 .impact-item {
   padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.02);
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 0;
 }
 
 .impact-icon {
