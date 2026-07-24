@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Wrench, Zap, Code2, FlaskConical, LayoutGrid } from 'lucide-react';
+import { Mail, Wrench, Zap, Code2, FlaskConical } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
@@ -316,12 +316,53 @@ const Team = () => {
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 className="section-heading">Team Structure</h2>
           </div>
-          <div className="flowchart-placeholder" style={{ padding: '4rem 2rem', textAlign: 'center', borderRadius: '4px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-            <div style={{ color: 'var(--accent-light)', marginBottom: '1rem' }}>
-              <LayoutGrid size={48} style={{ margin: '0 auto' }} />
+          <div className="org-chart-container">
+            <div className="tree">
+              <ul>
+                <li>
+                  <div className="org-node">
+                    <h4>Team Captain</h4>
+                  </div>
+                  <ul>
+                    <li>
+                      <div className="org-node">
+                        <h4>Vice Captain</h4>
+                      </div>
+                      <ul>
+                        {verticals.map(v => (
+                          <li key={v.id}>
+                            <div className="org-node">
+                              <h5>{v.name} Lead</h5>
+                            </div>
+                            <ul>
+                              <li>
+                                <div className="org-node">
+                                  <h5>Vice Lead</h5>
+                                </div>
+                                <ul>
+                                  <li>
+                                    <div className="org-node">
+                                      <h5>Systems Engineer</h5>
+                                    </div>
+                                    <ul>
+                                      <li>
+                                        <div className="org-node">
+                                          <h5>Junior Engineers</h5>
+                                        </div>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </div>
-            <h3 style={{ color: 'var(--text-primary)', marginBottom: '0.5rem' }}>Organizational Flowchart</h3>
-            <p style={{ color: 'var(--text-secondary)' }}>[ Flowchart diagram displaying ExComm and the 5 Subsystems will be inserted here ]</p>
           </div>
         </section>
 

@@ -14,6 +14,8 @@
   font-weight: 300;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
 .text-link {
@@ -301,22 +303,29 @@
 }
 
 .spec-card {
-  min-width: 280px;
-  background: #0a0a0a;
-  padding: 2rem;
+  background: transparent;
+  padding: 1.5rem 0 1.5rem 1.5rem;
   border-radius: 0;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: none;
+  border-left: 2px solid rgba(255, 255, 255, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.spec-card:hover {
+  border-left-color: var(--text-primary);
 }
 
 .spec-title {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: #ffffff;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .spec-desc {

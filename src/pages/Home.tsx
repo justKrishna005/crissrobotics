@@ -1,5 +1,4 @@
 import { Link } from 'react-router';
-import { ArrowRight, ArrowLeft } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 const heroImg = '/rover-mountain-irc26.jpg';
 import './Home.css';
@@ -94,10 +93,6 @@ const Home = () => {
         <div className="container">
           <div className="fleet-header scroll-reveal">
             <h2 className="fleet-title">Engineered<br/>for extremes</h2>
-            <div className="fleet-controls">
-              <button className="carousel-btn"><ArrowLeft size={20} /></button>
-              <button className="carousel-btn"><ArrowRight size={20} /></button>
-            </div>
           </div>
 
           <div className="fleet-content">
@@ -105,9 +100,14 @@ const Home = () => {
               <div className="rover-image-container">
                 <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop" alt="Latest Hardware Showcase" className="rover-hero-img" style={{ borderRadius: '8px' }} />
               </div>
+              <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
+                <Link to="/research" className="btn btn-outline" style={{ width: '100%', textAlign: 'center' }}>
+                  Read More
+                </Link>
+              </div>
             </div>
             
-            <div className="rover-specs fleet-gallery scroll-reveal delay-200" style={{flex: 1, overflowX: 'auto'}}>
+            <div className="rover-specs scroll-reveal delay-200" style={{flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem'}}>
               <div className="spec-card">
                 <h4 className="spec-title">Chassis</h4>
                 <p className="spec-desc">Custom carbon-fiber composite structure designed for maximum strength-to-weight ratio in high-stress environments.</p>

@@ -632,3 +632,122 @@
   border-bottom: 2px solid var(--accent-light);
   text-shadow: 0 0 10px rgba(96, 165, 250, 0.5); /* lights up the selected one */
 }
+
+/* ── Organizational Flowchart ─────────────────────────────────── */
+.org-chart-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+}
+
+.tree ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  margin: 0;
+}
+
+.tree li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 20px 10px 0 10px;
+  transition: all 0.5s;
+}
+
+/* We will use ::before and ::after to draw the connectors */
+.tree li::before, .tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  width: 50%;
+  height: 20px;
+}
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* We need to remove left-right connectors from elements without any siblings */
+.tree li:only-child::after, .tree li:only-child::before {
+  display: none;
+}
+
+/* Remove space from the top of single children */
+.tree li:only-child {
+  padding-top: 0;
+}
+
+/* Remove left connector from first child and right connector from last child */
+.tree li:first-child::before, .tree li:last-child::after {
+  border: 0 none;
+}
+
+/* Adding back the vertical connector to the last nodes */
+.tree li:last-child::before {
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 0;
+}
+.tree li:first-child::after {
+  border-radius: 0;
+}
+
+/* Time to add downward connectors from parents */
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  width: 0;
+  height: 20px;
+}
+
+.org-node {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  min-width: 140px;
+  position: relative;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.org-node h4, .org-node h5 {
+  font-family: var(--font-main);
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: capitalize;
+}
+
+.org-node h4 {
+  font-size: 1.1rem;
+}
+
+.org-node h5 {
+  font-size: 0.95rem;
+  color: #d4d4d8;
+}
+
+@media (max-width: 768px) {
+  .tree ul {
+    flex-direction: column;
+    padding-top: 0;
+  }
+  .tree li {
+    padding: 10px 0;
+  }
+  .tree li::before, .tree li::after, .tree ul ul::before {
+    display: none;
+  }
+}
