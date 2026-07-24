@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import heroImg from '../images/good_photos/3.png';
+const heroImg = '/rover-mountain-irc26.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -22,10 +22,7 @@ const Home = () => {
         </div>
 
         <div className="hero-content animate-fade-in">
-          {/* Centered styling mirroring the watch hero */}
-          <div className="hero-image-wrapper animate-slide-up hidden-mobile">
-             <img src={heroImg} alt="CRISS Rover" className="hero-main-img" />
-          </div>
+
 
           <h1 className="hero-title-text animate-slide-up delay-100">
             CRISS Robotics
@@ -46,6 +43,7 @@ const Home = () => {
 
       {/* ── Stats Band (Traction) ── */}
       <section className="stats-band scroll-reveal">
+        <div className="stats-title">Achievements</div>
         <div className="container stats-grid">
           <div className="stat-item">
             <h3 className="stat-number">6+</h3>
@@ -53,49 +51,41 @@ const Home = () => {
           </div>
           <div className="stat-item">
             <h3 className="stat-number">1st</h3>
-            <p className="stat-label">@ IRDC 2023</p>
+            <p className="stat-label">IRDC 2023</p>
           </div>
           <div className="stat-item">
             <h3 className="stat-number">2nd</h3>
-            <p className="stat-label">In Asia @ ERC 2025</p>
+            <p className="stat-label">In Asia ERC '25</p>
           </div>
           <div className="stat-item">
             <h3 className="stat-number">1st</h3>
-            <p className="stat-label">Indian Team @ ARCh '26</p>
+            <p className="stat-label">Indian Team ARCh '26</p>
+          </div>
+          <div className="stat-item">
+            <h3 className="stat-number">8+</h3>
+            <p className="stat-label">Industry Partners</p>
           </div>
         </div>
       </section>
 
-      {/* ── Condensed Achievements ── */}
-      <section className="home-achievements">
-        <div className="container">
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem' }}>
-            <h2 className="section-heading" style={{ marginBottom: 0 }}>Global Recognition</h2>
-            <Link to="/achievements" className="text-link">View all <ArrowRight size={16} /></Link>
+      {/* ── Our Story & About BITS Pilani ── */}
+      <section className="story-section scroll-reveal">
+        <div className="container story-grid">
+          
+          <div className="story-card">
+            <h3 className="story-title">OUR STORY</h3>
+            <p className="story-text">
+              Founded in 2021 by a group of BITS Pilani students passionate about <strong className="text-white">space exploration</strong>, CRISS began with a single goal: build an autonomous rover capable of competing on the international stage. Within two years we placed in the <strong className="text-white">top 10 at the International Rover Challenge</strong>. By 2025 we stood on the <strong className="text-white">podium at the European Rover Challenge</strong>.
+            </p>
           </div>
-          <div className="home-achievements-grid">
-            <div className="home-achievement-card scroll-reveal delay-100">
-              <div className="home-achievement-img-wrapper">
-                <img src="/erc_logo_white.png" alt="ERC 2025" />
-              </div>
-              <h3 className="home-achievement-title">ERC 2025</h3>
-              <p className="home-achievement-highlight">2nd in Asia, 3rd Internationally</p>
-            </div>
-            <div className="home-achievement-card scroll-reveal delay-200">
-              <div className="home-achievement-img-wrapper">
-                <img src="/irc_irdc_logo-removebg-preview.png" alt="IRDC 2023" />
-              </div>
-              <h3 className="home-achievement-title">IRDC 2023</h3>
-              <p className="home-achievement-highlight">1st Rank Worldwide</p>
-            </div>
-            <div className="home-achievement-card scroll-reveal delay-300">
-              <div className="home-achievement-img-wrapper">
-                <img src="/arch_logo-removebg-preview.png" alt="ARCh 2026" />
-              </div>
-              <h3 className="home-achievement-title">ARCh 2026</h3>
-              <p className="home-achievement-highlight">First Indian Team Invited</p>
-            </div>
+
+          <div className="story-card">
+            <h3 className="story-title">ABOUT BITS PILANI</h3>
+            <p className="story-text">
+              Established in 1964, BITS Pilani is one of <strong className="text-white">India's top-ranked institutions</strong>, known for <strong className="text-white">fostering innovation, cutting-edge research</strong>, and <strong className="text-white">entrepreneurship</strong>. Its extensive <strong className="text-white">global alumni network</strong> and <strong className="text-white">world-class academic ecosystem</strong> make it a hub for developing future leaders in technology and engineering.
+            </p>
           </div>
+
         </div>
       </section>
 
@@ -135,33 +125,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ── Who Are We Section (Styled like "Limited Editions") ── */}
-      <section className="about-section special-projects-section">
-        <div className="special-bg">
-          <img src="/team_at_competition.png" alt="Team at competition" />
-          <div className="special-overlay"></div>
-        </div>
-        
-        <div className="special-content container">
-          <div className="special-text-top scroll-reveal">
-            <p>CRISS Robotics is a fully student-run team at BITS Pilani building autonomous Mars<br/>
-              rovers, Martian-analog drones, and field-portable NIR spectrometers.<br/>
-              These are systems that don't exist commercially at this scale — we build them from scratch.</p>
-          </div>
-          
-          <div className="special-text-bottom scroll-reveal delay-200">
-            <h2 className="special-title">Who Are We?</h2>
-            <p className="special-subtitle">
-              We finished 3rd internationally at ERC 2025, 1st worldwide at IRDC 2023, and
-              became the first and only Indian team invited to the Australian Rover Challenge 2026.
-              Our engineers compete across three continents in the same season.
-            </p>
-            <div style={{ marginTop: '2rem' }}>
-              <Link to="/about" className="btn btn-outline">Read our full story</Link>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* ── Support Us CTA Section ── */}
       <section className="support-section">
