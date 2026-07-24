@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import './Footer.css';
 import { Mail } from 'lucide-react';
 

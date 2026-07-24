@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gauge } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';

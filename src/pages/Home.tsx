@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 const heroImg = '/rover-mountain-irc26.jpg';

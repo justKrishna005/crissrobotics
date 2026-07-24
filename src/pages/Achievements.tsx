@@ -1,5 +1,5 @@
 import { Calendar, ArrowRight, ExternalLink } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Achievements.css';
 

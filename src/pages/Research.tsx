@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';

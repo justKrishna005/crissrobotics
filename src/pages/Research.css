@@ -463,11 +463,6 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
-@media (max-width: 900px) {
-  font-weight: 800;
-  padding: 0.5rem 1.25rem;
-  letter-spacing: 0.05em;
-}
 
 .rover-timeline-body {
   padding: 2rem 2.5rem;

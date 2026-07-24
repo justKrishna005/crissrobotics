@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { Cpu, Globe2, Users, CheckCircle, ArrowRight, Target, Network, Binary } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
