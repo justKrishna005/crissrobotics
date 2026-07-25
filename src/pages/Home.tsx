@@ -1,6 +1,6 @@
 import { Link } from 'react-router';
+import { ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
-const heroImg = '/rover-mountain-irc26.jpg';
 import './Home.css';
 
 const Home = () => {
@@ -10,26 +10,15 @@ const Home = () => {
     <div className="home-container">
 
       {/* ── Hero Section ── */}
-      <section className="hero-section">
-        <div className="hero-bg">
-          <img
-            src={heroImg}
-            alt="CRISS Robotics Hero"
-            className="hero-bg-image"
-          />
-          <div className="hero-gradient"></div>
-        </div>
-
-        <div className="hero-content animate-fade-in">
-
-
-          <h1 className="hero-title-text animate-slide-up delay-100">
+      <header className="page-header page-header--photo">
+        <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h1 className="page-title animate-slide-up delay-100">
             CRISS Robotics
           </h1>
-          <p className="hero-subtitle animate-slide-up delay-200">
+          <p className="page-subtitle animate-slide-up delay-200">
             The leading team in BITS Pilani building autonomous Mars rovers, drones, and in-house spectrometers for extreme environments.
           </p>
-          <div className="hero-actions animate-slide-up delay-300">
+          <div className="hero-actions animate-slide-up delay-300" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
             <Link to="/competitions" className="btn btn-solid">
               View Missions
             </Link>
@@ -38,7 +27,13 @@ const Home = () => {
             </Link>
           </div>
         </div>
-      </section>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
+        </div>
+      </header>
 
       {/* ── Stats Band (Traction) ── */}
       <section className="stats-band scroll-reveal">

@@ -1,5 +1,5 @@
 import { Link } from 'react-router';
-import { Cpu, Globe2, Users, CheckCircle, ArrowRight, Target, Network, Binary } from 'lucide-react';
+import { Cpu, Globe2, Users, CheckCircle, ArrowRight, Target, Network, Binary, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
 
@@ -62,12 +62,18 @@ const Sponsorship = () => {
   return (
     <div className="sponsorship-page">
       {/* ── Header ── */}
-      <header className="page-header page-header--photo sponsorship-header">
+      <header className="page-header page-header--photo page-header--photo sponsorship-header">
         <div className="container">
           <h1 className="page-title animate-slide-up">Partner with Us</h1>
           <p className="page-subtitle animate-slide-up delay-100">
             Fuel the next generation of aerospace engineers.
           </p>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 

@@ -1,4 +1,4 @@
-import { Calendar, ArrowRight, ExternalLink } from 'lucide-react';
+import { Calendar, ArrowRight, ExternalLink, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Achievements.css';
@@ -60,14 +60,20 @@ const Achievements = () => {
 
   return (
     <div className="achievements-page animate-fade-in">
-      <header className="page-header achievements-header">
+      <header className="page-header page-header--photo">
         <div className="container">
-          <h1 className="page-title text-center">
+          <h1 className="page-title animate-slide-up">
             Our <span className="text-accent">Achievements</span>
           </h1>
-          <p className="page-subtitle text-center">
+          <p className="page-subtitle animate-slide-up delay-100">
             A history of excellence, innovation, and pushing the boundaries of what undergraduate engineers can achieve.
           </p>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 

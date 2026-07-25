@@ -83,7 +83,6 @@
   font-family: var(--font-main);
   font-size: 0.75rem;
   font-weight: 700;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent-dark);
 }
@@ -94,7 +93,6 @@
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
@@ -182,7 +180,6 @@
   align-items: center;
   margin-bottom: 1rem;
   font-size: 0.85rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
 }
@@ -301,7 +298,6 @@
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
@@ -355,7 +351,6 @@
   font-weight: 300;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
 }
 .platforms-new-links {
   display: flex;
@@ -450,7 +445,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .platforms-new-card-desc {
@@ -538,7 +532,6 @@
   font-weight: 300;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  text-transform: uppercase;
 }
 .platforms-new-links {
   display: flex;
@@ -645,7 +638,6 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.8rem;
-  text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 .platforms-new-card-desc {
@@ -675,11 +667,10 @@
 }
 .upgrade-stats-title {
   color: #a1a1aa; 
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   letter-spacing: 0.15em;
-  text-transform: uppercase;
   margin-bottom: 3rem;
-  font-weight: 500;
+  font-weight: 700;
 }
 .upgrade-stats-grid {
   display: flex;
@@ -714,7 +705,6 @@
   font-weight: 400;
   color: #a1a1aa;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   max-width: 150px;
 }
 .platform-bullets {

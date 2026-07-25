@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Alumni.css';
@@ -160,16 +161,22 @@ const Alumni = () => {
     <div className="alumni-page animate-fade-in">
       {/* ── Header ── */}
       <header className="page-header page-header--photo" style={{ marginBottom: 0 }}>
-        <div className="container">
-          <h1 className="page-title">Alumni</h1>
-          <p className="page-subtitle">
+        <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <h1 className="page-title animate-slide-up delay-100">Alumni</h1>
+          <p className="page-subtitle animate-slide-up delay-200">
             The engineers and leaders who built the foundation of CRISS Robotics.
           </p>
-          <div className="mt-6">
-            <Link to="/support-us" className="btn-openai">
+          <div className="hero-actions animate-slide-up delay-300" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+            <Link to="/support-us" className="btn btn-solid">
               Support Our Alumni Campaign
             </Link>
           </div>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 

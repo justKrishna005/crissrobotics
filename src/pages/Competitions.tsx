@@ -1,5 +1,4 @@
-
-import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gauge } from 'lucide-react';
+import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gauge, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
@@ -306,11 +305,17 @@ const Competitions = () => {
     <div className="animate-fade-in">
       <header className="page-header page-header--photo">
         <div className="container" style={{ textAlign: 'center' }}>
-          <h1 className="comp-page-title">Competitions</h1>
-          <p className="comp-page-subtitle">
+          <h1 className="page-title animate-slide-up">Competitions</h1>
+          <p className="page-subtitle animate-slide-up delay-100">
             CRISS has consistently been among the top rover teams globally,
             competing in prestigious international competitions.
           </p>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 

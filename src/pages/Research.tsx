@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
 
@@ -242,6 +242,12 @@ const Research = () => {
           <p className="page-subtitle">
             Pushing the boundaries of undergraduate engineering through funded research, advanced prototyping, and next-generation robotics.
           </p>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 

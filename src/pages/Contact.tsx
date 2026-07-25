@@ -1,4 +1,4 @@
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Contact.css';
 
@@ -22,11 +22,17 @@ const Contact = () => {
   useScrollReveal();
   return (
     <div className="contact-page">
-      <header className="page-header page-header--photo contact-header">
+      <header className="page-header page-header--photo page-header--photo contact-header">
         <h1 className="page-title animate-slide-up">Contact Us</h1>
         <p className="page-subtitle animate-slide-up delay-100">
           Reach out for sponsorships, collaborations, or general inquiries.
         </p>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
+        </div>
       </header>
 
       <section className="contact-section">

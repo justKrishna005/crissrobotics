@@ -51,7 +51,6 @@
   font-weight: 600;
   color: var(--text-secondary);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .form-group input,
@@ -130,7 +129,6 @@
 
 .info-label {
   font-size: 0.875rem;
-  text-transform: uppercase;
   color: var(--text-secondary);
   letter-spacing: 0.05em;
   margin-bottom: 0.25rem;

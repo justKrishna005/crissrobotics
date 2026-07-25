@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Mail, Wrench, Zap, Code2, FlaskConical } from 'lucide-react';
+import { Mail, ChevronDown, Zap, Code2, FlaskConical, Wrench } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Team.css';
 
@@ -290,13 +290,18 @@ const Team = () => {
   return (
     <div className="team-page animate-fade-in">
       {/* ── Team Photo (Hero) ── */}
-      <header className="team-hero" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1800&auto=format&fit=crop)', backgroundSize: 'cover', backgroundPosition: 'center', height: '60vh', position: 'relative' }}>
-        <div className="team-hero-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10, 15, 30, 0.9), rgba(10, 15, 30, 0.4))' }}></div>
-        <div className="container" style={{ position: 'relative', zIndex: 1, height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', paddingBottom: '3rem' }}>
-          <h1 className="page-title" style={{ color: '#fff', fontSize: '4rem', marginBottom: '0.5rem', fontFamily: 'var(--font-heading)' }}>Meet the Team</h1>
-          <p className="page-subtitle" style={{ color: 'var(--text-secondary)', fontSize: '1.25rem', maxWidth: '600px' }}>
+      <header className="page-header page-header--photo">
+        <div className="container">
+          <h1 className="page-title animate-slide-up">Meet the Team</h1>
+          <p className="page-subtitle animate-slide-up delay-100">
             A diverse group of engineering students dedicated to building the next generation of space exploration robotics.
           </p>
+        </div>
+        <div 
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
         </div>
       </header>
 
