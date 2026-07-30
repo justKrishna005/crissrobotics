@@ -1,64 +1,95 @@
 import { Link } from 'react-router';
-import { Cpu, Globe2, Users, CheckCircle, ArrowRight, Target, Network, Binary, ChevronDown } from 'lucide-react';
+import { Globe2, CheckCircle, Target, Network, Binary, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
 
-// Sponsor list – placeholder data
+import srtLogo from '../images/sponsor logos/SRT logo.png';
+import altiumLogo from '../images/sponsor logos/altium logo.svg';
+import ansysLogo from '../images/sponsor logos/ansys logo.png';
+import autodeskLogo from '../images/sponsor logos/autodesk logo.png';
+import dwartLogo from '../images/sponsor logos/dwart logo.png';
+import krysnayeLogo from '../images/sponsor logos/krysnaye logo.png';
+import onlyScrewsLogo from '../images/sponsor logos/only screws logo.avif';
+import opticaLogo from '../images/sponsor logos/optica logo.png';
+import pcbPowerLogo from '../images/sponsor logos/pcb power logo.webp';
+import skfLogo from '../images/sponsor logos/skf logo.webp';
+import solidworksLogo from '../images/sponsor logos/solidworks logo.png';
+
+// Sponsor list
 const sponsors = [
-  { name: 'NITTE',         size: 'large' },
-  { name: 'NIDHI PRAYAS', size: 'large' },
-  { name: 'SOLVE',         size: 'large' },
-  { name: 'SolidWorks',   size: 'medium' },
-  { name: 'Altium',       size: 'medium' },
-  { name: 'Ansys',        size: 'medium' },
-  { name: 'ROS',          size: 'medium' },
-  { name: 'Arduino',      size: 'medium' },
-  { name: 'Raspberry Pi', size: 'medium' },
+  { name: 'SRT', src: srtLogo, size: 'large' },
+  { name: 'Altium', src: altiumLogo, size: 'medium' },
+  { name: 'Ansys', src: ansysLogo, size: 'medium' },
+  { name: 'Autodesk', src: autodeskLogo, size: 'large', invert: true },
+  { name: 'Dwart', src: dwartLogo, size: 'large', invert: true },
+  { name: 'Krysnaye', src: krysnayeLogo, size: 'large' },
+  { name: 'Only Screws', src: onlyScrewsLogo, size: 'large' },
+  { name: 'Optica', src: opticaLogo, size: 'medium' },
+  { name: 'PCB Power', src: pcbPowerLogo, size: 'medium' },
+  { name: 'SKF', src: skfLogo, size: 'medium' },
+  { name: 'SolidWorks', src: solidworksLogo, size: 'large' },
 ];
 
 const tiers = [
   {
-    name: 'Bronze Partner',
-    amount: '₹50,000+',
-    desc: 'Support foundational engineering and subsystem prototyping.',
+    name: 'Bronze',
+    amount: '₹50,000',
+    desc: 'Support engineering and subsystem prototyping.',
+    color: '#e8a972', // Softer bronze
     perks: [
-      'Small logo on Rover',
-      'Small logo on Team Apparel',
-      'Logo on Website & Social Media',
-      'Invitation to Roll-Out Event'
+      'Logo on team jersey',
+      'Logo on exhibition panels',
+      'Dedicated social media post'
     ]
   },
   {
-    name: 'Silver Partner',
-    amount: '₹1,50,000+',
+    name: 'Silver',
+    amount: '₹1,00,000',
     desc: 'Fund critical competition logistics and advanced sensor suites.',
+    color: '#d4d4d8', // Brighter silver
+    perks: [
+      'Logo on rover (secondary)',
+      'Quarterly Progress Report',
+      'Mention in all press releases',
+      'Logo on team jersey',
+      'Dedicated social media post'
+    ]
+  },
+  {
+    name: 'Gold',
+    amount: '₹2,00,000',
+    desc: 'Become a cornerstone partner fueling our global operations.',
+    color: '#fcd34d', // Softer, brighter gold
     isPopular: true,
     perks: [
-      'Medium logo on Rover & Apparel',
-      'Dedicated Social Media Post',
-      'Access to Team Resume Database',
-      'Quarterly Progress Reports',
-      'Logo on Team Banner at Competitions'
+      'Custom promotional content',
+      'Invitation to rover showcases and events',
+      'Logo on rover (prominent)',
+      'Logo on rover (secondary)',
+      'Quarterly Progress Report',
+      'Logo on exhibition panels'
     ]
   },
   {
-    name: 'Gold Partner',
-    amount: '₹3,00,000+',
-    desc: 'Become a cornerstone partner fueling our global operations.',
+    name: 'Title',
+    amount: '₹3,00,000',
+    desc: 'The ultimate partnership level with maximum visibility.',
+    color: '#60a5fa', // Bright sky blue instead of dark blue
     perks: [
-      'Large prominent logo on Rover',
-      'Large logo on Team Apparel',
-      'Exclusive Team Visit/Demo at your HQ',
-      'Priority Recruiting & Internship access',
-      'Title Sponsor branding on media',
-      'Joint Press Release'
+      'Primary logo on rover chassis',
+      'Product testing on rover platforms',
+      'Custom promotional content',
+      'Invitation to rover showcases and events',
+      'Logo on rover (prominent)',
+      'Logo on rover (secondary)',
+      'Quarterly Progress Report'
     ]
   }
 ];
 
 const Sponsorship = () => {
   useScrollReveal();
-  
+
   return (
     <div className="sponsorship-page">
       {/* ── Header ── */}
@@ -69,7 +100,7 @@ const Sponsorship = () => {
             Fuel the next generation of aerospace engineers.
           </p>
         </div>
-        <div 
+        <div
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
@@ -78,24 +109,25 @@ const Sponsorship = () => {
       </header>
 
       {/* ── Impact Metrics ── */}
-      <section className="impact-metrics">
+      <section className="upgrade-stats-section scroll-reveal">
         <div className="container">
-          <div className="metrics-grid">
-            <div className="metric-item scroll-reveal delay-1">
-              <h3 className="metric-number">40+</h3>
-              <p className="metric-label">Engineers on the Team</p>
+          <h3 className="upgrade-stats-title">Impact Metrics</h3>
+          <div className="upgrade-stats-grid">
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">40+</div>
+              <div className="upgrade-stat-label">Engineers on the Team</div>
             </div>
-            <div className="metric-item scroll-reveal delay-2">
-              <h3 className="metric-number">6</h3>
-              <p className="metric-label">International Competitions</p>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">6</div>
+              <div className="upgrade-stat-label">International Competitions</div>
             </div>
-            <div className="metric-item scroll-reveal delay-3">
-              <h3 className="metric-number">3</h3>
-              <p className="metric-label">Continents Competed</p>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">3</div>
+              <div className="upgrade-stat-label">Continents Competed</div>
             </div>
-            <div className="metric-item scroll-reveal delay-4">
-              <h3 className="metric-number">#1</h3>
-              <p className="metric-label">IRDC 2023 Global Rank</p>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">#1</div>
+              <div className="upgrade-stat-label">IRDC 2023 Global Rank</div>
             </div>
           </div>
         </div>
@@ -103,43 +135,61 @@ const Sponsorship = () => {
 
       {/* ── Why Sponsor Us? ── */}
       <section className="sponsor-section">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1400px' }}>
           <div className="section-header-centered">
-            <h2 className="section-heading">Why Sponsor Us?</h2>
+            <h2 className="section-heading">Why Sponsor Us</h2>
             <p className="section-paragraph max-w-800">
               Building autonomous rovers for extra-terrestrial analogs requires immense resources, cutting-edge hardware, and world-class testing facilities. We rely on industry partners to push the boundaries of what undergraduate engineers can accomplish.
             </p>
           </div>
 
           <div className="why-sponsor-grid">
-            <div className="tech-card scroll-reveal delay-1">
-              <div className="tech-card-icon"><Cpu size={32} /></div>
-              <h3 className="tech-card-title">Empower Hardware Innovation</h3>
-              <p className="tech-card-desc">
-                Your support directly funds custom PCB fabrication, advanced sensor procurement (LiDAR, NIR spectrometers), and the hands-on education of our student engineers.
-              </p>
-            </div>
-            
-            <div className="tech-card scroll-reveal delay-2">
+            <div className="tech-card scroll-reveal delay-1" style={{ '--card-color': '#70e0e0' } as React.CSSProperties}>
               <div className="tech-card-icon"><Globe2 size={32} /></div>
-              <h3 className="tech-card-title">Global Brand Exposure</h3>
-              <p className="tech-card-desc">
-                Gain high-impact international visibility. Our rovers and team apparel are showcased at premier global competitions across India, Poland, and Australia.
-              </p>
+              <h3 className="tech-card-title">GLOBAL BRAND VISIBILITY</h3>
+              <div className="tech-card-desc">
+                <p style={{ marginBottom: '1rem' }}>Your brand logo travels to the European Rover Challenge in Poland, the Australian Rover Challenge in Adelaide, and international media coverage. Each competition reaches live audiences, educational institutions, and engineering communities worldwide.</p>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                  <li>Logo on rover chassis at international events</li>
+                  <li>Live-streamed competitions &middot; global student viewership</li>
+                  <li>Press coverage in Indian and international tech media</li>
+                  <li>BITS Pilani institutional mentions in all team communications</li>
+                </ul>
+              </div>
             </div>
-            
-            <div className="tech-card scroll-reveal delay-3">
-              <div className="tech-card-icon"><Users size={32} /></div>
-              <h3 className="tech-card-title">Elite Recruitment Pipeline</h3>
-              <p className="tech-card-desc">
-                Get priority access to our highly-skilled graduates possessing real-world experience in ROS2, autonomous navigation, mechanical design, and system integration.
-              </p>
+
+            <div className="tech-card scroll-reveal delay-2" style={{ '--card-color': '#b77580' } as React.CSSProperties}>
+              <div className="tech-card-icon"><Network size={32} /></div>
+              <h3 className="tech-card-title">BITS PILANI NETWORK</h3>
+              <div className="tech-card-desc">
+                <p style={{ marginBottom: '1rem' }}>BITS Pilani is India's top-ranked private engineering institution. Sponsoring CRISS gives your brand credibility within one of the world's most respected engineering alumni networks &mdash; spanning Google, Microsoft, Qualcomm, and beyond.</p>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                  <li>Access to BITS alumni industrial network</li>
+                  <li>Logo in BITS Pilani campus events and publications</li>
+                  <li>R&D collaboration opportunity for technical sponsors</li>
+                  <li>CSR/R&D alignment with a prestigious academic institution</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="tech-card scroll-reveal delay-3" style={{ '--card-color': '#4ac1d8' } as React.CSSProperties}>
+              <div className="tech-card-icon"><Target size={32} /></div>
+              <h3 className="tech-card-title">FRONTIER RESEARCH ASSOCIATION</h3>
+              <div className="tech-card-desc">
+                <p style={{ marginBottom: '1rem' }}>No other student team builds in-house UV, NIR, and Raman spectrometers. Associating your brand with CRISS signals a genuine commitment to frontier scientific research &mdash; a powerful differentiator for technology and R&D companies.</p>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
+                  <li>Association with publishable research</li>
+                  <li>Naming in academic outputs</li>
+                  <li>Co-branding on lab equipment and spectrometer systems</li>
+                  <li>Technical whitepaper acknowledgements (at higher tiers)</li>
+                </ul>
+              </div>
             </div>
           </div>
-          
+
           <div className="text-center mt-12 scroll-reveal delay-4">
-            <Link to="/support-us" className="btn-openai">
-              Donate to Us <ArrowRight size={20} />
+            <Link to="/support-us" className="btn btn-solid">
+              Donate to Us
             </Link>
           </div>
         </div>
@@ -147,7 +197,7 @@ const Sponsorship = () => {
 
       {/* ── What We Offer (Tiers) ── */}
       <section className="sponsor-section">
-        <div className="container">
+        <div className="container" style={{ maxWidth: '1400px' }}>
           <div className="section-header-centered">
             <h2 className="section-heading">What We Offer</h2>
             <p className="section-paragraph">
@@ -157,8 +207,12 @@ const Sponsorship = () => {
 
           <div className="tiers-grid">
             {tiers.map((tier, index) => (
-              <div key={tier.name} className={`tier-card ${tier.isPopular ? 'tier-card-popular' : ''} scroll-reveal delay-${index + 1}`}>
-                {tier.isPopular && <div className="tier-badge">Most Popular</div>}
+              <div
+                key={tier.name}
+                className={`tier-card ${tier.isPopular ? 'tier-card-popular' : ''} scroll-reveal delay-${(index % 4) + 1}`}
+                style={{ borderColor: tier.color }}
+              >
+                {tier.isPopular && <div className="tier-badge" style={{ backgroundColor: tier.color }}>Most Popular</div>}
                 <h3 className="tier-name">{tier.name}</h3>
                 <div className="tier-amount">{tier.amount}</div>
                 <p className="tier-desc">{tier.desc}</p>
@@ -166,14 +220,11 @@ const Sponsorship = () => {
                 <ul className="tier-perks">
                   {tier.perks.map((perk, i) => (
                     <li key={i}>
-                      <CheckCircle size={16} className="tier-perk-icon" />
+                      <CheckCircle size={16} className="tier-perk-icon" style={{ color: tier.color }} />
                       <span>{perk}</span>
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className="btn-openai w-full mt-auto" style={{justifyContent: 'center'}}>
-                  Select Tier
-                </Link>
               </div>
             ))}
           </div>
@@ -186,29 +237,29 @@ const Sponsorship = () => {
           <div className="section-header-centered">
             <h2 className="section-heading">How to Sponsor Us</h2>
           </div>
-          
+
           <div className="steps-container">
-            <div className="step-item scroll-reveal delay-1">
+            <div className="step-item scroll-reveal delay-1" style={{ '--card-color': '#70e0e0' } as React.CSSProperties}>
               <div className="step-icon-wrapper"><Target size={28} /></div>
               <div className="step-content">
                 <h3 className="step-title">1. Choose a Tier</h3>
                 <p className="step-desc">Review our partnership tiers above and select the level of engagement that aligns with your company's goals and budget.</p>
               </div>
             </div>
-            
+
             <div className="step-connector scroll-reveal delay-2"></div>
-            
-            <div className="step-item scroll-reveal delay-3">
+
+            <div className="step-item scroll-reveal delay-3" style={{ '--card-color': '#b77580' } as React.CSSProperties}>
               <div className="step-icon-wrapper"><Network size={28} /></div>
               <div className="step-content">
                 <h3 className="step-title">2. Connect With Us</h3>
-                <p className="step-desc">Reach out via our contact form or email our Operations Lead. We'll schedule a call to discuss custom requirements or specific branding needs.</p>
+                <p className="step-desc">Reach out via our contact form or email us. We'll schedule a call to discuss custom requirements or specific branding needs.</p>
               </div>
             </div>
-            
+
             <div className="step-connector scroll-reveal delay-4"></div>
-            
-            <div className="step-item scroll-reveal delay-5">
+
+            <div className="step-item scroll-reveal delay-5" style={{ '--card-color': '#4ac1d8' } as React.CSSProperties}>
               <div className="step-icon-wrapper"><Binary size={28} /></div>
               <div className="step-content">
                 <h3 className="step-title">3. Finalize Details</h3>
@@ -218,8 +269,8 @@ const Sponsorship = () => {
           </div>
 
           <div className="text-center mt-16 scroll-reveal delay-5">
-            <Link to="/support-us" className="btn-openai">
-              Join Our 2025–26 Season <ArrowRight size={20} />
+            <Link to="/contact" className="btn btn-solid">
+              Join Our 2025–26 Season
             </Link>
           </div>
         </div>
@@ -228,11 +279,11 @@ const Sponsorship = () => {
       {/* ── Current Sponsors – logo grid ── */}
       <section className="sponsor-section logos-section">
         <div className="container">
-          <p className="logos-eyebrow scroll-reveal delay-1">Trusted by Industry Leaders</p>
+          <h3 className="upgrade-stats-title text-center scroll-reveal delay-1">Trusted by Industry Leaders</h3>
           <div className="logos-grid scroll-reveal delay-2">
             {sponsors.map((s, i) => (
               <div className={`logo-cell logo-cell--${s.size}`} key={i}>
-                <span className="logo-text">{s.name}</span>
+                <img src={s.src} alt={s.name} className={`sponsor-logo-img ${s.invert ? 'invert-logo' : ''}`} />
               </div>
             ))}
           </div>

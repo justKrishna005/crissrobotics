@@ -1,6 +1,9 @@
 import { Link } from 'react-router';
 import { ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
+import storyImg1 from '../images/good_photos/about us.jpg';
+import storyImg2 from '../images/good_photos/bits pilani.webp';
+import engExtremesImg from '../images/good_photos/eng for extremes.png';
 import './Home.css';
 
 const Home = () => {
@@ -10,7 +13,7 @@ const Home = () => {
     <div className="home-container">
 
       {/* ── Hero Section ── */}
-      <header className="page-header page-header--photo">
+      <header className="page-header page-header--home">
         <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <h1 className="page-title animate-slide-up delay-100">
             CRISS Robotics
@@ -27,7 +30,7 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div 
+        <div
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
@@ -36,28 +39,30 @@ const Home = () => {
       </header>
 
       {/* ── Stats Band (Traction) ── */}
-      <section className="stats-band scroll-reveal">
-        <div className="stats-title">Achievements</div>
-        <div className="container stats-grid">
-          <div className="stat-item">
-            <h3 className="stat-number">6+</h3>
-            <p className="stat-label">Intl. Competitions</p>
-          </div>
-          <div className="stat-item">
-            <h3 className="stat-number">1st</h3>
-            <p className="stat-label">IRDC 2023</p>
-          </div>
-          <div className="stat-item">
-            <h3 className="stat-number">2nd</h3>
-            <p className="stat-label">In Asia ERC '25</p>
-          </div>
-          <div className="stat-item">
-            <h3 className="stat-number">1st</h3>
-            <p className="stat-label">Indian Team ARCh '26</p>
-          </div>
-          <div className="stat-item">
-            <h3 className="stat-number">8+</h3>
-            <p className="stat-label">Industry Partners</p>
+      <section className="upgrade-stats-section scroll-reveal">
+        <div className="container">
+          <h3 className="upgrade-stats-title">Achievements</h3>
+          <div className="upgrade-stats-grid">
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">6+</div>
+              <div className="upgrade-stat-label">Intl. Competitions</div>
+            </div>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">1st</div>
+              <div className="upgrade-stat-label">IRDC 2023</div>
+            </div>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">2nd</div>
+              <div className="upgrade-stat-label">In Asia ERC '25</div>
+            </div>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">1st</div>
+              <div className="upgrade-stat-label">Indian Team ARCh '26</div>
+            </div>
+            <div className="upgrade-stat-item">
+              <div className="upgrade-stat-value">8+</div>
+              <div className="upgrade-stat-label">Industry Partners</div>
+            </div>
           </div>
         </div>
       </section>
@@ -65,8 +70,11 @@ const Home = () => {
       {/* ── Our Story & About BITS Pilani ── */}
       <section className="story-section scroll-reveal">
         <div className="container story-grid">
-          
+
           <div className="story-card">
+            <div className="story-image-wrapper">
+              <img src={storyImg1} alt="Our Story" />
+            </div>
             <h3 className="story-title">OUR STORY</h3>
             <p className="story-text">
               Founded in 2021 by a group of BITS Pilani students passionate about <strong className="text-white">space exploration</strong>, CRISS began with a single goal: build an autonomous rover capable of competing on the international stage. Within two years we placed in the <strong className="text-white">top 10 at the International Rover Challenge</strong>. By 2025 we stood on the <strong className="text-white">podium at the European Rover Challenge</strong>.
@@ -74,6 +82,9 @@ const Home = () => {
           </div>
 
           <div className="story-card">
+            <div className="story-image-wrapper">
+              <img src={storyImg2} alt="About BITS Pilani" />
+            </div>
             <h3 className="story-title">ABOUT BITS PILANI</h3>
             <p className="story-text">
               Established in 1964, BITS Pilani is one of <strong className="text-white">India's top-ranked institutions</strong>, known for <strong className="text-white">fostering innovation, cutting-edge research</strong>, and <strong className="text-white">entrepreneurship</strong>. Its extensive <strong className="text-white">global alumni network</strong> and <strong className="text-white">world-class academic ecosystem</strong> make it a hub for developing future leaders in technology and engineering.
@@ -84,36 +95,35 @@ const Home = () => {
       </section>
 
       {/* ── Our Latest Rover Section (Styled like "New Collection") ── */}
-      <section className="rover-section fleet-section">
+      <section className="story-section scroll-reveal">
         <div className="container">
           <div className="fleet-header scroll-reveal">
-            <h2 className="fleet-title">Engineered<br/>for extremes</h2>
+            <h2 className="fleet-title">Engineered for Extremes</h2>
           </div>
 
-          <div className="fleet-content">
-            <div className="fleet-sidebar scroll-reveal delay-100">
-              <div className="rover-image-container">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop" alt="Latest Hardware Showcase" className="rover-hero-img" style={{ borderRadius: '8px' }} />
-              </div>
-              <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-                <Link to="/research" className="btn btn-outline" style={{ width: '100%', textAlign: 'center' }}>
-                  Read More
-                </Link>
-              </div>
+          <div className="story-grid scroll-reveal delay-100">
+            <div className="story-card" style={{ padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <img src={engExtremesImg} alt="Latest Hardware Showcase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-            
-            <div className="rover-specs scroll-reveal delay-200" style={{flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem'}}>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }}>
               <div className="spec-card">
-                <h4 className="spec-title">Chassis</h4>
+                <h4 className="spec-title">CHASSIS</h4>
                 <p className="spec-desc">Custom carbon-fiber composite structure designed for maximum strength-to-weight ratio in high-stress environments.</p>
               </div>
               <div className="spec-card">
-                <h4 className="spec-title">Autonomy</h4>
+                <h4 className="spec-title">AUTONOMY</h4>
                 <p className="spec-desc">Advanced ROS 2 stack utilizing LiDAR and stereo vision for fully autonomous obstacle avoidance and path planning.</p>
               </div>
               <div className="spec-card">
-                <h4 className="spec-title">Arm</h4>
+                <h4 className="spec-title">ARM</h4>
                 <p className="spec-desc">6-DOF robotic manipulator capable of precise equipment servicing and heavy payload deployment.</p>
+              </div>
+
+              <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+                <Link to="/research" className="btn btn-outline">
+                  Read More
+                </Link>
               </div>
             </div>
           </div>
