@@ -8,6 +8,7 @@ const InstagramIcon = () => (
     <circle cx="12" cy="12" r="4"/>
     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
   </svg>
+
 );
 
 const LinkedinIcon2 = () => (
@@ -23,10 +24,12 @@ const Contact = () => {
   return (
     <div className="contact-page">
       <header className="page-header page-header--photo page-header--photo contact-header">
-        <h1 className="page-title animate-slide-up">Contact Us</h1>
-        <p className="page-subtitle animate-slide-up delay-100">
-          Reach out for sponsorships, collaborations, or general inquiries.
-        </p>
+        <div className="container">
+          <h1 className="page-title animate-slide-up">Contact Us</h1>
+          <p className="page-subtitle animate-slide-up delay-100">
+            Reach out for sponsorships, collaborations, or general inquiries.
+          </p>
+        </div>
         <div 
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
@@ -58,7 +61,7 @@ const Contact = () => {
                   <label htmlFor="message">Message</label>
                   <textarea id="message" rows={5} placeholder="How can we help you?" required></textarea>
                 </div>
-                <button type="submit" className="btn-openai btn-submit">
+                <button type="submit" className="btn btn-solid btn-submit">
                   <Send size={18} /> Send Message
                 </button>
               </form>

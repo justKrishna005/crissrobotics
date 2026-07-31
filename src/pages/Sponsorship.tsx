@@ -9,6 +9,7 @@ import ansysLogo from '../images/sponsor logos/ansys logo.png';
 import autodeskLogo from '../images/sponsor logos/autodesk logo.png';
 import dwartLogo from '../images/sponsor logos/dwart logo.png';
 import krysnayeLogo from '../images/sponsor logos/krysnaye logo.png';
+import odriveLogo from '../images/sponsor logos/odrive logo.png';
 import onlyScrewsLogo from '../images/sponsor logos/only screws logo.avif';
 import opticaLogo from '../images/sponsor logos/optica logo.png';
 import pcbPowerLogo from '../images/sponsor logos/pcb power logo.webp';
@@ -23,6 +24,7 @@ const sponsors = [
   { name: 'Autodesk', src: autodeskLogo, size: 'large', invert: true },
   { name: 'Dwart', src: dwartLogo, size: 'large', invert: true },
   { name: 'Krysnaye', src: krysnayeLogo, size: 'large' },
+  { name: 'ODrive', src: odriveLogo, size: 'medium', invert: true },
   { name: 'Only Screws', src: onlyScrewsLogo, size: 'large' },
   { name: 'Optica', src: opticaLogo, size: 'medium' },
   { name: 'PCB Power', src: pcbPowerLogo, size: 'medium' },
@@ -188,9 +190,9 @@ const Sponsorship = () => {
           </div>
 
           <div className="text-center mt-12 scroll-reveal delay-4">
-            <Link to="/support-us" className="btn btn-solid">
+            <a href="https://www.bitsaa.org/g/criss-robotics" target="_blank" rel="noopener noreferrer" className="btn btn-solid">
               Donate to Us
-            </Link>
+            </a>
           </div>
         </div>
       </section>

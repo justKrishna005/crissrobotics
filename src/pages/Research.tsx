@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
+import armImage from '../images/good_photos/arm_2_transparent_BG.PNG';
+import ramanTestingImage from '../images/good_photos/payload/Raman testing.png';
 
 // ─── Funded Projects Data ─────────────────────────────────────────────────────
 
@@ -11,16 +13,17 @@ const fundedProjects = [
     funder: 'SOLVE Research Grant',
     description:
       'Development of an advanced robotic end manipulator for warehouse robotics applications. This project focuses on precision grasping, modular tool-changing, and integration with autonomous mobile platforms for industrial logistics.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
+    image: armImage,
   },
   {
     title: 'In-House NIR Spectrophotometer',
     funder: 'SPARKLE Research Grant',
     description:
       'Design and fabrication of a custom near-infrared spectrophotometer for real-time soil and mineral analysis. This instrument enables our rover to perform on-field science tasks during competition, identifying key compounds in analog Martian regolith.',
-    image: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop',
+    image: ramanTestingImage,
   },
 ];
+
 
 const platformsData = [
   {

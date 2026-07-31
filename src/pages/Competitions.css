@@ -93,8 +93,8 @@
 }
 
 .comp-card-title {
-  font-family: var(--font-main);
-  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.35rem;
@@ -126,11 +126,11 @@
 
 .comp-nav-tab {
   flex-shrink: 0;
-  padding: 1rem 1.75rem;
-  font-family: var(--font-main);
-  font-size: 0.85rem;
+  padding: 1.25rem 2rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.45);
   background: none;
   border: none;
@@ -145,7 +145,7 @@
 
 .comp-nav-tab--active {
   color: #ffffff;
-  border-bottom-color: var(--accent-dark);
+  border-bottom-color: #ffffff;
 }
 
 /* ── Competition Sections ────────────────────────────────────────────────── */
@@ -192,20 +192,20 @@
 }
 
 .comp-block-acronym {
-  font-family: var(--font-main);
-  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--text-primary);
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
   line-height: 1.1;
 }
 
 .comp-block-fullname {
-  font-family: var(--font-main);
-  font-size: 0.9rem;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
   font-weight: 400;
   color: var(--text-secondary);
-  opacity: 0.6;
+  opacity: 0.8;
   margin-top: 0.25rem;
 }
 
@@ -255,24 +255,27 @@
   padding-bottom: 4rem;
 }
 
-/* ── Photo Gallery ───────────────────────────────────────────────────────── */
+/* ── Top Section ───────────────────────────────────────────────────────── */
 
-.comp-gallery {
+.comp-top-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 2.5rem;
   margin-bottom: 3rem;
+  align-items: stretch;
 }
 
-.comp-gallery-item {
-  aspect-ratio: 16 / 10;
+.comp-single-photo {
+  width: 100%;
+  height: 100%;
+  min-height: 250px;
   overflow: hidden;
   position: relative;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.comp-gallery-item img {
+.comp-single-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -280,9 +283,9 @@
   transition: filter 0.3s ease, transform 0.5s ease;
 }
 
-.comp-gallery-item:hover img {
+.comp-single-photo:hover img {
   filter: brightness(1);
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 /* ── Details + Specs Grid ────────────────────────────────────────────────── */
@@ -295,11 +298,11 @@
 }
 
 .comp-subsection-title {
-  font-family: var(--font-main);
-  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--accent-light);
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   display: flex;
   align-items: center;
@@ -410,11 +413,11 @@
   padding: 1.25rem 2rem;
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 4px solid var(--accent-light);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0;
   font-family: var(--font-main);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
   margin-bottom: 1rem;
 }
@@ -463,8 +466,13 @@
     display: none;
   }
 
-  .comp-gallery {
+  .comp-top-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comp-single-photo {
+    min-height: 250px;
   }
 
   .comp-details-grid {

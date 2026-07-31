@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gauge, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
@@ -224,32 +225,17 @@ const CompetitionSection = ({
 
         {/* ── Content ── */}
         <div id={`comp-content-${comp.id}`} className="comp-block-content comp-block-content--open">
-          {/* Photo Gallery */}
-          <div className="comp-gallery scroll-reveal delay-1">
-            {comp.gallery.map((img, i) => (
-              <div key={i} className="comp-gallery-item">
-                <img src={img.src} alt={img.alt} loading="lazy" />
-              </div>
-            ))}
-          </div>
+          {/* Top Section: Photo (Left) + Details (Right) */}
+          <div className="comp-top-grid scroll-reveal delay-1">
+            {/* Single Photo */}
+            <div className="comp-single-photo">
+              <img src={comp.gallery[0].src} alt={comp.gallery[0].alt} loading="lazy" />
+            </div>
 
-          {/* Details + Specs Grid */}
-          <div className="comp-details-grid scroll-reveal delay-2">
+            {/* Details */}
             <div className="comp-description">
               <h3 className="comp-subsection-title">About This Competition</h3>
               <p className="comp-description-text">{comp.description}</p>
-            </div>
-            <div className="comp-specs-card">
-              <h3 className="comp-subsection-title">Rover: {comp.roverName}</h3>
-              <ul className="comp-specs-list">
-                {comp.roverSpecs.map((spec, i) => (
-                  <li key={i}>
-                    <span className="comp-spec-icon">{spec.icon}</span>
-                    <span className="comp-spec-label">{spec.label}</span>
-                    <span className="comp-spec-value">{spec.value}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
@@ -300,6 +286,8 @@ const CompetitionSection = ({
 
 const Competitions = () => {
   useScrollReveal();
+  const [activeCompId, setActiveCompId] = useState(competitions[0].id);
+  const activeComp = competitions.find(c => c.id === activeCompId) || competitions[0];
 
   return (
     <div className="animate-fade-in">
@@ -319,37 +307,21 @@ const Competitions = () => {
         </div>
       </header>
 
-      {/* ── Competition Cards Grid ── */}
-      <section className="comp-cards-section container">
-        <div className="comp-cards-grid">
-          {competitions.map((comp) => (
-            <div
-              key={comp.id}
-              className="comp-card"
-              onClick={() => {
-                const element = document.getElementById(comp.id);
-                if (element) {
-                  const y = element.getBoundingClientRect().top + window.scrollY - 100;
-                  window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-              }}
-            >
-              <div className="comp-card-img-wrapper">
-                <img src={comp.gallery[0].src} alt={comp.acronym} loading="lazy" />
-              </div>
-              <h3 className="comp-card-title">{comp.acronym}</h3>
-              <p className="comp-card-subtitle">{comp.fullName}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '4rem' }}>
+      {/* ── Navigation Bar ── */}
+      <div className="comp-nav-bar animate-fade-in delay-200">
         {competitions.map((comp) => (
-          <div key={comp.id} style={{ marginBottom: '6rem' }}>
-            <CompetitionSection comp={comp} />
-          </div>
+          <button
+            key={comp.id}
+            className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
+            onClick={() => setActiveCompId(comp.id)}
+          >
+            {comp.acronym}
+          </button>
         ))}
+      </div>
+
+      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
+        <CompetitionSection key={activeComp.id} comp={activeComp} />
       </div>
     </div>
   );
