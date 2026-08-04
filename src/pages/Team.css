@@ -629,9 +629,6 @@
 
 .team-sticky-nav::-webkit-scrollbar { display: none; }
 
-.team-sticky-nav.scrolled {
-  /* Kept for class presence but style is handled by base black background */
-}
 
 .team-nav-btn {
   flex-shrink: 0;
