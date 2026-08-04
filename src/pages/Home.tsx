@@ -1,9 +1,9 @@
 import { Link } from 'react-router';
 import { ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
-import storyImg1 from '../images/good_photos/about us.jpg';
-import storyImg2 from '../images/good_photos/bits pilani.webp';
-import engExtremesImg from '../images/good_photos/eng for extremes.png';
+const storyImg1 = '/images/good_photos/about us.jpg';
+const storyImg2 = '/images/good_photos/bits pilani.webp';
+const engExtremesImg = '/images/good_photos/eng for extremes.png';
 import './Home.css';
 
 const Home = () => {
@@ -153,3 +153,4 @@ const Home = () => {
 };
 
 export default Home;
+

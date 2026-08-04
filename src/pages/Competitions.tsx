@@ -3,9 +3,9 @@ import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gau
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
-import archVideo from "../images/good_photos/competitions/video arch'26.mp4";
-import irdcVideo from "../images/good_photos/competitions/curie irdc.mp4";
-import robofestVideo from "../images/good_photos/competitions/robofest.mp4";
+const archVideo = "/images/good_photos/competitions/video arch'26.mp4";
+const irdcVideo = '/images/good_photos/competitions/curie irdc.mp4';
+const robofestVideo = '/images/good_photos/competitions/robofest.mp4';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -320,3 +320,4 @@ const Competitions = () => {
 };
 
 export default Competitions;
+
