@@ -41,10 +41,10 @@ const Footer = () => {
         
         <div className="footer-right">
           <div className="social-links">
-            <a href="#" aria-label="Instagram" className="social-link"><InstagramIcon /></a>
-            <a href="#" aria-label="LinkedIn" className="social-link"><LinkedinIcon /></a>
-            <a href="#" aria-label="Twitter" className="social-link"><TwitterIcon /></a>
-            <a href="#" aria-label="Email" className="social-link"><Mail size={20} /></a>
+            <a href="https://www.instagram.com/criss_robotics/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-link"><InstagramIcon /></a>
+            <a href="https://www.linkedin.com/company/criss-robotics/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-link"><LinkedinIcon /></a>
+            <a href="https://x.com/CRISSRobotics" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-link"><TwitterIcon /></a>
+            <a href="mailto:outreach@crissrobotics.space" aria-label="Email" className="social-link"><Mail size={20} /></a>
           </div>
           <div className="footer-copy">
             &copy; {new Date().getFullYear()} CRISS Robotics. All rights reserved.

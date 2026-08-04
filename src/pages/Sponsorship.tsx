@@ -150,50 +150,32 @@ const Sponsorship = () => {
           <div className="why-sponsor-grid">
             <div className="tech-card scroll-reveal delay-1" style={{ '--card-color': '#70e0e0' } as React.CSSProperties}>
               <div className="tech-card-icon"><Globe2 size={32} /></div>
-              <h3 className="tech-card-title">GLOBAL BRAND VISIBILITY</h3>
+              <h3 className="tech-card-title">Global Brand Visibility</h3>
               <div className="tech-card-desc">
-                <p style={{ marginBottom: '1rem' }}>Your brand logo travels to the European Rover Challenge in Poland, the Australian Rover Challenge in Adelaide, and international media coverage. Each competition reaches live audiences, educational institutions, and engineering communities worldwide.</p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-                  <li>Logo on rover chassis at international events</li>
-                  <li>Live-streamed competitions &middot; global student viewership</li>
-                  <li>Press coverage in Indian and international tech media</li>
-                  <li>BITS Pilani institutional mentions in all team communications</li>
-                </ul>
+                <p>Your brand logo travels to the European Rover Challenge in Poland, the Australian Rover Challenge in Adelaide, and international media coverage. Each competition reaches live audiences, educational institutions, and engineering communities worldwide.</p>
               </div>
             </div>
 
             <div className="tech-card scroll-reveal delay-2" style={{ '--card-color': '#b77580' } as React.CSSProperties}>
               <div className="tech-card-icon"><Network size={32} /></div>
-              <h3 className="tech-card-title">BITS PILANI NETWORK</h3>
+              <h3 className="tech-card-title">BITS Pilani Network</h3>
               <div className="tech-card-desc">
-                <p style={{ marginBottom: '1rem' }}>BITS Pilani is India's top-ranked private engineering institution. Sponsoring CRISS gives your brand credibility within one of the world's most respected engineering alumni networks &mdash; spanning Google, Microsoft, Qualcomm, and beyond.</p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-                  <li>Access to BITS alumni industrial network</li>
-                  <li>Logo in BITS Pilani campus events and publications</li>
-                  <li>R&D collaboration opportunity for technical sponsors</li>
-                  <li>CSR/R&D alignment with a prestigious academic institution</li>
-                </ul>
+                <p>BITS Pilani is India's top-ranked private engineering institution. Sponsoring CRISS gives your brand credibility within one of the world's most respected engineering alumni networks &mdash; spanning Google, Microsoft, Qualcomm, and beyond.</p>
               </div>
             </div>
 
             <div className="tech-card scroll-reveal delay-3" style={{ '--card-color': '#4ac1d8' } as React.CSSProperties}>
               <div className="tech-card-icon"><Target size={32} /></div>
-              <h3 className="tech-card-title">FRONTIER RESEARCH ASSOCIATION</h3>
+              <h3 className="tech-card-title">Frontier Research Association</h3>
               <div className="tech-card-desc">
-                <p style={{ marginBottom: '1rem' }}>No other student team builds in-house UV, NIR, and Raman spectrometers. Associating your brand with CRISS signals a genuine commitment to frontier scientific research &mdash; a powerful differentiator for technology and R&D companies.</p>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }}>
-                  <li>Association with publishable research</li>
-                  <li>Naming in academic outputs</li>
-                  <li>Co-branding on lab equipment and spectrometer systems</li>
-                  <li>Technical whitepaper acknowledgements (at higher tiers)</li>
-                </ul>
+                <p>No other student team builds in-house UV, NIR, and Raman spectrometers. Associating your brand with CRISS signals a genuine commitment to frontier scientific research &mdash; a powerful differentiator for technology and R&D companies.</p>
               </div>
             </div>
           </div>
 
           <div className="text-center mt-12 scroll-reveal delay-4">
-            <a href="https://www.bitsaa.org/g/criss-robotics" target="_blank" rel="noopener noreferrer" className="btn btn-solid">
-              Donate to Us
+            <a href="https://www.canva.com/design/DAHPAopqEA8/3tyNX4eCS1K-1qAIeoh-5A/view" target="_blank" rel="noopener noreferrer" className="btn btn-solid">
+              Sponsorship Brochure 2026-27
             </a>
           </div>
         </div>
@@ -287,7 +269,7 @@ const Sponsorship = () => {
           <div className="logos-grid scroll-reveal delay-2">
             {sponsors.map((s, i) => (
               <div className={`logo-cell logo-cell--${s.size}`} key={i}>
-                <img src={s.src} alt={s.name} className={`sponsor-logo-img ${s.invert ? 'invert-logo' : ''}`} />
+                <img src={s.src} alt={s.name} className={`sponsor-logo-img ${s.invert ? 'invert-logo' : ''}`} loading="lazy" />
               </div>
             ))}
           </div>

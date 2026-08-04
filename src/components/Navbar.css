@@ -84,7 +84,6 @@
   }
 
   .mobile-toggle {
-    display: block;
     display: flex;
     justify-content: flex-end;
   }

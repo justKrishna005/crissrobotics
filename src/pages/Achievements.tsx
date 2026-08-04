@@ -124,41 +124,7 @@ const Achievements = () => {
         </div>
       </section>
 
-      {/* ── News Coverage ── */}
-      <section className="news-coverage-section">
-        <div className="container">
-          <div className="section-header-centered">
-            <h2 className="section-heading">In the News</h2>
-            <p className="section-paragraph max-w-800">
-              Our engineering achievements have caught the attention of national media and global technology publications.
-            </p>
-          </div>
 
-          <div className="news-grid">
-            <a href="#" className="news-card glass-panel scroll-reveal delay-1">
-              <div className="news-source">The Hindu</div>
-              <h3 className="news-title">BITS Pilani Team Creates History, Invited to Australian Rover Challenge</h3>
-              <p className="news-excerpt">
-                CRISS Robotics becomes the first Indian team to qualify for the prestigious ARC, showcasing their custom-built Martian rover capabilities on a global stage...
-              </p>
-              <div className="news-read-more">
-                Read Full Article <ExternalLink size={16} className="external-icon" />
-              </div>
-            </a>
-
-            <a href="#" className="news-card glass-panel scroll-reveal delay-2">
-              <div className="news-source">Times of India</div>
-              <h3 className="news-title">Students Build Rs 2.5 Lakh Autonomous Drone for Planetary Exploration</h3>
-              <p className="news-excerpt">
-                Winning the Gujarat Robofest ideation phase, the team is now developing an autonomous aerial system designed specifically for extra-terrestrial environments...
-              </p>
-              <div className="news-read-more">
-                Read Full Article <ExternalLink size={16} className="external-icon" />
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

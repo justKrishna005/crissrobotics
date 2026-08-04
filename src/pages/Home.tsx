@@ -32,7 +32,11 @@ const Home = () => {
         </div>
         <div
           className="scroll-indicator"
+          role="button"
+          tabIndex={0}
+          aria-label="Scroll down"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); window.scrollTo({ top: window.innerHeight, behavior: 'smooth' }); } }}
         >
           <ChevronDown size={32} strokeWidth={1.5} />
         </div>
@@ -73,7 +77,7 @@ const Home = () => {
 
           <div className="story-card">
             <div className="story-image-wrapper">
-              <img src={storyImg1} alt="Our Story" />
+              <img src={storyImg1} alt="Our Story" loading="lazy" />
             </div>
             <h3 className="story-title">OUR STORY</h3>
             <p className="story-text">
@@ -83,7 +87,7 @@ const Home = () => {
 
           <div className="story-card">
             <div className="story-image-wrapper">
-              <img src={storyImg2} alt="About BITS Pilani" />
+              <img src={storyImg2} alt="About BITS Pilani" loading="lazy" />
             </div>
             <h3 className="story-title">ABOUT BITS PILANI</h3>
             <p className="story-text">
@@ -103,7 +107,7 @@ const Home = () => {
 
           <div className="story-grid scroll-reveal delay-100">
             <div className="story-card" style={{ padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src={engExtremesImg} alt="Latest Hardware Showcase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <img src={engExtremesImg} alt="Latest Hardware Showcase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }}>

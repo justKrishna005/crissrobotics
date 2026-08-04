@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 
 :root {
   /* ── Brand Palette (Luxury Dark Theme) ── */
@@ -226,10 +226,14 @@ h6 {
 .glass-card {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0;
+  border-radius: 6px;
   /* Sharp edges */
   padding: 2.5rem;
   transition: border-color 0.3s ease;
+}
+
+img:not(.logo-image):not(.sponsor-logo-img), video, iframe {
+  border-radius: 6px;
 }
 
 .glass-card:hover {
@@ -369,4 +373,25 @@ h6 {
 
 .text-right {
   text-align: right;
+}
+
+/* ── Mobile Responsiveness ── */
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 2.2rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.8rem;
+  }
 }
