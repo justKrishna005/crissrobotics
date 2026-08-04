@@ -4,15 +4,21 @@ import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
 import armImage from '../images/good_photos/arm_2_transparent_BG.PNG';
 import ramanTestingImage from '../images/good_photos/payload/Raman testing.png';
+import airavatImg from '../images/good_photos/rover renders/airavat.png';
+import eklavyaImg from '../images/good_photos/rover renders/eklavya.png';
+import fenrirImg from '../images/good_photos/rover renders/fenrir.png';
+import aetherImg from '../images/good_photos/rover renders/aether.png';
+import icarusImg from '../images/good_photos/rover renders/icarus old.png';
+import dionysusImg from '../images/good_photos/rover renders/dionysus blackchassis.PNG';
 
 // ─── Funded Projects Data ─────────────────────────────────────────────────────
 
 const fundedProjects = [
   {
-    title: 'Robotic End Manipulator',
+    title: '5DOF Robotic Arm',
     funder: 'SOLVE Research Grant',
     description:
-      'Development of an advanced robotic end manipulator for warehouse robotics applications. This project focuses on precision grasping, modular tool-changing, and integration with autonomous mobile platforms for industrial logistics.',
+      'Development of a custom 5-degrees-of-freedom robotic arm designed for planetary exploration, featuring custom cycloidal drives for high precision and torque. This project focuses on autonomous manipulation, payload handling, and scientific sample retrieval in simulated Martian environments.',
     image: armImage,
   },
   {
@@ -81,34 +87,41 @@ const upgradeGoals = [
 
 const roverTimeline = [
   {
-    year: '2021',
-    name: 'Genesis',
-    milestones: ['First rover prototype', 'Basic chassis and 4-wheel drive', 'Manual teleoperation'],
-    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600&auto=format&fit=crop',
-  },
-  {
-    year: '2022',
-    name: 'Curie',
-    milestones: ['Rocker-bogie suspension', '4-DOF robotic arm', 'First competition entry (IRC)'],
-    image: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=600&auto=format&fit=crop',
-  },
-  {
     year: '2023',
-    name: 'Curie II',
-    milestones: ['5-DOF arm with end effector', 'Custom PCBs', '1st Rank IRDC, 5th ERC Worldwide'],
-    image: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=600&auto=format&fit=crop',
+    name: 'Airavat',
+    milestones: ['Early prototype / Foundation'],
+    image: airavatImg,
   },
   {
     year: '2024',
-    name: 'Curie II v2',
-    milestones: ['Upgraded autonomy stack', 'NIR spectrometer integration', 'Best Business Plan IRC'],
-    image: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=600&auto=format&fit=crop',
+    name: 'Eklavya',
+    milestones: ['International Rover Challenge (IRC) 2024'],
+    image: eklavyaImg,
   },
   {
     year: '2025',
-    name: 'Curie III',
-    milestones: ['6-DOF arm', 'Full autonomous nav', '3rd Intl. ERC, First Indian team at ARC'],
-    image: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=600&auto=format&fit=crop',
+    name: 'Fenrir',
+    milestones: ['International Rover Challenge (IRC) 2025'],
+    image: fenrirImg,
+  },
+  {
+    year: '2025',
+    name: 'Aether',
+    milestones: ['International Space Drone Challenge (ISDC) 2025'],
+    image: aetherImg,
+  },
+  {
+    year: '2026',
+    name: 'Icarus',
+    milestones: ['International Rover Challenge (IRC) 2026'],
+    image: icarusImg,
+  },
+  {
+    year: '2026',
+    name: 'Dionysus',
+    milestones: ['Australian Rover Challenge (ARCh) 2026'],
+    image: dionysusImg,
+    imageStyle: { transform: 'scale(1.4)' },
   },
 ];
 
@@ -246,7 +259,7 @@ const Research = () => {
             Pushing the boundaries of undergraduate engineering through funded research, advanced prototyping, and next-generation robotics.
           </p>
         </div>
-        <div 
+        <div
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
@@ -354,7 +367,7 @@ const Research = () => {
       <section className="research-section" style={{ paddingBottom: '2rem' }}>
         <div className="container">
           <div className="section-header-left">
-            <h2 className="section-heading">Rover Evolution</h2>
+            <h2 className="section-heading">Rover and Drone Evolution</h2>
           </div>
           <p className="section-paragraph max-w-800" style={{ marginBottom: '3rem' }}>
             From our first prototype to a globally competitive rover, trace the engineering journey that defines CRISS Robotics.
@@ -370,7 +383,7 @@ const Research = () => {
               {roverTimeline.map((rover, index) => (
                 <div key={index} className={`rover-timeline-entry scroll-reveal delay-${(index % 5) + 1}`}>
                   <div className="rover-timeline-image">
-                    <img src={rover.image} alt={rover.name} loading="lazy" />
+                    <img src={rover.image} alt={rover.name} loading="lazy" style={rover.imageStyle} />
                     <div className="rover-timeline-year">{rover.year}</div>
                   </div>
                   <div className="rover-timeline-body">

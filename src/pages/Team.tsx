@@ -247,7 +247,7 @@ const excomm: TeamMember[] = [
 // ─── Main Team Page ───────────────────────────────────────────────────────────
 
 const Team = () => {
-  const [activeNav, setActiveNav] = useState('structure');
+  const [activeNav, setActiveNav] = useState('leadership');
   const [isSticky, setIsSticky] = useState(false);
   useScrollReveal();
 
@@ -260,7 +260,7 @@ const Team = () => {
   const otherLeadership = Array.from(new Map(otherLeadershipRaw.filter(m => !excommNames.has(m.name)).map(m => [m.name, m])).values());
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['structure', 'leadership', ...verticals.map(v => v.id)];
+      const sections = ['leadership', ...verticals.map(v => v.id)];
       const scrollPosition = window.scrollY + 160; // offset for sticky nav + global nav
 
       for (const section of sections) {
@@ -307,7 +307,6 @@ const Team = () => {
 
       {/* ── Sticky Nav Bar ── */}
       <nav className={`team-sticky-nav ${isSticky ? 'scrolled' : ''}`}>
-        <button className={`team-nav-btn ${activeNav === 'structure' ? 'active' : ''}`} onClick={() => scrollToSection('structure')}>Structure</button>
         <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')}>Leadership</button>
         {verticals.map(v => (
           <button key={v.id} className={`team-nav-btn ${activeNav === v.id ? 'active' : ''}`} onClick={() => scrollToSection(v.id)}>{v.name}</button>
@@ -315,61 +314,6 @@ const Team = () => {
       </nav>
 
       <div className="container" style={{ padding: '4rem 1rem' }}>
-
-        {/* ── Structure Section ── */}
-        <section id="structure" className="team-section" style={{ marginBottom: '6rem' }}>
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <h2 className="section-heading">Team Structure</h2>
-          </div>
-          <div className="org-chart-container">
-            <div className="tree">
-              <ul>
-                <li>
-                  <div className="org-node">
-                    <h4>Team Captain</h4>
-                  </div>
-                  <ul>
-                    <li>
-                      <div className="org-node">
-                        <h4>Vice Captain</h4>
-                      </div>
-                      <ul>
-                        {verticals.map(v => (
-                          <li key={v.id}>
-                            <div className="org-node">
-                              <h5>{v.name} Lead</h5>
-                            </div>
-                            <ul>
-                              <li>
-                                <div className="org-node">
-                                  <h5>Vice Lead</h5>
-                                </div>
-                                <ul>
-                                  <li>
-                                    <div className="org-node">
-                                      <h5>Systems Engineer</h5>
-                                    </div>
-                                    <ul>
-                                      <li>
-                                        <div className="org-node">
-                                          <h5>Junior Engineers</h5>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                  </li>
-                                </ul>
-                              </li>
-                            </ul>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
 
         {/* ── Leadership Section (ExComm) ── */}
         <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
@@ -404,7 +348,6 @@ const Team = () => {
                     <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
                     <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
-                      <div style={{ color: vertical.accent, marginBottom: '0.5rem' }}>{vertical.icon}</div>
                       <h3 style={{ fontSize: '2.5rem', color: '#fff', fontFamily: 'var(--font-heading)', margin: 0 }}>{vertical.name}</h3>
                       <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', marginTop: '0.5rem' }}>{vertical.fullDesc}</p>
                     </div>

@@ -3,6 +3,8 @@ import { ExternalLink, Trophy, Award, Medal, Star, Play, Cpu, Weight, Radio, Gau
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
+import archVideo from "../images/good_photos/competitions/video arch'26.mp4";
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface RoverSpec {
@@ -31,6 +33,7 @@ interface CompetitionData {
   roverSpecs: RoverSpec[];
   gallery: GalleryImage[];
   sarVideoUrl?: string;        // YouTube embed URL
+  localVideo?: string;         // Local video asset
   achievements: Achievement[];
 }
 
@@ -43,7 +46,7 @@ const competitions: CompetitionData[] = [
     fullName: 'International Rover Challenge',
     website: 'https://www.spaceroboticssociety.org/events/international-rover-challenge/',
     description:
-      'The International Rover Challenge (formerly Indian Rover Challenge), organized by the Space Robotics Society, is the sole competition of its kind in the Asia-Pacific region. It challenges student teams worldwide to engineer rovers ready for space exploration, fostering innovation and inspiring the next generation of engineers. Teams are evaluated across multiple tasks including autonomous traversal, equipment servicing, science operations, and business plan presentations.',
+      'During the International Rover Challenge 2024, we were honored with the Best Business Plan Award for our detailed rover commercialization and sustainability strategy. Competing against top international teams, we secured an overall rank of 10th and finished 2nd in the PIMA evaluation, reflecting our strong balance of technical execution and strategic planning.',
     roverName: 'Curie II',
     roverSpecs: [
       { label: 'Weight', value: '~50 kg', icon: <Weight size={16} /> },
@@ -56,7 +59,7 @@ const competitions: CompetitionData[] = [
       { src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop', alt: 'Team at competition' },
       { src: 'https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop', alt: 'Rover arm operation' },
     ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    sarVideoUrl: 'https://www.youtube.com/embed/Lyqm1RDACO8',
     achievements: [
       { text: 'Best Business Plan Award — IRC 2024', icon: <Trophy size={16} /> },
       { text: '2nd in PIMA Evaluation — IRC 2024', icon: <Medal size={16} /> },
@@ -82,18 +85,17 @@ const competitions: CompetitionData[] = [
       { src: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=800&auto=format&fit=crop', alt: 'Rover on Martian track' },
       { src: 'https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=800&auto=format&fit=crop', alt: 'Software development' },
     ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    sarVideoUrl: 'https://www.youtube.com/embed/o5EDir4B6mE',
     achievements: [
-      { text: '2nd in Asia, 3rd Internationally — ERC 2025', icon: <Medal size={16} /> },
-      { text: '2nd in Asia, 5th Worldwide — ERC 2023', icon: <Medal size={16} /> },
-      { text: 'Best in Maintenance Award — ERC 2023', icon: <Trophy size={16} /> },
+      { text: 'Globally 3rd and 2nd in Asia — ERC 2025', icon: <Medal size={16} /> },
+      { text: '2nd Place, Maintenance & Design Category — ERC 2022', icon: <Trophy size={16} /> },
     ],
   },
   {
     id: 'arch',
     acronym: 'ARCh',
     fullName: 'Australian Rover Challenge',
-    website: 'https://www.aiaa.org/arch',
+    website: 'https://adelaide.edu.au/about/events/2027/australian-rover-challenge/',
     description:
       'The Australian Rover Challenge evaluates a rover\'s ability to operate in complex, real-world environments across the Australian outback. Teams are scored on system architecture, mechanical reliability, autonomous decision-making, and end-to-end mission execution. CRISS Robotics made history by becoming the first and only Indian team to receive an invitation to participate in 2026.',
     roverName: 'Curie III',
@@ -108,9 +110,9 @@ const competitions: CompetitionData[] = [
       { src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop', alt: 'Rover assembly' },
       { src: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=800&auto=format&fit=crop', alt: 'Testing environment' },
     ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    localVideo: archVideo,
     achievements: [
-      { text: 'First & Only Indian Team Invited — ARC 2026', icon: <Star size={16} /> },
+      { text: '1st & only team from India ever invited — ARCh 2026', icon: <Star size={16} /> },
     ],
   },
   {
@@ -134,32 +136,9 @@ const competitions: CompetitionData[] = [
     ],
     sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     achievements: [
-      { text: '1st Rank Worldwide with Curie Rover — IRDC 2023', icon: <Trophy size={16} /> },
+      { text: '1st Rank Overall — IRDC 2023', icon: <Trophy size={16} /> },
+      { text: '2nd Rank Overall — IRDC 2024', icon: <Medal size={16} /> },
       { text: '3rd Rank Overall — IRDC 2025', icon: <Award size={16} /> },
-    ],
-  },
-  {
-    id: 'isdc',
-    acronym: 'ISDC',
-    fullName: 'International Space Development Conference',
-    website: 'https://isdc.nss.org/',
-    description:
-      'The ISDC is one of the world\'s premier annual gatherings focused on space exploration, colonisation, and development. CRISS participates in design competitions and technical presentations, showcasing research and rover technology to a global audience of space professionals and academics. The conference provides a platform to network with leading aerospace organizations and present our engineering innovations.',
-    roverName: 'Curie II',
-    roverSpecs: [
-      { label: 'Weight', value: '~50 kg', icon: <Weight size={16} /> },
-      { label: 'DOF (Arm)', value: '5-DOF', icon: <Cpu size={16} /> },
-      { label: 'Autonomy', value: 'Semi-Autonomous', icon: <Gauge size={16} /> },
-      { label: 'Payload', value: 'Science Suite', icon: <Radio size={16} /> },
-    ],
-    gallery: [
-      { src: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop', alt: 'Conference presentation' },
-      { src: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?q=80&w=800&auto=format&fit=crop', alt: 'Team at ISDC' },
-      { src: 'https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=800&auto=format&fit=crop', alt: 'Space development expo' },
-    ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    achievements: [
-      { text: 'Technical Presentation — ISDC 2024', icon: <Award size={16} /> },
     ],
   },
   {
@@ -183,9 +162,8 @@ const competitions: CompetitionData[] = [
     ],
     sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     achievements: [
-      { text: 'Won Ideation Phase (Level 1) — Robofest 4.0', icon: <Trophy size={16} /> },
-      { text: '₹2.5 Lakhs Prize Money', icon: <Star size={16} /> },
-      { text: 'Selected for Level 2 (In Progress)', icon: <Award size={16} /> },
+      { text: 'Finalists — RoboFest 4.0', icon: <Trophy size={16} /> },
+      { text: 'Top 3 — RoboFest 3.0', icon: <Medal size={16} /> },
     ],
   },
 ];
@@ -242,19 +220,31 @@ const CompetitionSection = ({
           {/* Video + Achievements Grid */}
           <div className="comp-video-achievements-grid">
             {/* SAR Video */}
-            {comp.sarVideoUrl ? (
+            {(comp.sarVideoUrl || comp.localVideo) ? (
               <div className="comp-sar scroll-reveal delay-3">
                 <h3 className="comp-subsection-title">
                   <Play size={18} />
-                  System Acceptance Review
+                  {comp.id === 'irc' 
+                    ? 'IRC 2024 SDDR' 
+                    : comp.id === 'arch' 
+                    ? 'ARCh 2026' 
+                    : 'System Acceptance Review'}
                 </h3>
                 <div className="comp-sar-embed">
-                  <iframe
-                    src={comp.sarVideoUrl}
-                    title={`${comp.acronym} SAR Video`}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  {comp.localVideo ? (
+                    <video
+                      src={comp.localVideo}
+                      controls
+                      style={{ width: '100%', height: '100%', backgroundColor: '#000' }}
+                    />
+                  ) : (
+                    <iframe
+                      src={comp.sarVideoUrl}
+                      title={`${comp.acronym} SAR Video`}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  )}
                 </div>
               </div>
             ) : (
@@ -299,7 +289,7 @@ const Competitions = () => {
             competing in prestigious international competitions.
           </p>
         </div>
-        <div 
+        <div
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >

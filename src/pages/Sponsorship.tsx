@@ -15,6 +15,7 @@ import opticaLogo from '../images/sponsor logos/optica logo.png';
 import pcbPowerLogo from '../images/sponsor logos/pcb power logo.webp';
 import skfLogo from '../images/sponsor logos/skf logo.webp';
 import solidworksLogo from '../images/sponsor logos/solidworks logo.png';
+import speedaccLogo from '../images/sponsor logos/speedacc logo.png';
 
 // Sponsor list
 const sponsors = [
@@ -30,6 +31,7 @@ const sponsors = [
   { name: 'PCB Power', src: pcbPowerLogo, size: 'medium' },
   { name: 'SKF', src: skfLogo, size: 'medium' },
   { name: 'SolidWorks', src: solidworksLogo, size: 'large' },
+  { name: 'SpeedAcc', src: speedaccLogo, size: 'large' },
 ];
 
 const tiers = [
@@ -73,9 +75,9 @@ const tiers = [
     ]
   },
   {
-    name: 'Title',
+    name: 'Platinum',
     amount: '₹3,00,000',
-    desc: 'The ultimate partnership level with maximum visibility.',
+    desc: 'Title sponsor with maximum visibility.',
     color: '#60a5fa', // Bright sky blue instead of dark blue
     perks: [
       'Primary logo on rover chassis',

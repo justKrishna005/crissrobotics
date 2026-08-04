@@ -14,14 +14,14 @@ const Home = () => {
 
       {/* ── Hero Section ── */}
       <header className="page-header page-header--home">
-        <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <h1 className="page-title animate-slide-up delay-100">
+        <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', maxWidth: '100%', paddingRight: '5vw', paddingLeft: '5vw' }}>
+          <h1 className="page-title animate-slide-up delay-100" style={{ fontSize: '6rem', lineHeight: '1', marginBottom: '1rem' }}>
             CRISS Robotics
           </h1>
-          <p className="page-subtitle animate-slide-up delay-200">
+          <p className="page-subtitle animate-slide-up delay-200" style={{ margin: '0 auto 0 0' }}>
             The leading team in BITS Pilani building autonomous Mars rovers, drones, and in-house spectrometers for extreme environments.
           </p>
-          <div className="hero-actions animate-slide-up delay-300" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+          <div className="hero-actions animate-slide-up delay-300" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'flex-start' }}>
             <Link to="/competitions" className="btn btn-solid">
               View Missions
             </Link>
@@ -60,7 +60,7 @@ const Home = () => {
               <div className="upgrade-stat-label">Indian Team ARCh '26</div>
             </div>
             <div className="upgrade-stat-item">
-              <div className="upgrade-stat-value">8+</div>
+              <div className="upgrade-stat-value">10+</div>
               <div className="upgrade-stat-label">Industry Partners</div>
             </div>
           </div>
