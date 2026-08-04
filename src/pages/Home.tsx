@@ -14,14 +14,14 @@ const Home = () => {
 
       {/* ── Hero Section ── */}
       <header className="page-header page-header--home">
-        <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', maxWidth: '100%', paddingRight: '5vw', paddingLeft: '5vw' }}>
-          <h1 className="page-title animate-slide-up delay-100" style={{ fontSize: '6rem', lineHeight: '1', marginBottom: '1rem' }}>
+        <div className="container home-hero-content">
+          <h1 className="page-title animate-slide-up delay-100 home-title">
             CRISS Robotics
           </h1>
-          <p className="page-subtitle animate-slide-up delay-200" style={{ margin: '0 auto 0 0' }}>
+          <p className="page-subtitle animate-slide-up delay-200 home-subtitle">
             The leading team in BITS Pilani building autonomous Mars rovers, drones, and in-house spectrometers for extreme environments.
           </p>
-          <div className="hero-actions animate-slide-up delay-300" style={{ marginTop: '2.5rem', display: 'flex', gap: '1rem', justifyContent: 'flex-start' }}>
+          <div className="hero-actions animate-slide-up delay-300 home-actions">
             <Link to="/competitions" className="btn btn-solid">
               View Missions
             </Link>
@@ -106,11 +106,11 @@ const Home = () => {
           </div>
 
           <div className="story-grid scroll-reveal delay-100">
-            <div className="story-card" style={{ padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <img src={engExtremesImg} alt="Latest Hardware Showcase" style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
+            <div className="story-card fleet-story-img-card">
+              <img src={engExtremesImg} alt="Latest Hardware Showcase" className="fleet-story-img" loading="lazy" />
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', justifyContent: 'center' }}>
+            <div className="fleet-specs-container">
               <div className="spec-card">
                 <h4 className="spec-title">CHASSIS</h4>
                 <p className="spec-desc">Custom carbon-fiber composite structure designed for maximum strength-to-weight ratio in high-stress environments.</p>
@@ -124,7 +124,7 @@ const Home = () => {
                 <p className="spec-desc">6-DOF robotic manipulator capable of precise equipment servicing and heavy payload deployment.</p>
               </div>
 
-              <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+              <div className="fleet-specs-action">
                 <Link to="/research" className="btn btn-outline">
                   Read More
                 </Link>

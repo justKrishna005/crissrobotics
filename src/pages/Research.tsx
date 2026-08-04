@@ -274,7 +274,7 @@ const Research = () => {
 
           <div className="platforms-new-sidebar">
             <h2 className="platforms-new-title">THREE<br />PLATFORMS.<br />ONE MISSION.</h2>
-            <p style={{ color: '#a1a1aa', fontSize: '0.9rem', marginBottom: '3rem', maxWidth: '90%' }}>
+            <p className="platforms-new-desc">
               End-to-end designed, fabricated and programmed by CRISS, no off-the-shelf competition kits.
             </p>
             <ul className="platforms-new-links">

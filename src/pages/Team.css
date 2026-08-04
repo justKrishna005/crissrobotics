@@ -563,6 +563,14 @@
     gap: 3.5rem;
   }
 
+  .leadership-row--top {
+    gap: 4rem;
+  }
+
+  .leadership-row--mid {
+    gap: 2rem;
+  }
+
   .vertical-work-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -571,15 +579,28 @@
 @media (max-width: 600px) {
   .verticals-grid {
     grid-template-columns: 1fr;
-    padding: 1rem 1rem 6rem;
+    padding: 1rem 1rem 4rem;
   }
 
   .vertical-card {
     height: 380px;
   }
 
+  .members-juniors-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
   .members-leads-row {
     gap: 2.5rem;
+  }
+
+  .leadership-row--top {
+    gap: 2.5rem;
+  }
+
+  .leadership-row--mid {
+    gap: 1.5rem;
   }
 
   .vertical-work-grid {

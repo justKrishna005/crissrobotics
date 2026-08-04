@@ -63,6 +63,21 @@ h2 {
   /* Bold headings */
 }
 
+/* Fluid Typography */
+html {
+  font-size: 16px;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+}
+
 h3,
 h4,
 h5,
@@ -82,6 +97,18 @@ h6 {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1.25rem;
+  }
 }
 
 /* Buttons */
@@ -141,7 +168,7 @@ h6 {
 /* Internal Pages Global Styles */
 .page-header {
   position: relative;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -189,19 +216,21 @@ h6 {
 
 .page-title {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
+  line-height: 1.1;
 }
 
 .page-subtitle {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 3vw, 0.95rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--text-secondary);
   max-width: 48rem;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .grid-3 {

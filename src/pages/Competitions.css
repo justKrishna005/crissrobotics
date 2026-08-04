@@ -476,7 +476,8 @@
   }
 
   .comp-single-photo {
-    min-height: 250px;
+    min-height: auto;
+    aspect-ratio: 16/9;
   }
 
   .comp-details-grid {

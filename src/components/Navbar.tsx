@@ -64,8 +64,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="mobile-menu">
+      <div className={`mobile-menu ${isOpen ? 'is-open' : ''}`}>
           <ul className="nav-links-mobile">
             {links.map((link) => (
               <li key={link.name}>
@@ -79,8 +78,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-        </div>
-      )}
+      </div>
     </nav>
   );
 };
