@@ -69,20 +69,20 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Ayush Girish Bhandary',
       role: 'Lead',
-      image: '../teamimages/image_2.webp',
+      image: '/teamimages/image_2.webp',
       linkedin: 'https://linkedin.com',
     },
     viceLead: {
       name: 'Janaansh Patel',
       role: 'Vice Lead',
-      image: '../teamimages/Janansh.webp',
+      image: '/teamimages/Janansh.webp',
       linkedin: 'https://linkedin.com',
     },
     systemsEngineers: [
       {
         name: 'Ved Patel',
         role: 'Systems Engineer',
-        image: '../teamimages/Ved.webp',
+        image: '/teamimages/Ved.webp',
         linkedin: 'https://linkedin.com',
       }
     ],
@@ -107,20 +107,20 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Vibhav Jain',
       role: 'Lead',
-      image: '../teamimages/Vibhav Jain.webp',
+      image: '/teamimages/Vibhav Jain.webp',
       linkedin: 'https://linkedin.com',
     },
     viceLead: {
       name: 'Hitarth Parikh',
       role: 'Vice Lead',
-      image: '../teamimages/Hitarth.webp',
+      image: '/teamimages/Hitarth.webp',
       linkedin: 'https://linkedin.com',
     },
     systemsEngineers: [
       {
         name: 'Prasham Agarwal',
         role: 'Systems Engineer',
-        image: '../teamimages/Prasham.webp',
+        image: '/teamimages/Prasham.webp',
         linkedin: 'https://linkedin.com',
       }
     ],
@@ -145,14 +145,14 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Pranav Biju',
       role: 'Lead',
-      image: '../teamimages/Pranav Biju.webp',
+      image: '/teamimages/Pranav Biju.webp',
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
     },
     viceLead: {
       name: 'Adhyatma Deep Agrawal',
       role: 'Vice Lead',
-      image: '../teamimages/Todi.webp',
+      image: '/teamimages/Todi.webp',
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
     },
@@ -160,7 +160,7 @@ const verticals: VerticalData[] = [
       {
         name: 'Dev Arora',
         role: 'Systems Engineer',
-        image: '../teamimages/Dev.webp',
+        image: '/teamimages/Dev.webp',
         linkedin: 'https://linkedin.com',
         github: 'https://github.com',
       }
@@ -186,7 +186,7 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Jhanvi Matta',
       role: 'Payload Lead',
-      image: '../teamimages/Jhanvi.webp',
+      image: '/teamimages/Jhanvi.webp',
       linkedin: 'https://linkedin.com',
     },
   },
@@ -203,7 +203,7 @@ const MemberCard = ({
 }) => (
   <div className={`member-card scroll-reveal delay-${(index % 5) + 1}`}>
     <div className="member-image-container">
-      <img src={member.image} alt={member.name} className="member-photo" />
+      <img src={member.image} alt={member.name} className="member-photo" loading="lazy" />
     </div>
     <h3 className="member-name">{member.name}</h3>
     <p className="member-role">{member.role}</p>
@@ -232,13 +232,13 @@ const excomm: TeamMember[] = [
   {
     name: 'Krishna Dubey',
     role: 'Team Captain',
-    image: '../teamimages/image_1.webp',
+    image: '/teamimages/image_1.webp',
     linkedin: 'https://linkedin.com',
   },
   {
     name: 'Ayush Girish Bhandary',
     role: 'Team Vice Captain',
-    image: '../teamimages/image_2.webp',
+    image: '/teamimages/image_2.webp',
     linkedin: 'https://linkedin.com',
   }
 ];
@@ -246,7 +246,7 @@ const excomm: TeamMember[] = [
 const facultyAdvisor: TeamMember = {
   name: 'Dr. M.S. Dasgupta',
   role: 'Faculty Advisor',
-  image: '../teamimages/das-gupta.webp',
+  image: '/teamimages/das-gupta.webp',
   email: 'mailto:dasgupta@pilani.bits-pilani.ac.in',
 };
 
@@ -362,7 +362,7 @@ const Team = () => {
                 {/* Subsystem Hero / Photos */}
                 <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
                   <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '6px', overflow: 'hidden', marginBottom: '2rem' }}>
-                    <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
                     <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
                       <h3 style={{ fontSize: '2.5rem', color: '#fff', fontFamily: 'var(--font-heading)', margin: 0 }}>{vertical.name}</h3>

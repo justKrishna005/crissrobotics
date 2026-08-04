@@ -1,1 +1,15 @@
 /* App specific styles, global styles are in index.css */
+
+/* Smooth page content fade-in on route change */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app-container > main > * {
+  animation: pageFadeIn 0.3s ease-out;
+}

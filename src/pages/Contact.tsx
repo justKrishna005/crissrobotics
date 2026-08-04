@@ -103,10 +103,10 @@ const Contact = () => {
               <div className="social-links-section">
                 <h4 className="info-label">Follow Us</h4>
                 <div className="contact-social-links">
-                  <a href="#" className="social-link-item" aria-label="Instagram">
+                  <a href="https://www.instagram.com/criss_robotics/" target="_blank" rel="noopener noreferrer" className="social-link-item" aria-label="Instagram">
                     <InstagramIcon />
                   </a>
-                  <a href="#" className="social-link-item" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/criss-robotics/" target="_blank" rel="noopener noreferrer" className="social-link-item" aria-label="LinkedIn">
                     <LinkedinIcon2 />
                   </a>
                 </div>

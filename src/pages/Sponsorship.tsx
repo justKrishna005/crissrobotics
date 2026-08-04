@@ -269,7 +269,7 @@ const Sponsorship = () => {
           <div className="logos-grid scroll-reveal delay-2">
             {sponsors.map((s, i) => (
               <div className={`logo-cell logo-cell--${s.size}`} key={i}>
-                <img src={s.src} alt={s.name} className={`sponsor-logo-img ${s.invert ? 'invert-logo' : ''}`} />
+                <img src={s.src} alt={s.name} className={`sponsor-logo-img ${s.invert ? 'invert-logo' : ''}`} loading="lazy" />
               </div>
             ))}
           </div>

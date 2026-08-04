@@ -4,6 +4,8 @@ import useScrollReveal from '../hooks/useScrollReveal';
 import './Competitions.css';
 
 import archVideo from "../images/good_photos/competitions/video arch'26.mp4";
+import irdcVideo from "../images/good_photos/competitions/curie irdc.mp4";
+import robofestVideo from "../images/good_photos/competitions/robofest.mp4";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -46,7 +48,7 @@ const competitions: CompetitionData[] = [
     fullName: 'International Rover Challenge',
     website: 'https://www.spaceroboticssociety.org/events/international-rover-challenge/',
     description:
-      'During the International Rover Challenge 2024, we were honored with the Best Business Plan Award for our detailed rover commercialization and sustainability strategy. Competing against top international teams, we secured an overall rank of 10th and finished 2nd in the PIMA evaluation, reflecting our strong balance of technical execution and strategic planning.',
+      'The International Rover Challenge (IRC) is an annual space robotics competition organized by the Space Robotics Society (SPROS). It challenges university students from around the globe to design, build, and operate next-generation Mars rovers in simulated Martian conditions. Teams undergo rigorous evaluation across various domains including autonomous navigation, science missions, and extreme retrieval tasks, fostering innovation in planetary exploration.',
     roverName: 'Curie II',
     roverSpecs: [
       { label: 'Weight', value: '~50 kg', icon: <Weight size={16} /> },
@@ -134,7 +136,7 @@ const competitions: CompetitionData[] = [
       { src: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=800&auto=format&fit=crop', alt: 'CAD modeling' },
       { src: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?q=80&w=800&auto=format&fit=crop', alt: 'Rover prototype' },
     ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    localVideo: irdcVideo,
     achievements: [
       { text: '1st Rank Overall — IRDC 2023', icon: <Trophy size={16} /> },
       { text: '2nd Rank Overall — IRDC 2024', icon: <Medal size={16} /> },
@@ -160,7 +162,7 @@ const competitions: CompetitionData[] = [
       { src: 'https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=800&auto=format&fit=crop', alt: 'Autonomous testing' },
       { src: 'https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=800&auto=format&fit=crop', alt: 'Electronics work' },
     ],
-    sarVideoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    localVideo: robofestVideo,
     achievements: [
       { text: 'Finalists — RoboFest 4.0', icon: <Trophy size={16} /> },
       { text: 'Top 3 — RoboFest 3.0', icon: <Medal size={16} /> },
