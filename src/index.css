@@ -226,10 +226,14 @@ h6 {
 .glass-card {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0;
+  border-radius: 6px;
   /* Sharp edges */
   padding: 2.5rem;
   transition: border-color 0.3s ease;
+}
+
+img:not(.logo-image):not(.sponsor-logo-img), video, iframe {
+  border-radius: 6px;
 }
 
 .glass-card:hover {

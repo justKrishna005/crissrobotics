@@ -243,6 +243,12 @@ const excomm: TeamMember[] = [
   }
 ];
 
+const facultyAdvisor: TeamMember = {
+  name: 'Dr. M.S. Dasgupta',
+  role: 'Faculty Advisor',
+  image: '../teamimages/das-gupta.webp',
+  email: 'mailto:dasgupta@pilani.bits-pilani.ac.in',
+};
 
 // ─── Main Team Page ───────────────────────────────────────────────────────────
 
@@ -308,6 +314,7 @@ const Team = () => {
       {/* ── Sticky Nav Bar ── */}
       <nav className={`team-sticky-nav ${isSticky ? 'scrolled' : ''}`}>
         <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')}>Leadership</button>
+        <button className={`team-nav-btn ${activeNav === 'advisor' ? 'active' : ''}`} onClick={() => scrollToSection('advisor')}>Faculty Advisor</button>
         {verticals.map(v => (
           <button key={v.id} className={`team-nav-btn ${activeNav === v.id ? 'active' : ''}`} onClick={() => scrollToSection(v.id)}>{v.name}</button>
         ))}
@@ -336,6 +343,16 @@ const Team = () => {
           </div>
         </section>
 
+        {/* ── Faculty Advisor ── */}
+        <section id="advisor" className="team-section" style={{ marginBottom: '6rem' }}>
+          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 className="section-heading">Faculty Advisor</h2>
+          </div>
+          <div className="leadership-row leadership-row--top">
+            <MemberCard member={facultyAdvisor} index={0} />
+          </div>
+        </section>
+
         {/* ── Subsystems Section ── */}
         <section id="subsystems" className="team-section">
           <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
@@ -344,7 +361,7 @@ const Team = () => {
 
                 {/* Subsystem Hero / Photos */}
                 <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
-                  <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '4px', overflow: 'hidden', marginBottom: '2rem' }}>
+                  <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '6px', overflow: 'hidden', marginBottom: '2rem' }}>
                     <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
                     <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
