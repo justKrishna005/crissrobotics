@@ -3,19 +3,19 @@ import { Globe2, CheckCircle, Target, Network, Binary, ChevronDown } from 'lucid
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
 
-import srtLogo from '../images/sponsor logos/SRT logo.png';
-import altiumLogo from '../images/sponsor logos/altium logo.svg';
-import ansysLogo from '../images/sponsor logos/ansys logo.png';
-import autodeskLogo from '../images/sponsor logos/autodesk logo.png';
-import dwartLogo from '../images/sponsor logos/dwart logo.png';
-import krysnayeLogo from '../images/sponsor logos/krysnaye logo.png';
-import odriveLogo from '../images/sponsor logos/odrive logo.png';
-import onlyScrewsLogo from '../images/sponsor logos/only screws logo.avif';
-import opticaLogo from '../images/sponsor logos/optica logo.png';
-import pcbPowerLogo from '../images/sponsor logos/pcb power logo.webp';
-import skfLogo from '../images/sponsor logos/skf logo.webp';
-import solidworksLogo from '../images/sponsor logos/solidworks logo.png';
-import speedaccLogo from '../images/sponsor logos/speedacc logo.png';
+const srtLogo = '/images/sponsor logos/SRT logo.png';
+const altiumLogo = '/images/sponsor logos/altium logo.svg';
+const ansysLogo = '/images/sponsor logos/ansys logo.png';
+const autodeskLogo = '/images/sponsor logos/autodesk logo.png';
+const dwartLogo = '/images/sponsor logos/dwart logo.png';
+const krysnayeLogo = '/images/sponsor logos/krysnaye logo.png';
+const odriveLogo = '/images/sponsor logos/odrive logo.png';
+const onlyScrewsLogo = '/images/sponsor logos/only screws logo.avif';
+const opticaLogo = '/images/sponsor logos/optica logo.png';
+const pcbPowerLogo = '/images/sponsor logos/pcb power logo.webp';
+const skfLogo = '/images/sponsor logos/skf logo.webp';
+const solidworksLogo = '/images/sponsor logos/solidworks logo.png';
+const speedaccLogo = '/images/sponsor logos/speedacc logo.png';
 
 // Sponsor list
 const sponsors = [
@@ -281,3 +281,4 @@ const Sponsorship = () => {
 };
 
 export default Sponsorship;
+

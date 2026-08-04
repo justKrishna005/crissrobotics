@@ -2,14 +2,14 @@ import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
-import armImage from '../images/good_photos/arm_2_transparent_BG.PNG';
-import ramanTestingImage from '../images/good_photos/payload/Raman testing.png';
-import airavatImg from '../images/good_photos/rover renders/airavat.png';
-import eklavyaImg from '../images/good_photos/rover renders/eklavya.png';
-import fenrirImg from '../images/good_photos/rover renders/fenrir.png';
-import aetherImg from '../images/good_photos/rover renders/aether.png';
-import icarusImg from '../images/good_photos/rover renders/icarus old.png';
-import dionysusImg from '../images/good_photos/rover renders/dionysus blackchassis.PNG';
+const armImage = '/images/good_photos/arm_2_transparent_BG.PNG';
+const ramanTestingImage = '/images/good_photos/payload/Raman testing.png';
+const airavatImg = '/images/good_photos/rover renders/airavat.png';
+const eklavyaImg = '/images/good_photos/rover renders/eklavya.png';
+const fenrirImg = '/images/good_photos/rover renders/fenrir.png';
+const aetherImg = '/images/good_photos/rover renders/aether.png';
+const icarusImg = '/images/good_photos/rover renders/icarus old.png';
+const dionysusImg = '/images/good_photos/rover renders/dionysus blackchassis.PNG';
 
 // ─── Funded Projects Data ─────────────────────────────────────────────────────
 
@@ -407,3 +407,4 @@ const Research = () => {
 };
 
 export default Research;
+
