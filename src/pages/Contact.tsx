@@ -94,8 +94,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="info-label">Email</h4>
-                  <a href="mailto:crissrobotics.pilani.bits-pilani.ac.in" className="info-value info-link">
-                    crissrobotics.pilani.bits-pilani.ac.in
+                  <a href="mailto:crissrobotics@pilani.bits-pilani.ac.in" className="info-value info-link">
+                    crissrobotics.pilani@bits-pilani.ac.in
                   </a>
                 </div>
               </div>

@@ -46,7 +46,7 @@
   animation: cardReveal 0.55s cubic-bezier(0.4, 0, 0.2, 1) both;
   /* Hover */
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.4s ease;
+    box-shadow 0.4s ease;
 }
 
 @keyframes cardReveal {
@@ -54,6 +54,7 @@
     opacity: 0;
     transform: translateY(36px) scale(0.96);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -63,19 +64,20 @@
 .vertical-card:hover {
   transform: translateY(-14px) scale(1.02);
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.65),
-              0 0 0 1.5px var(--card-accent, rgba(255, 255, 255, 0.2));
+    0 0 0 1.5px var(--card-accent, rgba(255, 255, 255, 0.2));
   z-index: 2;
 }
 
 .vertical-card:focus-visible {
   box-shadow: 0 0 0 3px var(--card-accent, #60a5fa),
-              0 24px 60px rgba(0, 0, 0, 0.5);
+    0 24px 60px rgba(0, 0, 0, 0.5);
 }
 
 /* Background image */
 .vertical-card-bg {
   position: absolute;
-  inset: -6%;            /* slightly oversized so scale doesn't show edges */
+  inset: -6%;
+  /* slightly oversized so scale doesn't show edges */
   background-size: cover;
   background-position: center;
   filter: brightness(0.65);
@@ -91,22 +93,18 @@
 .vertical-card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.93) 0%,
-    rgba(0, 0, 0, 0.55) 45%,
-    rgba(255, 255, 255, 0.08) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.93) 0%,
+      rgba(0, 0, 0, 0.55) 45%,
+      rgba(255, 255, 255, 0.08) 100%);
   transition: background 0.4s ease;
 }
 
 .vertical-card:hover .vertical-card-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.96) 0%,
-    rgba(0, 0, 0, 0.6) 45%,
-    rgba(255, 255, 255, 0.12) 100%
-  );
+  background: linear-gradient(to top,
+      rgba(0, 0, 0, 0.96) 0%,
+      rgba(0, 0, 0, 0.6) 45%,
+      rgba(255, 255, 255, 0.12) 100%);
 }
 
 /* Accent glow bloom at the bottom */
@@ -277,12 +275,10 @@
 .vertical-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.12) 0%,
-    rgba(255, 255, 255, 0.35) 45%,
-    rgba(0, 0, 0, 0.82) 100%
-  );
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.35) 45%,
+      rgba(0, 0, 0, 0.82) 100%);
 }
 
 .vertical-hero-content {
@@ -456,7 +452,8 @@
   align-items: center;
   text-align: center;
   background: transparent;
-  width: 240px; /* fixed width ensures photo circles are always spaced equally */
+  width: 240px;
+  /* fixed width ensures photo circles are always spaced equally */
 }
 
 /* Image circle */
@@ -608,7 +605,8 @@
   }
 
   .vertical-hero-desc {
-    display: none; /* hide on very small screens — too cramped */
+    display: none;
+    /* hide on very small screens — too cramped */
   }
 }
 
@@ -627,7 +625,10 @@
   scrollbar-width: none;
 }
 
-.team-sticky-nav::-webkit-scrollbar { display: none; }
+.team-sticky-nav::-webkit-scrollbar {
+  display: none;
+}
+
 
 
 .team-nav-btn {
@@ -684,7 +685,8 @@
 }
 
 /* We will use ::before and ::after to draw the connectors */
-.tree li::before, .tree li::after {
+.tree li::before,
+.tree li::after {
   content: '';
   position: absolute;
   top: 0;
@@ -693,6 +695,7 @@
   width: 50%;
   height: 20px;
 }
+
 .tree li::after {
   right: auto;
   left: 50%;
@@ -700,7 +703,8 @@
 }
 
 /* We need to remove left-right connectors from elements without any siblings */
-.tree li:only-child::after, .tree li:only-child::before {
+.tree li:only-child::after,
+.tree li:only-child::before {
   display: none;
 }
 
@@ -710,7 +714,8 @@
 }
 
 /* Remove left connector from first child and right connector from last child */
-.tree li:first-child::before, .tree li:last-child::after {
+.tree li:first-child::before,
+.tree li:last-child::after {
   border: 0 none;
 }
 
@@ -719,6 +724,7 @@
   border-right: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: 6px;
 }
+
 .tree li:first-child::after {
   border-radius: 6px;
 }
@@ -743,7 +749,8 @@
   margin: 0 auto;
 }
 
-.org-node h4, .org-node h5 {
+.org-node h4,
+.org-node h5 {
   font-family: var(--font-main);
   font-weight: 300;
   color: #fff;
@@ -765,10 +772,14 @@
     flex-direction: column;
     padding-top: 0;
   }
+
   .tree li {
     padding: 10px 0;
   }
-  .tree li::before, .tree li::after, .tree ul ul::before {
+
+  .tree li::before,
+  .tree li::after,
+  .tree ul ul::before {
     display: none;
   }
-}
+}
