@@ -189,6 +189,12 @@ const verticals: VerticalData[] = [
       image: '/teamimages/Jhanvi.webp',
       linkedin: 'https://linkedin.com',
     },
+    viceLead: {
+      name: 'Winnie the Poo',
+      role: 'Vice Lead',
+      image: '/teamimages/poo lead.jpg',
+      linkedin: 'https://linkedin.com',
+    },
   },
 ];
 
