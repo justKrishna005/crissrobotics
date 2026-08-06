@@ -186,7 +186,7 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Jhanvi Matta',
       role: 'Payload Lead',
-      image: '/teamimages/Jhanvi.webp',
+      image: '/teamimages/jhanvi.png',
       linkedin: 'https://linkedin.com',
     },
     viceLead: {
@@ -331,7 +331,7 @@ const Team = () => {
         {/* ── Leadership Section (ExComm) ── */}
         <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 className="section-heading">Leadership</h2>
+            <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Leadership</h3>
           </div>
 
           {/* Row 1: Team Captain + Vice Captain */}
@@ -341,18 +341,13 @@ const Team = () => {
             ))}
           </div>
 
-          {/* Row 2: Leads, Vice Leads, and Systems Engineers */}
-          <div className="leadership-row leadership-row--mid" style={{ marginTop: '3rem' }}>
-            {otherLeadership.map((member, i) => (
-              <MemberCard key={i} member={member} index={i + excomm.length} />
-            ))}
-          </div>
+
         </section>
 
         {/* ── Faculty Advisor ── */}
         <section id="advisor" className="team-section" style={{ marginBottom: '6rem' }}>
           <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 className="section-heading">Faculty Advisor</h2>
+            <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Faculty Advisor</h3>
           </div>
           <div className="leadership-row leadership-row--top">
             <MemberCard member={facultyAdvisor} index={0} />
@@ -365,16 +360,10 @@ const Team = () => {
             {verticals.map((vertical) => (
               <div key={vertical.id} id={vertical.id} className="subsystem-block">
 
-                {/* Subsystem Hero / Photos */}
-                <div className="subsystem-header" style={{ marginBottom: '3rem' }}>
-                  <div className="subsystem-banner" style={{ position: 'relative', height: '300px', borderRadius: '6px', overflow: 'hidden', marginBottom: '2rem' }}>
-                    <img src={vertical.heroImage} alt={vertical.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(10,15,30,0.9) 0%, rgba(10,15,30,0.2) 100%)' }}></div>
-                    <div style={{ position: 'absolute', bottom: '2rem', left: '2rem', zIndex: 1 }}>
-                      <h3 style={{ fontSize: '2.5rem', color: '#fff', fontFamily: 'var(--font-heading)', margin: 0 }}>{vertical.name}</h3>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '600px', marginTop: '0.5rem' }}>{vertical.fullDesc}</p>
-                    </div>
-                  </div>
+                {/* Subsystem Header */}
+                <div className="subsystem-header" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                  <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>{vertical.name}</h3>
+                  <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>{vertical.fullDesc}</p>
                 </div>
 
                 {/* Subsystem Members Centered */}
