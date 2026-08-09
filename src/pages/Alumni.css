@@ -23,9 +23,6 @@
   scrollbar-width: none;
 }
 
-.alumni-year-bar.scrolled {
-  /* Kept for class presence but style is handled by base black background */
-}
 
 .alumni-year-bar::-webkit-scrollbar { display: none; }
 

@@ -263,13 +263,7 @@ const Team = () => {
   const [isSticky, setIsSticky] = useState(false);
   useScrollReveal();
 
-  const allLeads = verticals.map(v => v.lead);
-  const allViceLeads = verticals.flatMap(v => v.viceLead ? [v.viceLead] : []);
-  const allSystemsEngineers = verticals.flatMap(v => v.systemsEngineers || []);
 
-  const otherLeadershipRaw = [...allLeads, ...allViceLeads, ...allSystemsEngineers];
-  const excommNames = new Set(excomm.map(m => m.name));
-  const otherLeadership = Array.from(new Map(otherLeadershipRaw.filter(m => !excommNames.has(m.name)).map(m => [m.name, m])).values());
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['leadership', ...verticals.map(v => v.id)];
