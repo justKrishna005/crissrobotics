@@ -69,21 +69,64 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Ayush Girish Bhandary',
       role: 'Lead',
-      image: '/teamimages/image_2.webp',
-      linkedin: 'https://linkedin.com',
+      image: '/team images/24 Batch/image_2.webp',
+      linkedin: 'https://www.linkedin.com/in/ayush-girish-bhandary-95582a324/',
     },
     viceLead: {
       name: 'Janaansh Patel',
       role: 'Vice Lead',
-      image: '/teamimages/Janansh.webp',
+      image: '/team images/24 Batch/Janansh.webp',
       linkedin: 'https://linkedin.com',
     },
     systemsEngineers: [
       {
         name: 'Ved Patel',
         role: 'Systems Engineer',
-        image: '/teamimages/Ved.webp',
+        image: '/team images/24 Batch/Ved.webp',
         linkedin: 'https://linkedin.com',
+      },
+      {
+        name: 'Nissan Mohanty',
+        role: 'Member',
+        image: '/team images/25 Batch/NISSAN MOHANTY.png',
+        linkedin: 'https://www.linkedin.com/in/nissan-mohanty-880401214',
+        github: 'https://github.com/rolling-thunder18',
+      },
+      {
+        name: 'Arnav Jain',
+        role: 'Member',
+        image: '/team images/25 Batch/ARNAV JAIN.jpg',
+        linkedin: 'https://www.linkedin.com/in/arnav-jain-990382375',
+      },
+      {
+        name: 'Shraddha Nair',
+        role: 'Member',
+        image: '/team images/25 Batch/SHRADDHA SHARATH NAIR.jpeg',
+        linkedin: 'https://www.linkedin.com/in/shraddha-sharath-nair-b20baa42a/',
+      },
+      {
+        name: 'Omkar Rajadhyaksha',
+        role: 'Member',
+        image: '/team images/25 Batch/OMKAR RAHUL RAJADHYAKSHA.png',
+        linkedin: 'https://www.linkedin.com/in/omkar-rajadhyaksha/',
+      },
+      {
+        name: 'Karan Anand',
+        role: 'Member',
+        image: '/team images/25 Batch/KARAN ANAND.jpeg',
+        linkedin: 'https://www.linkedin.com/in/karan-anand-2801953a1/',
+      },
+      {
+        name: 'Shreyas Nanotkar',
+        role: 'Member',
+        image: '/team images/25 Batch/SHREYAS SACHIN NANOTKAR.jpg',
+        linkedin: 'https://www.linkedin.com/in/shreyas-nanotkar-630157322',
+      },
+      {
+        name: 'Pratham Gautam Sinai Talaulikar',
+        role: 'Member',
+        image: '/team images/25 Batch/PRATHAM GAUTAM SINAI TALAULIKAR.jpg',
+        linkedin: 'https://www.linkedin.com/in/pratham-talaulikar-0057bb227',
       }
     ],
   },
@@ -107,21 +150,96 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Vibhav Jain',
       role: 'Lead',
-      image: '/teamimages/Vibhav Jain.webp',
-      linkedin: 'https://linkedin.com',
+      image: '/team images/24 Batch/vibhav jain.jpeg',
+      linkedin: 'https://www.linkedin.com/in/vibhav-jain-203949323',
+      objectPosition: 'center 15%',
     },
     viceLead: {
       name: 'Hitarth Parikh',
       role: 'Vice Lead',
-      image: '/teamimages/Hitarth.webp',
-      linkedin: 'https://linkedin.com',
+      image: '/team images/24 Batch/Hitarth.webp',
+      linkedin: 'https://www.linkedin.com/in/hitarth-bhavin-parikh',
+      objectPosition: 'center 15%',
     },
     systemsEngineers: [
       {
         name: 'Prasham Agarwal',
         role: 'Systems Engineer',
-        image: '/teamimages/Prasham.webp',
-        linkedin: 'https://linkedin.com',
+        image: '/team images/24 Batch/Prasham.webp',
+        linkedin: 'https://www.linkedin.com/in/prasham-agarwal-2044a7316',
+        github: 'https://github.com/Prasham884',
+      },
+      {
+        name: 'Adit Sarkar',
+        role: 'Member',
+        image: '/team images/25 Batch/ADIT SARKAR.jpeg',
+        linkedin: 'https://www.linkedin.com/in/adit-sarkar-a2538b329',
+      },
+      {
+        name: 'Yash Maheshwari',
+        role: 'Member',
+        image: '/team images/25 Batch/YASH RAKESHKUMAR MAHESHWARI.jpg',
+        linkedin: 'https://www.linkedin.com/in/yash-maheshwari-87670731a/',
+        github: 'https://github.com/Yash7288',
+      },
+      {
+        name: 'Viinaayak Gupta',
+        role: 'Member',
+        image: '/team images/25 Batch/VIINAAYAK GUPTA.jpeg',
+        linkedin: 'https://www.linkedin.com/in/viinaayak-gupta-3116b4387',
+      },
+      {
+        name: 'Maharnava Sharma',
+        role: 'Member',
+        image: '/team images/25 Batch/MAHARNAVA SHARMA.webp',
+        linkedin: 'https://www.linkedin.com/in/maharnava-sharma-44079a386/',
+      },
+      {
+        name: 'Ameeraa Dashaputra',
+        role: 'Member',
+        image: '/team images/25 Batch/AMEERAA RAJESH DASHAPUTRA.jpeg',
+        linkedin: 'https://www.linkedin.com/in/ameeraa-dashaputra-0b6415380',
+      },
+      {
+        name: 'Aditya Balaraman',
+        role: 'Member',
+        image: '/team images/25 Batch/ADITYA BALARAMAN.jpeg',
+        linkedin: 'https://www.linkedin.com/in/aditya-balaraman-01800842b/',
+        github: 'https://github.com/4dityabalaraman',
+      },
+      {
+        name: 'Sharanya Sharma',
+        role: 'Member',
+        image: '/team images/25 Batch/SHARANYA SHARMA.jpeg',
+        linkedin: 'https://www.linkedin.com/in/sharanya-sharma-94584436a/',
+      },
+      {
+        name: 'Sai Dongargaonkar',
+        role: 'Member',
+        image: '/team images/25 Batch/SAI DONGARGAONKAR.jpg',
+        linkedin: 'https://in.linkedin.com/in/sai-dongargaonkar-b15b7b262',
+        github: 'https://github.com/MrGuardianGo',
+      },
+      {
+        name: 'Sparsh Bansal',
+        role: 'Member',
+        image: '/team images/25 Batch/Sparsh Bansal.jpg',
+        linkedin: 'https://www.linkedin.com/in/sparsh-bansal-2a7481379/',
+        github: 'https://github.com/Sparz2',
+      },
+      {
+        name: 'Prateek Mittal',
+        role: 'Member',
+        image: '/team images/25 Batch/PRATEEK MITTAL.jpg',
+        linkedin: 'https://www.linkedin.com/in/prateek-mittal-52a38a237',
+        github: 'https://github.com/PrateekM-Stu',
+      },
+      {
+        name: 'Vidit Singh Sikarwar',
+        role: 'Member',
+        image: '/team images/25 Batch/VIDIT SINGH SIKARWAR.jpg',
+        linkedin: 'https://www.linkedin.com/in/vidit-singh-sikarwar-079318384',
+        github: 'https://github.com/viditsikarwar8-pixel',
       }
     ],
   },
@@ -145,14 +263,14 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Pranav Biju',
       role: 'Lead',
-      image: '/teamimages/Pranav Biju.webp',
+      image: '/team images/24 Batch/Pranav Biju.webp',
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
     },
     viceLead: {
       name: 'Adhyatma Deep Agrawal',
       role: 'Vice Lead',
-      image: '/teamimages/Todi.webp',
+      image: '/team images/24 Batch/Todi.webp',
       linkedin: 'https://linkedin.com',
       github: 'https://github.com',
     },
@@ -160,9 +278,72 @@ const verticals: VerticalData[] = [
       {
         name: 'Dev Arora',
         role: 'Systems Engineer',
-        image: '/teamimages/Dev.webp',
+        image: '/team images/24 Batch/Dev.webp',
         linkedin: 'https://linkedin.com',
         github: 'https://github.com',
+      },
+      {
+        name: 'Romir Karna',
+        role: 'Member',
+        image: '/team images/25 Batch/ROMIR KARNA.jpg',
+        linkedin: 'https://www.linkedin.com/in/romirkarna/',
+        github: 'https://github.com/Romir-Karna7',
+      },
+      {
+        name: 'Agatsya Om',
+        role: 'Member',
+        image: '/team images/25 Batch/AGATSYA OM.jpg',
+        linkedin: 'https://www.linkedin.com/in/agatsya-om',
+        github: 'https://github.com/agatsya-blip',
+      },
+      {
+        name: 'Hitesh Pote',
+        role: 'Member',
+        image: '/team images/25 Batch/HITESH BABASAHEB POTE.jpg',
+        linkedin: 'https://www.linkedin.com/in/hiteshpote',
+        github: 'https://github.com/HiteshPote',
+      },
+      {
+        name: 'Mohammad Talha',
+        role: 'Member',
+        image: '/team images/25 Batch/MOHAMMAD TALHA.jpeg',
+        linkedin: 'https://www.linkedin.com/in/mohammad-talha-313aaa377',
+        github: 'https://github.com/MohammadTalha06',
+      },
+      {
+        name: 'Veer Raghuvanshi',
+        role: 'Member',
+        image: '/team images/25 Batch/VEER RAGHUVANSHI.jpeg',
+        linkedin: 'https://www.linkedin.com/in/veerraghuvanshi',
+        github: 'https://github.com/VeerR13',
+      },
+      {
+        name: 'Sagar Kumar',
+        role: 'Member',
+        image: '/team images/25 Batch/SAGAR KUMAR.jpeg',
+        linkedin: 'https://www.linkedin.com/in/sagar-kumar36',
+        github: 'https://github.com/samscienced32-blip',
+      },
+      {
+        name: 'Ishan Kumar',
+        role: 'Member',
+        image: '/team images/25 Batch/ISHAN KUMAR.jpg',
+        linkedin: 'https://www.linkedin.com/in/ishan-kumar-637022412',
+        github: 'https://github.com/shadowpenguin28',
+      },
+      {
+        name: 'Shivam Ghadge',
+        role: 'Member',
+        image: '/team images/25 Batch/SHIVAM MACHINDRANATH GHADGE.jpg',
+        linkedin: 'https://www.linkedin.com/in/shivam-ghadge-7532a2375',
+        github: 'https://github.com/razqen',
+      },
+      {
+        name: 'Ananya Mukherjee',
+        role: 'Member',
+        image: '/team images/25 Batch/ANANYA MUKHERJEE.jpg',
+        linkedin: 'https://www.linkedin.com/in/mukherjee-ananya',
+        github: 'https://github.com/mathananya',
       }
     ],
   },
@@ -186,15 +367,44 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Jhanvi Matta',
       role: 'Payload Lead',
-      image: '/teamimages/jhanvi.png',
-      linkedin: 'https://linkedin.com',
+      image: '/team images/24 Batch/Jhanvi.webp',
+      linkedin: 'https://www.linkedin.com/in/jhanvimatta/',
+      github: 'https://github.com/jhanvimatta',
     },
     viceLead: {
       name: 'Winnie the Poo',
       role: 'Vice Lead',
-      image: '/teamimages/poo lead.jpg',
+      image: '/team images/24 Batch/poo lead.jpg',
       linkedin: 'https://linkedin.com',
     },
+    systemsEngineers: [
+      {
+        name: 'Juin Jestin K',
+        role: 'Member',
+        image: '/team images/25 Batch/JUIN JESTIN K.JPG',
+        linkedin: 'https://www.linkedin.com/in/juin-jestin-kalathil-a296793a8',
+        github: 'https://github.com/juinjustkiddin',
+      },
+      {
+        name: 'Mehul Agarwal',
+        role: 'Member',
+        image: '/team images/25 Batch/MEHUL AGARWAL.jpg',
+        linkedin: 'https://www.linkedin.com/in/mehul-agarwal-08a5a12a9',
+      },
+      {
+        name: 'Etish Mathur',
+        role: 'Member',
+        image: '/team images/25 Batch/ETISH MATHUR.jpeg',
+        linkedin: 'https://www.linkedin.com/in/etish-mathur-3b057939a',
+        github: 'https://github.com/Etishgit',
+      },
+      {
+        name: 'Anugraha A',
+        role: 'Member',
+        image: '/team images/25 Batch/ANUGRAHA A.jpeg',
+        linkedin: 'https://www.linkedin.com/in/anugraha-a-17717242b',
+      }
+    ],
   },
 ];
 
@@ -209,7 +419,13 @@ const MemberCard = ({
 }) => (
   <div className={`member-card scroll-reveal delay-${(index % 5) + 1}`}>
     <div className="member-image-container">
-      <img src={member.image} alt={member.name} className="member-photo" loading="lazy" />
+      <img 
+        src={member.image} 
+        alt={member.name} 
+        className="member-photo" 
+        loading="lazy" 
+        style={{ objectPosition: member.objectPosition || 'center' }} 
+      />
     </div>
     <h3 className="member-name">{member.name}</h3>
     <p className="member-role">{member.role}</p>
@@ -238,21 +454,22 @@ const excomm: TeamMember[] = [
   {
     name: 'Krishna Dubey',
     role: 'Team Captain',
-    image: '/teamimages/image_1.webp',
-    linkedin: 'https://linkedin.com',
+    image: '/team images/24 Batch/image_1.webp',
+    linkedin: 'https://www.linkedin.com/in/krishna-dubey-5638aa248/',
+    github: 'https://github.com/justKrishna005',
   },
   {
     name: 'Ayush Girish Bhandary',
     role: 'Team Vice Captain',
-    image: '/teamimages/image_2.webp',
-    linkedin: 'https://linkedin.com',
+    image: '/team images/24 Batch/image_2.webp',
+    linkedin: 'https://www.linkedin.com/in/ayush-girish-bhandary-95582a324/',
   }
 ];
 
 const facultyAdvisor: TeamMember = {
   name: 'Dr. M.S. Dasgupta',
   role: 'Faculty Advisor',
-  image: '/teamimages/das-gupta.webp',
+  image: '/team images/24 Batch/das-gupta.webp',
   email: 'mailto:dasgupta@pilani.bits-pilani.ac.in',
 };
 
@@ -303,7 +520,7 @@ const Team = () => {
             A diverse group of engineering students dedicated to building the next generation of space exploration robotics.
           </p>
         </div>
-        <div 
+        <div
           className="scroll-indicator"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
@@ -362,14 +579,29 @@ const Team = () => {
 
                 {/* Subsystem Members Centered */}
                 <div className="subsystem-members" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
+                  {/* Row 1: Lead (and Vice Lead for Payload) */}
                   <div className="members-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
                     <MemberCard member={vertical.lead} index={0} />
-                    {vertical.viceLead && <MemberCard member={vertical.viceLead} index={1} />}
+                    {vertical.id === 'payload' && vertical.viceLead && (
+                      <MemberCard member={vertical.viceLead} index={1} />
+                    )}
                   </div>
-                  {vertical.systemsEngineers && vertical.systemsEngineers.length > 0 && (
+
+                  {/* Row 2: Vice Lead + System Engineers */}
+                  {((vertical.id !== 'payload' && vertical.viceLead) || (vertical.systemsEngineers && vertical.systemsEngineers.some(m => m.role !== 'Member'))) && (
+                    <div className="members-vice-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+                      {vertical.id !== 'payload' && vertical.viceLead && <MemberCard member={vertical.viceLead} index={1} />}
+                      {vertical.systemsEngineers && vertical.systemsEngineers.filter(m => m.role !== 'Member').map((member, i) => (
+                        <MemberCard key={`se-${i}`} member={member} index={i + 2} />
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Row 3: Members */}
+                  {vertical.systemsEngineers && vertical.systemsEngineers.some(m => m.role === 'Member') && (
                     <div className="members-juniors-grid" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-                      {vertical.systemsEngineers.map((member, i) => (
-                        <MemberCard key={i} member={member} index={i} />
+                      {vertical.systemsEngineers.filter(m => m.role === 'Member').map((member, i) => (
+                        <MemberCard key={`mem-${i}`} member={member} index={i} />
                       ))}
                     </div>
                   )}
