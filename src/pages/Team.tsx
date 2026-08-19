@@ -28,6 +28,7 @@ interface TeamMember {
   linkedin?: string;
   github?: string;
   email?: string;
+  objectPosition?: string;
 }
 
 interface VerticalData {
