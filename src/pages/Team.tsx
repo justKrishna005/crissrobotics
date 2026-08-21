@@ -272,8 +272,8 @@ const verticals: VerticalData[] = [
       name: 'Adhyatma Deep Agrawal',
       role: 'Vice Lead',
       image: '/team images/24 Batch/Todi.webp',
-      linkedin: 'https://linkedin.com',
-      github: 'https://github.com',
+      linkedin: 'https://linkedin.com/adhyatmaagrawal',
+      github: 'https://github.com/ad-1106',
     },
     systemsEngineers: [
       {
@@ -420,12 +420,12 @@ const MemberCard = ({
 }) => (
   <div className={`member-card scroll-reveal delay-${(index % 5) + 1}`}>
     <div className="member-image-container">
-      <img 
-        src={member.image} 
-        alt={member.name} 
-        className="member-photo" 
-        loading="lazy" 
-        style={{ objectPosition: member.objectPosition || 'center' }} 
+      <img
+        src={member.image}
+        alt={member.name}
+        className="member-photo"
+        loading="lazy"
+        style={{ objectPosition: member.objectPosition || 'center' }}
       />
     </div>
     <h3 className="member-name">{member.name}</h3>
@@ -477,23 +477,12 @@ const facultyAdvisor: TeamMember = {
 // ─── Main Team Page ───────────────────────────────────────────────────────────
 
 const Team = () => {
-  const [activeNav, setActiveNav] = useState('leadership');
+  const [activeSection, setActiveSection] = useState('leadership');
   const [isSticky, setIsSticky] = useState(false);
   useScrollReveal();
 
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['leadership', ...verticals.map(v => v.id)];
-      const scrollPosition = window.scrollY + 160; // offset for sticky nav + global nav
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
-          setActiveNav(section);
-        }
-      }
-
       if (window.scrollY > window.innerHeight * 0.6 - 70) {
         setIsSticky(true);
       } else {
@@ -504,8 +493,9 @@ const Team = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+  const handleTabClick = (sectionId: string) => {
+    setActiveSection(sectionId);
+    const element = document.getElementById('team-content');
     if (element) {
       window.scrollTo({ top: element.offsetTop - 140, behavior: 'smooth' });
     }
@@ -531,87 +521,76 @@ const Team = () => {
 
       {/* ── Sticky Nav Bar ── */}
       <nav className={`team-sticky-nav ${isSticky ? 'scrolled' : ''}`}>
-        <button className={`team-nav-btn ${activeNav === 'leadership' ? 'active' : ''}`} onClick={() => scrollToSection('leadership')}>Leadership</button>
-        <button className={`team-nav-btn ${activeNav === 'advisor' ? 'active' : ''}`} onClick={() => scrollToSection('advisor')}>Faculty Advisor</button>
+        <button className={`team-nav-btn ${activeSection === 'leadership' ? 'active' : ''}`} onClick={() => handleTabClick('leadership')}>Leadership</button>
         {verticals.map(v => (
-          <button key={v.id} className={`team-nav-btn ${activeNav === v.id ? 'active' : ''}`} onClick={() => scrollToSection(v.id)}>{v.name}</button>
+          <button key={v.id} className={`team-nav-btn ${activeSection === v.id ? 'active' : ''}`} onClick={() => handleTabClick(v.id)}>{v.name}</button>
         ))}
       </nav>
 
-      <div className="container" style={{ padding: '4rem 1rem' }}>
+      <div id="team-content" className="container" style={{ padding: '4rem 1rem' }}>
 
-        {/* ── Leadership Section (ExComm) ── */}
-        <section id="leadership" className="team-section" style={{ marginBottom: '6rem' }}>
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Leadership</h3>
-          </div>
+        {/* ── Leadership & Advisor Section ── */}
+        {activeSection === 'leadership' && (
+          <section id="leadership" className="team-section animate-fade-in" style={{ marginBottom: '6rem' }}>
+            <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+              <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Leadership</h3>
+            </div>
 
-          {/* Row 1: Team Captain + Vice Captain */}
-          <div className="leadership-row leadership-row--top">
-            {excomm.map((member, i) => (
-              <MemberCard key={i} member={member} index={i} />
-            ))}
-          </div>
+            {/* Row 1: Team Captain + Vice Captain */}
+            <div className="leadership-row leadership-row--top" style={{ marginBottom: '6rem' }}>
+              {excomm.map((member, i) => (
+                <MemberCard key={i} member={member} index={i} />
+              ))}
+            </div>
 
-
-        </section>
-
-        {/* ── Faculty Advisor ── */}
-        <section id="advisor" className="team-section" style={{ marginBottom: '6rem' }}>
-          <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Faculty Advisor</h3>
-          </div>
-          <div className="leadership-row leadership-row--top">
-            <MemberCard member={facultyAdvisor} index={0} />
-          </div>
-        </section>
+            <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+              <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Faculty Advisor</h3>
+            </div>
+            <div className="leadership-row leadership-row--top">
+              <MemberCard member={facultyAdvisor} index={0} />
+            </div>
+          </section>
+        )}
 
         {/* ── Subsystems Section ── */}
-        <section id="subsystems" className="team-section">
-          <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-            {verticals.map((vertical) => (
-              <div key={vertical.id} id={vertical.id} className="subsystem-block">
+        {activeSection !== 'leadership' && (
+          <section id="subsystems" className="team-section">
+            <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
+              {verticals.filter(v => v.id === activeSection).map((vertical) => (
+                <div key={vertical.id} className="subsystem-block animate-fade-in">
 
-                {/* Subsystem Header */}
-                <div className="subsystem-header" style={{ marginBottom: '3rem', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>{vertical.name}</h3>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>{vertical.fullDesc}</p>
-                </div>
-
-                {/* Subsystem Members Centered */}
-                <div className="subsystem-members" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
-                  {/* Row 1: Lead (and Vice Lead for Payload) */}
-                  <div className="members-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-                    <MemberCard member={vertical.lead} index={0} />
-                    {vertical.id === 'payload' && vertical.viceLead && (
-                      <MemberCard member={vertical.viceLead} index={1} />
-                    )}
+                  {/* Subsystem Header */}
+                  <div className="subsystem-header" style={{ marginBottom: '3rem', textAlign: 'center' }}>
+                    <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>{vertical.name}</h3>
+                    <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: '800px', margin: '0 auto' }}>{vertical.fullDesc}</p>
                   </div>
 
-                  {/* Row 2: Vice Lead + System Engineers */}
-                  {((vertical.id !== 'payload' && vertical.viceLead) || (vertical.systemsEngineers && vertical.systemsEngineers.some(m => m.role !== 'Member'))) && (
-                    <div className="members-vice-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-                      {vertical.id !== 'payload' && vertical.viceLead && <MemberCard member={vertical.viceLead} index={1} />}
+                  {/* Subsystem Members Centered */}
+                  <div className="subsystem-members" style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>
+                    {/* Row 1: Lead, Vice Lead, and System Engineers */}
+                    <div className="members-leads-row" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+                      <MemberCard member={vertical.lead} index={0} />
+                      {vertical.viceLead && <MemberCard member={vertical.viceLead} index={1} />}
                       {vertical.systemsEngineers && vertical.systemsEngineers.filter(m => m.role !== 'Member').map((member, i) => (
                         <MemberCard key={`se-${i}`} member={member} index={i + 2} />
                       ))}
                     </div>
-                  )}
 
-                  {/* Row 3: Members */}
-                  {vertical.systemsEngineers && vertical.systemsEngineers.some(m => m.role === 'Member') && (
-                    <div className="members-juniors-grid" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-                      {vertical.systemsEngineers.filter(m => m.role === 'Member').map((member, i) => (
-                        <MemberCard key={`mem-${i}`} member={member} index={i} />
-                      ))}
-                    </div>
-                  )}
+                    {/* Row 3: Members */}
+                    {vertical.systemsEngineers && vertical.systemsEngineers.some(m => m.role === 'Member') && (
+                      <div className="members-juniors-grid" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+                        {vertical.systemsEngineers.filter(m => m.role === 'Member').map((member, i) => (
+                          <MemberCard key={`mem-${i}`} member={member} index={i} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
                 </div>
-
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        )}
       </div>
     </div>
   );
