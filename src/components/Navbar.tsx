@@ -43,7 +43,7 @@ const Navbar = () => {
         
         {/* Left: Logo */}
         <Link to="/" className="nav-logo">
-          <img src="/logo.png" alt="CRISS Robotics" className="logo-image" style={{ height: '40px', objectFit: 'contain' }} />
+          <img src="/logo.webp" alt="CRISS Robotics" className="logo-image" style={{ height: '40px', objectFit: 'contain' }} />
         </Link>
 
         {/* Center: Desktop Menu */}

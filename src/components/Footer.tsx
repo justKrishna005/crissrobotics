@@ -32,7 +32,7 @@ const Footer = () => {
       <div className="container footer-container">
         <div className="footer-left">
           <Link to="/" className="footer-logo">
-            <img src="/logo.png" alt="CRISS Robotics" className="logo-image" />
+            <img src="/logo.webp" alt="CRISS Robotics" className="logo-image" />
           </Link>
           <p className="footer-desc">
             Forging the next generation of aerospace engineers through rigorous international competition.

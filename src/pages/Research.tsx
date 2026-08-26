@@ -2,14 +2,14 @@ import { useState, useRef } from 'react';
 import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Research.css';
-const armImage = '/images/good_photos/arm_2_transparent_BG.PNG';
-const ramanTestingImage = '/images/good_photos/payload/Raman testing.png';
-const airavatImg = '/images/good_photos/rover renders/airavat.png';
-const eklavyaImg = '/images/good_photos/rover renders/eklavya.png';
-const fenrirImg = '/images/good_photos/rover renders/fenrir.png';
-const aetherImg = '/images/good_photos/rover renders/aether.png';
-const icarusImg = '/images/good_photos/rover renders/icarus old.png';
-const dionysusImg = '/images/good_photos/rover renders/dionysus blackchassis.PNG';
+const armImage = '/images/good_photos/arm_2_transparent_BG.webp';
+const ramanTestingImage = '/images/good_photos/payload/Raman testing.webp';
+const airavatImg = '/images/good_photos/rover renders/airavat.webp';
+const eklavyaImg = '/images/good_photos/rover renders/eklavya.webp';
+const fenrirImg = '/images/good_photos/rover renders/fenrir.webp';
+const aetherImg = '/images/good_photos/rover renders/aether.webp';
+const icarusImg = '/images/good_photos/rover renders/icarus old.webp';
+const dionysusImg = '/images/good_photos/rover renders/dionysus blackchassis.webp';
 
 // ─── Funded Projects Data ─────────────────────────────────────────────────────
 
@@ -44,7 +44,7 @@ const platformsData = [
       'Intra-rover CAN Bus architecture',
       'Nav2 stack on ROS2'
     ],
-    image: '/autonomous-mars-rover.png'
+    image: '/autonomous-mars-rover.webp'
   },
   {
     title: 'IN-HOUSE SPECTROMETERS',
