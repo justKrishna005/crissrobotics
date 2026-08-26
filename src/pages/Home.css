@@ -145,17 +145,45 @@
 
 @media (max-width: 768px) {
   .page-header--home {
-    background-position: center center;
+    /* Rover sits at ~72% across the source image; bias the crop right so it stays in frame */
+    background-position: 85% center;
     padding-top: 60px;
+  }
+
+  /* Drop the heavy black fade at the top, keep a readable scrim behind the copy */
+  .page-header.page-header--home::before {
+    background:
+      linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.35) 30%, rgba(0, 0, 0, 0.72) 60%, #000000 100%),
+      rgba(0, 0, 0, 0.25);
+  }
+
+  /* Center the hero block on mobile */
+  .home-hero-content {
+    align-items: center;
+    text-align: center;
+  }
+  .home-subtitle {
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.75);
+  }
+  .home-title {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
   }
   .home-actions {
     flex-direction: column;
-    width: 100%;
+    /* Column shrinks to the widest button; stretch then matches the other to it */
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: stretch;
   }
   .home-actions .btn {
-    width: 100%;
+    width: auto;
     text-align: center;
-    padding: 1rem; /* Slightly larger touch target on mobile */
+    padding: 1rem 2.5rem; /* Slightly larger touch target on mobile */
   }
 }
 
