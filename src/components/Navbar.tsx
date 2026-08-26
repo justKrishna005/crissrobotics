@@ -16,6 +16,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const { overflow } = document.body.style;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = overflow;
+    };
+  }, [isOpen]);
+
   const links = [
     { name: 'Mission', path: '/' },
     { name: 'Research', path: '/research' },
@@ -68,8 +77,8 @@ const Navbar = () => {
           <ul className="nav-links-mobile">
             {links.map((link) => (
               <li key={link.name}>
-                <Link 
-                  to={link.path} 
+                <Link
+                  to={link.path}
                   className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
                   onClick={() => setIsOpen(false)}
                 >
@@ -79,6 +88,13 @@ const Navbar = () => {
             ))}
           </ul>
       </div>
+
+      {/* Scrim: dims/blurs the page behind the mobile menu */}
+      <div
+        className={`nav-scrim ${isOpen ? 'is-open' : ''}`}
+        onClick={() => setIsOpen(false)}
+        aria-hidden="true"
+      />
     </nav>
   );
 };

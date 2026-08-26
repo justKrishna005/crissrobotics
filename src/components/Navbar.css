@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 200;
   background-color: transparent;
   padding: 1.5rem 0;
   transition: all 0.3s ease;
@@ -18,6 +18,8 @@
 }
 
 .nav-container {
+  position: relative;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,6 +84,10 @@
   display: none;
 }
 
+.nav-scrim {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .desktop-menu {
     display: none;
@@ -98,11 +104,12 @@
     top: 100%;
     left: 0;
     width: 100%;
+    z-index: 2;
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2rem 0;
-    
+
     /* Animation setup */
     opacity: 0;
     visibility: hidden;
@@ -114,6 +121,28 @@
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+  }
+
+  /* Scrim: sits below the navbar/menu but above the page content,
+     dimming and blurring it so the open menu reads as the focused layer. */
+  .nav-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    pointer-events: none;
+  }
+
+  .nav-scrim.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav-links-mobile {
