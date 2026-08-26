@@ -187,7 +187,14 @@ const Alumni = () => {
           <button
             key={year}
             className={`alumni-year-tab ${activeYear === year ? 'alumni-year-tab--active' : ''}`}
-            onClick={() => setActiveYear(year)}
+            onClick={(e) => {
+              setActiveYear(year);
+              e.currentTarget.scrollIntoView({
+                behavior: 'smooth',
+                inline: 'center',
+                block: 'nearest',
+              });
+            }}
           >
             {year}
           </button>

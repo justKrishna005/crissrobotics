@@ -620,12 +620,20 @@
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
   background: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+}
+
+@media (min-width: 720px) {
+  .team-sticky-nav {
+    justify-content: center;
+  }
 }
 
 .team-sticky-nav::-webkit-scrollbar {
@@ -636,6 +644,7 @@
 
 .team-nav-btn {
   flex-shrink: 0;
+  scroll-snap-align: start;
   padding: 1.25rem 2rem;
   font-family: var(--font-heading);
   font-size: 1.1rem;

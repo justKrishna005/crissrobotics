@@ -493,8 +493,13 @@ const Team = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleTabClick = (sectionId: string) => {
+  const handleTabClick = (sectionId: string, e: React.MouseEvent<HTMLButtonElement>) => {
     setActiveSection(sectionId);
+    e.currentTarget.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    });
     const element = document.getElementById('team-content');
     if (element) {
       window.scrollTo({ top: element.offsetTop - 140, behavior: 'smooth' });
@@ -521,9 +526,9 @@ const Team = () => {
 
       {/* ── Sticky Nav Bar ── */}
       <nav className={`team-sticky-nav ${isSticky ? 'scrolled' : ''}`}>
-        <button className={`team-nav-btn ${activeSection === 'leadership' ? 'active' : ''}`} onClick={() => handleTabClick('leadership')}>Leadership</button>
+        <button className={`team-nav-btn ${activeSection === 'leadership' ? 'active' : ''}`} onClick={(e) => handleTabClick('leadership', e)}>Leadership</button>
         {verticals.map(v => (
-          <button key={v.id} className={`team-nav-btn ${activeSection === v.id ? 'active' : ''}`} onClick={() => handleTabClick(v.id)}>{v.name}</button>
+          <button key={v.id} className={`team-nav-btn ${activeSection === v.id ? 'active' : ''}`} onClick={(e) => handleTabClick(v.id, e)}>{v.name}</button>
         ))}
       </nav>
 

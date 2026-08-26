@@ -281,6 +281,7 @@ const Competitions = () => {
   const [activeCompId, setActiveCompId] = useState(competitions[0].id);
   const activeComp = competitions.find(c => c.id === activeCompId) || competitions[0];
 
+
   return (
     <div className="animate-fade-in">
       <header className="page-header page-header--photo">
@@ -303,10 +304,17 @@ const Competitions = () => {
       <div className="comp-nav-bar animate-fade-in delay-200">
         {competitions.map((comp) => (
           <button
-            key={comp.id}
-            className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
-            onClick={() => setActiveCompId(comp.id)}
-          >
+    key={comp.id}
+    className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
+    onClick={(e) => {
+      setActiveCompId(comp.id);
+      e.currentTarget.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'center',
+      });
+    }}
+  >
             {comp.acronym}
           </button>
         ))}
