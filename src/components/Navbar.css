@@ -148,14 +148,19 @@
   .nav-links-mobile {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    /* `center` collapses each link to content width, defeating the
+       width: 100% below. `stretch` gives full-width rows as intended. */
+    align-items: stretch;
+    gap: 0.5rem;
   }
-  
+
   .nav-links-mobile .nav-link {
     font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    display: block;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
     width: 100%;
     text-align: center;
   }

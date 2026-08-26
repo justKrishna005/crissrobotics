@@ -22,6 +22,10 @@
   font-size: 1.25rem;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
+  /* It's a <Link> — give it a real hit area. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 
 .footer-desc {

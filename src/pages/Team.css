@@ -206,7 +206,9 @@
   flex-shrink: 0;
 }
 
-/* "Explore →" hint — slides in on hover */
+/* "Explore →" hint.
+   Visible by default so touch users get an affordance; on pointer devices
+   it starts hidden and slides in on hover. */
 .vertical-card-cta {
   display: flex;
   align-items: center;
@@ -216,14 +218,21 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   color: var(--card-accent, #60a5fa);
-  opacity: 0;
-  transform: translateX(-8px);
-  transition: opacity 0.3s ease 0.06s, transform 0.3s ease 0.06s;
+  opacity: 1;
+  transform: none;
 }
 
-.vertical-card:hover .vertical-card-cta {
-  opacity: 1;
-  transform: translateX(0);
+@media (hover: hover) and (pointer: fine) {
+  .vertical-card-cta {
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s ease 0.06s, transform 0.3s ease 0.06s;
+  }
+
+  .vertical-card:hover .vertical-card-cta {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -518,8 +527,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   color: rgba(255, 255, 255, 0.38);
   background: rgba(255, 255, 255, 0.04);
@@ -607,9 +616,15 @@
     grid-template-columns: 1fr;
   }
 
+  /* Was `display: none` ("too cramped"). Clamp the line count instead —
+     the reader still gets the opening of the description. */
   .vertical-hero-desc {
-    display: none;
-    /* hide on very small screens — too cramped */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 

@@ -184,22 +184,22 @@ const CompetitionSection = ({
         <div className="comp-block-header">
           <div className="comp-block-header-left">
             <div>
-              <h2 className="comp-block-acronym">{comp.acronym}</h2>
+              <h2 className="comp-block-acronym">
+                {comp.acronym}
+                {comp.website && (
+                  <a
+                    href={comp.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="comp-website-icon"
+                    aria-label={`Visit official site for ${comp.acronym}`}
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                )}
+              </h2>
               <p className="comp-block-fullname">{comp.fullName}</p>
             </div>
-          </div>
-          <div className="comp-block-header-right">
-            {comp.website && (
-              <a
-                href={comp.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="comp-website-link"
-              >
-                <ExternalLink size={14} />
-                <span>Official Site</span>
-              </a>
-            )}
           </div>
         </div>
 
