@@ -320,7 +320,7 @@ const Competitions = () => {
         ))}
       </div>
 
-      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
+      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '2rem' }}>
         <CompetitionSection key={activeComp.id} comp={activeComp} />
       </div>
     </div>

@@ -490,4 +490,8 @@
   .comp-details-grid {
     grid-template-columns: 1fr;
   }
+
+  .comp-description {
+    padding: 1.25rem;
+  }
 }
