@@ -230,6 +230,8 @@
   color: var(--item-color, var(--accent-light));
   text-decoration: none;
   transition: color 0.3s ease;
+  min-height: 44px;
+  padding: 0.5rem 0;
 }
 
 .arrow-icon {
@@ -315,48 +317,85 @@
   transform: translateY(-2px) translateX(2px);
 }
 
-/* ── Responsive Styling ── */
+/* ── Responsive Styling ──
+   Below 900px the alternating two-column timeline collapses to a single
+   left-aligned rail. Each row becomes:
+
+     ●  2025          <- header line (node + year, in normal flow)
+     │  ┌──────────┐
+     │  │  card    │
+     │  └──────────┘
+
+   The node sits on the rail and the year label and card share a 36px
+   left indent, so everything lines up on one edge. */
 @media (max-width: 900px) {
+  .compact-timeline-section {
+    padding: 2rem 0 4rem;
+  }
+
+  /* Rail: 2px line centred under the 24px node (node spans 0–24px). */
   .alternating-timeline-line {
-    left: 20px;
+    left: 11px;
     transform: none;
   }
-  
+
   .alternating-timeline-row {
-    flex-direction: column !important;
-    align-items: flex-start;
-    margin-bottom: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+    margin-bottom: 2.5rem;
   }
-  
+
+  /* The center column stops being a spacer and becomes the header line. */
   .alternating-timeline-center {
-    position: absolute;
-    left: 0;
-    top: 2rem;
-    width: 40px;
+    order: -1;
+    position: static;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .alternating-timeline-node {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  /* Static, so the desktop flag--left / flag--right offsets no longer apply. */
+  .achievement-year-flag {
+    position: static;
+    height: auto;
+    line-height: 1;
+    transform: none;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    border-radius: 4px;
   }
 
   .timeline-side {
     width: 100%;
-    padding-left: 50px; /* Space for the line */
+    /* Clears the node's 8px halo (ends at 32px) and aligns with the year. */
+    padding-left: 2.25rem;
   }
 
-  .timeline-side--left, .timeline-side--right {
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Reset flag for mobile */
-  .achievement-year-flag {
-    position: relative;
-    top: 0;
-    transform: none;
-    display: inline-block;
-    margin-bottom: 1rem;
-    left: 0 !important;
-    right: auto !important;
-    border-radius: 4px;
-  }
-  
-  .achievement-year-flag::after {
+  /* Only one side carries the card; the other is an empty placeholder. */
+  .timeline-side:empty {
     display: none;
+  }
+
+  .timeline-text-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Indent stays at 2.25rem so the card keeps its shared left edge with
+     the year label — the internal padding is what buys reading width. */
+  .timeline-text-content {
+    padding: 1.25rem;
+  }
+
+  .achievement-title {
+    font-size: 1.2rem;
   }
 }

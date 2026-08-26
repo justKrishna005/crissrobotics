@@ -143,6 +143,11 @@
 .info-link {
   color: var(--accent-light);
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  /* Long address — let it wrap instead of forcing a wide, thin target. */
+  overflow-wrap: anywhere;
 }
 
 .info-link:hover {

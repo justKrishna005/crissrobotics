@@ -51,11 +51,19 @@
   border: none;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0.7;
+  /* Full opacity on touch — there is no hover to recover it.
+     `.comp-card--active` still carries the selected state. */
+  opacity: 1;
 }
 
-.comp-card:hover {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .comp-card {
+    opacity: 0.7;
+  }
+
+  .comp-card:hover {
+    opacity: 1;
+  }
 }
 
 .comp-card--active {
@@ -111,7 +119,7 @@
 .comp-nav-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
   background: #000000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
@@ -120,15 +128,24 @@
   z-index: 50;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-snap-type: x proximity;
+    overscroll-behavior-x: contain;
+}
+
+@media (min-width: 720px) {
+  .comp-nav-bar {
+    justify-content: center;
+  }
 }
 
 .comp-nav-bar::-webkit-scrollbar { display: none; }
 
 .comp-nav-tab {
   flex-shrink: 0;
+   scroll-snap-align: start;
   padding: 1.25rem 2rem;
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.45);
@@ -192,6 +209,9 @@
 }
 
 .comp-block-acronym {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-heading);
   font-size: 3.5rem;
   font-weight: 700;
@@ -209,28 +229,18 @@
   margin-top: 0.25rem;
 }
 
-.comp-block-header-right {
-  display: flex;
+.comp-website-icon {
+  display: inline-flex;
   align-items: center;
-  gap: 1.5rem;
-}
-
-.comp-website-link {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  font-weight: 500;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   color: #a1a1aa;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 0.4rem 0.85rem;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
 }
 
-.comp-website-link:hover {
-  border-color: var(--accent-dark);
+.comp-website-icon:hover {
   color: #ffffff;
 }
 
@@ -463,10 +473,7 @@
 
   .comp-block-acronym {
     font-size: 1.5rem;
-  }
-
-  .comp-website-link {
-    display: none;
+    gap: 0.5rem;
   }
 
   .comp-top-grid {
@@ -482,5 +489,9 @@
 
   .comp-details-grid {
     grid-template-columns: 1fr;
+  }
+
+  .comp-description {
+    padding: 1.25rem;
   }
 }

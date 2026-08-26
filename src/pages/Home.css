@@ -253,7 +253,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
   transition: border-color 0.3s ease, background 0.3s ease;
 }
 
@@ -523,8 +523,18 @@
   
   .home-achievements-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
-  
+
+  /* aspect-ratio: 1 turns each logo tile into a full-width square once the
+     grid is single-column — ~335px tall on a phone for a small logo. Cap it
+     so the row stays compact; the card centres it. */
+  .home-achievement-img-wrapper {
+    max-width: 220px;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
   .fleet-content {
     flex-direction: column;
     gap: 2rem;
@@ -579,7 +589,8 @@
 .story-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  /* Mobile-only value — the min-width: 768px block below raises it to 4rem. */
+  gap: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -590,8 +601,10 @@
 }
 
 .story-card {
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.05);
+  background: rgba(255,255,255,0.03);
+  /* 0.05 was near-invisible against #000. 0.12 reads as a defined edge while
+     staying quiet — most cards in this codebase sit around 0.1. */
+  border: 1px solid rgba(255,255,255,0.12);
   padding: 3rem;
   border-radius: 6px;
 }
@@ -601,7 +614,26 @@
   aspect-ratio: 16/10;
   margin-bottom: 2rem;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Must come AFTER the two rules above — media queries add no specificity,
+   so an earlier block would lose to the base padding on source order. */
+@media (max-width: 768px) {
+  /* 3rem each side left only ~240px of text on a 375px screen. */
+  .story-card {
+    padding: 1.25rem;
+  }
+
+  .story-image-wrapper {
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-card {
+    padding: 1rem;
+  }
 }
 
 .story-image-wrapper img {
@@ -618,10 +650,11 @@
 .story-title {
   font-size: 1.2rem;
   letter-spacing: 0.15em;
-
-  color: #a1a1aa;
+  /* Was #a1a1aa — identical to .story-text below, so it never read as a
+     heading. White separates it from the body copy. */
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .story-text {

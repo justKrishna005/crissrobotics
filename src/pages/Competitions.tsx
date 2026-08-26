@@ -184,22 +184,22 @@ const CompetitionSection = ({
         <div className="comp-block-header">
           <div className="comp-block-header-left">
             <div>
-              <h2 className="comp-block-acronym">{comp.acronym}</h2>
+              <h2 className="comp-block-acronym">
+                {comp.acronym}
+                {comp.website && (
+                  <a
+                    href={comp.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="comp-website-icon"
+                    aria-label={`Visit official site for ${comp.acronym}`}
+                  >
+                    <ExternalLink size={20} />
+                  </a>
+                )}
+              </h2>
               <p className="comp-block-fullname">{comp.fullName}</p>
             </div>
-          </div>
-          <div className="comp-block-header-right">
-            {comp.website && (
-              <a
-                href={comp.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="comp-website-link"
-              >
-                <ExternalLink size={14} />
-                <span>Official Site</span>
-              </a>
-            )}
           </div>
         </div>
 
@@ -281,6 +281,7 @@ const Competitions = () => {
   const [activeCompId, setActiveCompId] = useState(competitions[0].id);
   const activeComp = competitions.find(c => c.id === activeCompId) || competitions[0];
 
+
   return (
     <div className="animate-fade-in">
       <header className="page-header page-header--photo">
@@ -303,16 +304,23 @@ const Competitions = () => {
       <div className="comp-nav-bar animate-fade-in delay-200">
         {competitions.map((comp) => (
           <button
-            key={comp.id}
-            className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
-            onClick={() => setActiveCompId(comp.id)}
-          >
+    key={comp.id}
+    className={`comp-nav-tab ${activeCompId === comp.id ? 'comp-nav-tab--active' : ''}`}
+    onClick={(e) => {
+      setActiveCompId(comp.id);
+      e.currentTarget.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'center',
+      });
+    }}
+  >
             {comp.acronym}
           </button>
         ))}
       </div>
 
-      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '2rem', paddingBottom: '4rem' }}>
+      <div id="comp-details-area" className="comp-sections-wrapper" style={{ marginTop: '2rem' }}>
         <CompetitionSection key={activeComp.id} comp={activeComp} />
       </div>
     </div>

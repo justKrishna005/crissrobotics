@@ -63,19 +63,12 @@ h2 {
   /* Bold headings */
 }
 
-/* Fluid Typography */
+/* Fluid Typography
+   Root stays at the user's browser preference (usually 16px) at every width.
+   Oversized display type is tuned per-component with clamp(), not by
+   shrinking the root — see .page-title below and .hero-title in Home.css. */
 html {
-  font-size: 16px;
-}
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-@media (max-width: 480px) {
-  html {
-    font-size: 13px;
-  }
+  font-size: 100%;
 }
 
 h3,
@@ -216,7 +209,7 @@ h6 {
 
 .page-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  font-size: clamp(2rem, 8vw, 3.5rem);
   font-weight: 700;
   letter-spacing: 0.02em;
   margin-bottom: 1.5rem;
@@ -406,21 +399,7 @@ img:not(.logo-image):not(.sponsor-logo-img), video, iframe {
 
 /* ── Mobile Responsiveness ── */
 @media (max-width: 768px) {
-  .page-title {
-    font-size: 2.2rem;
-  }
-
-  .page-subtitle {
-    font-size: 0.85rem;
-  }
-
   .container {
     padding: 0 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .page-title {
-    font-size: 1.8rem;
   }
 }
