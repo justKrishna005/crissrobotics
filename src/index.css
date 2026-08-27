@@ -181,7 +181,7 @@ h6 {
 }
 
 .page-header--photo {
-  background-image: url('/images/team/all-team-irc25.jpg');
+  background-image: url('/images/team/all-team-irc25.webp');
   background-size: cover;
   background-position: center center;
 }
@@ -191,7 +191,7 @@ h6 {
 }
 
 .page-header--home {
-  background-image: url('/images/good_photos/home-rover2.png');
+  background-image: url('/images/good_photos/home-rover2.webp');
   background-size: cover;
   background-position: center bottom;
   align-items: center;

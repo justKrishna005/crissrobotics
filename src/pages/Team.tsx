@@ -89,44 +89,44 @@ const verticals: VerticalData[] = [
       {
         name: 'Nissan Mohanty',
         role: 'Member',
-        image: '/team images/25 Batch/NISSAN MOHANTY.png',
+        image: '/team images/25 Batch/NISSAN MOHANTY.webp',
         linkedin: 'https://www.linkedin.com/in/nissan-mohanty-880401214',
         github: 'https://github.com/rolling-thunder18',
       },
       {
         name: 'Arnav Jain',
         role: 'Member',
-        image: '/team images/25 Batch/ARNAV JAIN.jpg',
+        image: '/team images/25 Batch/ARNAV JAIN.webp',
         linkedin: 'https://www.linkedin.com/in/arnav-jain-990382375',
       },
       {
         name: 'Shraddha Nair',
         role: 'Member',
-        image: '/team images/25 Batch/SHRADDHA SHARATH NAIR.jpeg',
+        image: '/team images/25 Batch/SHRADDHA SHARATH NAIR.webp',
         linkedin: 'https://www.linkedin.com/in/shraddha-sharath-nair-b20baa42a/',
       },
       {
         name: 'Omkar Rajadhyaksha',
         role: 'Member',
-        image: '/team images/25 Batch/OMKAR RAHUL RAJADHYAKSHA.png',
+        image: '/team images/25 Batch/OMKAR RAHUL RAJADHYAKSHA.webp',
         linkedin: 'https://www.linkedin.com/in/omkar-rajadhyaksha/',
       },
       {
         name: 'Karan Anand',
         role: 'Member',
-        image: '/team images/25 Batch/KARAN ANAND.jpeg',
+        image: '/team images/25 Batch/KARAN ANAND.webp',
         linkedin: 'https://www.linkedin.com/in/karan-anand-2801953a1/',
       },
       {
         name: 'Shreyas Nanotkar',
         role: 'Member',
-        image: '/team images/25 Batch/SHREYAS SACHIN NANOTKAR.jpg',
+        image: '/team images/25 Batch/SHREYAS SACHIN NANOTKAR.webp',
         linkedin: 'https://www.linkedin.com/in/shreyas-nanotkar-630157322',
       },
       {
         name: 'Pratham Gautam Sinai Talaulikar',
         role: 'Member',
-        image: '/team images/25 Batch/PRATHAM GAUTAM SINAI TALAULIKAR.jpg',
+        image: '/team images/25 Batch/PRATHAM GAUTAM SINAI TALAULIKAR.webp',
         linkedin: 'https://www.linkedin.com/in/pratham-talaulikar-0057bb227',
       }
     ],
@@ -151,7 +151,7 @@ const verticals: VerticalData[] = [
     lead: {
       name: 'Vibhav Jain',
       role: 'Lead',
-      image: '/team images/24 Batch/vibhav jain.jpeg',
+      image: '/team images/24 Batch/vibhav jain.webp',
       linkedin: 'https://www.linkedin.com/in/vibhav-jain-203949323',
       objectPosition: 'center 15%',
     },
@@ -173,20 +173,20 @@ const verticals: VerticalData[] = [
       {
         name: 'Adit Sarkar',
         role: 'Member',
-        image: '/team images/25 Batch/ADIT SARKAR.jpeg',
+        image: '/team images/25 Batch/ADIT SARKAR.webp',
         linkedin: 'https://www.linkedin.com/in/adit-sarkar-a2538b329',
       },
       {
         name: 'Yash Maheshwari',
         role: 'Member',
-        image: '/team images/25 Batch/YASH RAKESHKUMAR MAHESHWARI.jpg',
+        image: '/team images/25 Batch/YASH RAKESHKUMAR MAHESHWARI.webp',
         linkedin: 'https://www.linkedin.com/in/yash-maheshwari-87670731a/',
         github: 'https://github.com/Yash7288',
       },
       {
         name: 'Viinaayak Gupta',
         role: 'Member',
-        image: '/team images/25 Batch/VIINAAYAK GUPTA.jpeg',
+        image: '/team images/25 Batch/VIINAAYAK GUPTA.webp',
         linkedin: 'https://www.linkedin.com/in/viinaayak-gupta-3116b4387',
       },
       {
@@ -198,47 +198,47 @@ const verticals: VerticalData[] = [
       {
         name: 'Ameeraa Dashaputra',
         role: 'Member',
-        image: '/team images/25 Batch/AMEERAA RAJESH DASHAPUTRA.jpeg',
+        image: '/team images/25 Batch/AMEERAA RAJESH DASHAPUTRA.webp',
         linkedin: 'https://www.linkedin.com/in/ameeraa-dashaputra-0b6415380',
       },
       {
         name: 'Aditya Balaraman',
         role: 'Member',
-        image: '/team images/25 Batch/ADITYA BALARAMAN.jpeg',
+        image: '/team images/25 Batch/ADITYA BALARAMAN.webp',
         linkedin: 'https://www.linkedin.com/in/aditya-balaraman-01800842b/',
         github: 'https://github.com/4dityabalaraman',
       },
       {
         name: 'Sharanya Sharma',
         role: 'Member',
-        image: '/team images/25 Batch/SHARANYA SHARMA.jpeg',
+        image: '/team images/25 Batch/SHARANYA SHARMA.webp',
         linkedin: 'https://www.linkedin.com/in/sharanya-sharma-94584436a/',
       },
       {
         name: 'Sai Dongargaonkar',
         role: 'Member',
-        image: '/team images/25 Batch/SAI DONGARGAONKAR.jpg',
+        image: '/team images/25 Batch/SAI DONGARGAONKAR.webp',
         linkedin: 'https://in.linkedin.com/in/sai-dongargaonkar-b15b7b262',
         github: 'https://github.com/MrGuardianGo',
       },
       {
         name: 'Sparsh Bansal',
         role: 'Member',
-        image: '/team images/25 Batch/Sparsh Bansal.jpg',
+        image: '/team images/25 Batch/Sparsh Bansal.webp',
         linkedin: 'https://www.linkedin.com/in/sparsh-bansal-2a7481379/',
         github: 'https://github.com/Sparz2',
       },
       {
         name: 'Prateek Mittal',
         role: 'Member',
-        image: '/team images/25 Batch/PRATEEK MITTAL.jpg',
+        image: '/team images/25 Batch/PRATEEK MITTAL.webp',
         linkedin: 'https://www.linkedin.com/in/prateek-mittal-52a38a237',
         github: 'https://github.com/PrateekM-Stu',
       },
       {
         name: 'Vidit Singh Sikarwar',
         role: 'Member',
-        image: '/team images/25 Batch/VIDIT SINGH SIKARWAR.jpg',
+        image: '/team images/25 Batch/VIDIT SINGH SIKARWAR.webp',
         linkedin: 'https://www.linkedin.com/in/vidit-singh-sikarwar-079318384',
         github: 'https://github.com/viditsikarwar8-pixel',
       }
@@ -286,63 +286,63 @@ const verticals: VerticalData[] = [
       {
         name: 'Romir Karna',
         role: 'Member',
-        image: '/team images/25 Batch/ROMIR KARNA.jpg',
+        image: '/team images/25 Batch/ROMIR KARNA.webp',
         linkedin: 'https://www.linkedin.com/in/romirkarna/',
         github: 'https://github.com/Romir-Karna7',
       },
       {
         name: 'Agatsya Om',
         role: 'Member',
-        image: '/team images/25 Batch/AGATSYA OM.jpg',
+        image: '/team images/25 Batch/AGATSYA OM.webp',
         linkedin: 'https://www.linkedin.com/in/agatsya-om',
         github: 'https://github.com/agatsya-blip',
       },
       {
         name: 'Hitesh Pote',
         role: 'Member',
-        image: '/team images/25 Batch/HITESH BABASAHEB POTE.jpg',
+        image: '/team images/25 Batch/HITESH BABASAHEB POTE.webp',
         linkedin: 'https://www.linkedin.com/in/hiteshpote',
         github: 'https://github.com/HiteshPote',
       },
       {
         name: 'Mohammad Talha',
         role: 'Member',
-        image: '/team images/25 Batch/MOHAMMAD TALHA.jpeg',
+        image: '/team images/25 Batch/MOHAMMAD TALHA.webp',
         linkedin: 'https://www.linkedin.com/in/mohammad-talha-313aaa377',
         github: 'https://github.com/MohammadTalha06',
       },
       {
         name: 'Veer Raghuvanshi',
         role: 'Member',
-        image: '/team images/25 Batch/VEER RAGHUVANSHI.jpeg',
+        image: '/team images/25 Batch/VEER RAGHUVANSHI.webp',
         linkedin: 'https://www.linkedin.com/in/veerraghuvanshi',
         github: 'https://github.com/VeerR13',
       },
       {
         name: 'Sagar Kumar',
         role: 'Member',
-        image: '/team images/25 Batch/SAGAR KUMAR.jpeg',
+        image: '/team images/25 Batch/SAGAR KUMAR.webp',
         linkedin: 'https://www.linkedin.com/in/sagar-kumar36',
         github: 'https://github.com/samscienced32-blip',
       },
       {
         name: 'Ishan Kumar',
         role: 'Member',
-        image: '/team images/25 Batch/ISHAN KUMAR.jpg',
+        image: '/team images/25 Batch/ISHAN KUMAR.webp',
         linkedin: 'https://www.linkedin.com/in/ishan-kumar-637022412',
         github: 'https://github.com/shadowpenguin28',
       },
       {
         name: 'Shivam Ghadge',
         role: 'Member',
-        image: '/team images/25 Batch/SHIVAM MACHINDRANATH GHADGE.jpg',
+        image: '/team images/25 Batch/SHIVAM MACHINDRANATH GHADGE.webp',
         linkedin: 'https://www.linkedin.com/in/shivam-ghadge-7532a2375',
         github: 'https://github.com/razqen',
       },
       {
         name: 'Ananya Mukherjee',
         role: 'Member',
-        image: '/team images/25 Batch/ANANYA MUKHERJEE.jpg',
+        image: '/team images/25 Batch/ANANYA MUKHERJEE.webp',
         linkedin: 'https://www.linkedin.com/in/mukherjee-ananya',
         github: 'https://github.com/mathananya',
       }
@@ -367,7 +367,7 @@ const verticals: VerticalData[] = [
     ],
     lead: {
       name: 'Jhanvi Matta',
-      role: 'Payload Lead',
+      role: 'Lead',
       image: '/team images/24 Batch/Jhanvi.webp',
       linkedin: 'https://www.linkedin.com/in/jhanvimatta/',
       github: 'https://github.com/jhanvimatta',
@@ -375,34 +375,34 @@ const verticals: VerticalData[] = [
     viceLead: {
       name: 'Winnie the Poo',
       role: 'Vice Lead',
-      image: '/team images/24 Batch/poo lead.jpg',
+      image: '/team images/24 Batch/poo lead.webp',
       linkedin: 'https://linkedin.com',
     },
     systemsEngineers: [
       {
         name: 'Juin Jestin K',
         role: 'Member',
-        image: '/team images/25 Batch/JUIN JESTIN K.JPG',
+        image: '/team images/25 Batch/JUIN JESTIN K.webp',
         linkedin: 'https://www.linkedin.com/in/juin-jestin-kalathil-a296793a8',
         github: 'https://github.com/juinjustkiddin',
       },
       {
         name: 'Mehul Agarwal',
         role: 'Member',
-        image: '/team images/25 Batch/MEHUL AGARWAL.jpg',
+        image: '/team images/25 Batch/MEHUL AGARWAL.webp',
         linkedin: 'https://www.linkedin.com/in/mehul-agarwal-08a5a12a9',
       },
       {
         name: 'Etish Mathur',
         role: 'Member',
-        image: '/team images/25 Batch/ETISH MATHUR.jpeg',
+        image: '/team images/25 Batch/ETISH MATHUR.webp',
         linkedin: 'https://www.linkedin.com/in/etish-mathur-3b057939a',
         github: 'https://github.com/Etishgit',
       },
       {
         name: 'Anugraha A',
         role: 'Member',
-        image: '/team images/25 Batch/ANUGRAHA A.jpeg',
+        image: '/team images/25 Batch/ANUGRAHA A.webp',
         linkedin: 'https://www.linkedin.com/in/anugraha-a-17717242b',
       }
     ],
@@ -465,6 +465,17 @@ const excomm: TeamMember[] = [
     image: '/team images/24 Batch/image_2.webp',
     linkedin: 'https://www.linkedin.com/in/ayush-girish-bhandary-95582a324/',
   }
+];
+
+// ─── Management ───────────────────────────────────────────────────────────────
+// Add management members here.
+const management: TeamMember[] = [
+  {
+    name: 'Atharv Agarwal',
+    role: 'Member',
+    image: '/team images/26 batch/atharv.webp',
+    
+  },
 ];
 
 const facultyAdvisor: TeamMember = {
@@ -530,6 +541,7 @@ const Team = () => {
         {verticals.map(v => (
           <button key={v.id} className={`team-nav-btn ${activeSection === v.id ? 'active' : ''}`} onClick={(e) => handleTabClick(v.id, e)}>{v.name}</button>
         ))}
+        <button className={`team-nav-btn ${activeSection === 'management' ? 'active' : ''}`} onClick={(e) => handleTabClick('management', e)}>Management</button>
       </nav>
 
       <div id="team-content" className="container" style={{ padding: '4rem 1rem' }}>
@@ -557,8 +569,22 @@ const Team = () => {
           </section>
         )}
 
+        {/* ── Management Section ── */}
+        {activeSection === 'management' && (
+          <section id="management" className="team-section animate-fade-in" style={{ marginBottom: '6rem' }}>
+            <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+              <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Management</h3>
+            </div>
+            <div className="leadership-row leadership-row--top">
+              {management.map((member, i) => (
+                <MemberCard key={i} member={member} index={i} />
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* ── Subsystems Section ── */}
-        {activeSection !== 'leadership' && (
+        {activeSection !== 'leadership' && activeSection !== 'management' && (
           <section id="subsystems" className="team-section">
             <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
               {verticals.filter(v => v.id === activeSection).map((vertical) => (

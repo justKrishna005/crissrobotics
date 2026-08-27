@@ -3,19 +3,19 @@ import { Globe2, CheckCircle, Target, Network, Binary, ChevronDown } from 'lucid
 import useScrollReveal from '../hooks/useScrollReveal';
 import './Sponsorship.css';
 
-const srtLogo = '/images/sponsor logos/SRT logo.png';
+const srtLogo = '/images/sponsor logos/SRT logo.webp';
 const altiumLogo = '/images/sponsor logos/altium logo.svg';
-const ansysLogo = '/images/sponsor logos/ansys logo.png';
-const autodeskLogo = '/images/sponsor logos/autodesk logo.png';
-const dwartLogo = '/images/sponsor logos/dwart logo.png';
-const krysnayeLogo = '/images/sponsor logos/krysnaye logo.png';
-const odriveLogo = '/images/sponsor logos/odrive logo.png';
+const ansysLogo = '/images/sponsor logos/ansys logo.webp';
+const autodeskLogo = '/images/sponsor logos/autodesk logo.webp';
+const dwartLogo = '/images/sponsor logos/dwart logo.webp';
+const krysnayeLogo = '/images/sponsor logos/krysnaye logo.webp';
+const odriveLogo = '/images/sponsor logos/odrive logo.webp';
 const onlyScrewsLogo = '/images/sponsor logos/only screws logo.avif';
-const opticaLogo = '/images/sponsor logos/optica logo.png';
+const opticaLogo = '/images/sponsor logos/optica logo.webp';
 const pcbPowerLogo = '/images/sponsor logos/pcb power logo.webp';
 const skfLogo = '/images/sponsor logos/skf logo.webp';
-const solidworksLogo = '/images/sponsor logos/solidworks logo.png';
-const speedaccLogo = '/images/sponsor logos/speedacc logo.png';
+const solidworksLogo = '/images/sponsor logos/solidworks logo.webp';
+const speedaccLogo = '/images/sponsor logos/speedacc logo.webp';
 
 // Sponsor list
 const sponsors = [

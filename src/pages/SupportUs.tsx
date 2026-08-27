@@ -1,7 +1,143 @@
+import { useState } from 'react';
 import { Link } from 'react-router';
 
 import useScrollReveal from '../hooks/useScrollReveal';
 import './SupportUs.css';
+
+// ── Budget breakdown ─────────────────────────────────────────────────────────
+// Percentages are derived from the values so the pie and the legend can never
+// drift apart.
+//
+// Palette: the original site palette, kept by choice. Note that the two darkest
+// slots (#334573 / #5c4066) sit ΔE 6.8 apart to normal vision and 2.4 under
+// protanopia, so the legend name + value beside each swatch is what carries
+// identity for those two — keep the legend labelled if the colours stay.
+
+type Category = { name: string; lakhs: number; color: string };
+
+const CATEGORIES: Category[] = [
+  { name: 'Payload & Science',        lakhs: 15.6, color: '#70e0e0' },
+  { name: 'Electronics & Power',      lakhs: 7.8,  color: '#2c8ebf' },
+  { name: 'Mechanical & Fabrication', lakhs: 13.2, color: '#334573' },
+  { name: 'Autonomous Software',      lakhs: 4.2,  color: '#5c4066' },
+  { name: 'Testing & Prototyping',    lakhs: 6.6,  color: '#b77580' },
+  { name: 'Lab Operations',           lakhs: 3.6,  color: '#3e6596' },
+  { name: 'Competition & Travel',     lakhs: 9.0,  color: '#4ac1d8' },
+];
+
+const TOTAL = CATEGORIES.reduce((sum, c) => sum + c.lakhs, 0);
+
+const CX = 100;
+const CY = 100;
+const RADIUS = 90;
+const INNER = 24;   // small hole so the wedges never converge on a point
+const EXPLODE = 6;  // px a wedge slides outward when active
+
+const point = (deg: number, r: number) => {
+  const rad = ((deg - 90) * Math.PI) / 180;
+  return { x: CX + r * Math.cos(rad), y: CY + r * Math.sin(rad) };
+};
+
+// An annular sector. The separators are NOT cut out of the geometry (an angular
+// gap would fan out towards the rim) — each wedge is stroked in the background
+// colour instead, which gives a separator of constant width at every radius.
+const wedgePath = (startDeg: number, endDeg: number) => {
+  const oa = point(startDeg, RADIUS);
+  const ob = point(endDeg, RADIUS);
+  const ia = point(endDeg, INNER);
+  const ib = point(startDeg, INNER);
+  const large = endDeg - startDeg > 180 ? 1 : 0;
+  const f = (n: number) => n.toFixed(2);
+  return [
+    `M ${f(oa.x)} ${f(oa.y)}`,
+    `A ${RADIUS} ${RADIUS} 0 ${large} 1 ${f(ob.x)} ${f(ob.y)}`,
+    `L ${f(ia.x)} ${f(ia.y)}`,
+    `A ${INNER} ${INNER} 0 ${large} 0 ${f(ib.x)} ${f(ib.y)}`,
+    'Z',
+  ].join(' ');
+};
+
+const BudgetBreakdown = () => {
+  const [active, setActive] = useState<number | null>(null);
+
+  let cursor = 0;
+  const segments = CATEGORIES.map((c) => {
+    const pct = (c.lakhs / TOTAL) * 100;
+    const startDeg = (cursor / 100) * 360;
+    cursor += pct;
+    const endDeg = (cursor / 100) * 360;
+    const mid = ((startDeg + endDeg) / 2 - 90) * (Math.PI / 180);
+    return {
+      ...c,
+      pct,
+      path: wedgePath(startDeg, endDeg),
+      dx: Math.cos(mid) * EXPLODE,
+      dy: Math.sin(mid) * EXPLODE,
+    };
+  });
+
+  return (
+    <div className="budget-breakdown scroll-reveal delay-2">
+      <h2 className="section-heading text-center">Budget By Category</h2>
+
+      <div className="budget-breakdown-grid">
+
+        <div className="budget-chart-container">
+          <svg
+            className="budget-pie"
+            viewBox="0 0 200 200"
+            role="img"
+            aria-label="Budget split by category"
+          >
+            {segments.map((s, i) => (
+              <path
+                key={s.name}
+                className={`pie-slice ${active === i ? 'is-active' : ''} ${active !== null && active !== i ? 'is-dimmed' : ''}`}
+                d={s.path}
+                fill={s.color}
+                transform={active === i ? `translate(${s.dx.toFixed(2)} ${s.dy.toFixed(2)})` : undefined}
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
+              />
+            ))}
+          </svg>
+
+        </div>
+
+        <div className="budget-legend-wrapper">
+          <div className="budget-legend">
+            {segments.map((s, i) => (
+              <div
+                key={s.name}
+                className={`legend-item ${active === i ? 'is-active' : ''}`}
+                tabIndex={0}
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
+                onFocus={() => setActive(i)}
+                onBlur={() => setActive(null)}
+              >
+                <div className="legend-left">
+                  <div className="legend-color" style={{ backgroundColor: s.color, ['--swatch' as string]: s.color }}></div>
+                  <span className="legend-name">{s.name}</span>
+                </div>
+                <div className="legend-right">
+                  <span className="legend-val">₹{s.lakhs.toFixed(1)}L</span>
+                  <span className="legend-pct">{Math.round(s.pct)}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="budget-total">
+            <span>Total</span>
+            <span className="budget-total-val">₹60,00,000</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
 
 const SupportUs = () => {
   useScrollReveal();
@@ -51,96 +187,7 @@ const SupportUs = () => {
           </div>
 
           {/* Bottom Section: Breakdown */}
-          <div className="budget-breakdown scroll-reveal delay-2">
-            <h2 className="section-heading text-center" style={{ marginBottom: '4rem' }}>Budget By Category</h2>
-            <div className="budget-breakdown-grid">
-              
-              <div className="budget-chart-container">
-                <div className="donut-chart"></div>
-              </div>
-
-              <div className="budget-legend-wrapper">
-                <div className="budget-legend">
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#70e0e0' }}></div>
-                      <span className="legend-name">Payload & Science</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹15.6L</span>
-                      <span className="legend-pct">26%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#2c8ebf' }}></div>
-                      <span className="legend-name">Electronics & Power</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹7.8L</span>
-                      <span className="legend-pct">13%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#334573' }}></div>
-                      <span className="legend-name">Mechanical & Fabrication</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹13.2L</span>
-                      <span className="legend-pct">22%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#5c4066' }}></div>
-                      <span className="legend-name">Autonomous Software</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹4.2L</span>
-                      <span className="legend-pct">7%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#b77580' }}></div>
-                      <span className="legend-name">Testing & Prototyping</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹6.6L</span>
-                      <span className="legend-pct">11%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#3e6596' }}></div>
-                      <span className="legend-name">Lab Operations</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹3.6L</span>
-                      <span className="legend-pct">6%</span>
-                    </div>
-                  </div>
-                  <div className="legend-item">
-                    <div className="legend-left">
-                      <div className="legend-color" style={{ backgroundColor: '#4ac1d8' }}></div>
-                      <span className="legend-name">Competition & Travel</span>
-                    </div>
-                    <div className="legend-right">
-                      <span className="legend-val">₹9.0L</span>
-                      <span className="legend-pct">15%</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="budget-total">
-                  <span>Total</span>
-                  <span className="budget-total-val">₹60,00,000</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
+          <BudgetBreakdown />
         </div>
       </section>
 
