@@ -1,10 +1,11 @@
 .support-us-page {
-  padding-top: 100px;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.support-hero {
-  padding: 4rem 0;
+/* Header background/overlay handled by .page-header--photo in index.css */
+.support-header {
+  margin-bottom: 0;
 }
 
 .support-hero-desc {

@@ -25,6 +25,23 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  // The mobile menu only exists below 1000px — above that the CSS hides it and
+  // the toggle, so an open menu would leave the body scroll-locked with nothing
+  // on screen to close it. Close it when the viewport crosses the breakpoint.
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 1000px)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      if (!e.matches) setIsOpen(false);
+    };
+    mq.addEventListener('change', handleChange);
+    return () => mq.removeEventListener('change', handleChange);
+  }, []);
+
+  // Close on navigation too, so the lock can never outlive a route change.
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
   const links = [
     { name: 'Mission', path: '/' },
     { name: 'Research', path: '/research' },
@@ -33,7 +50,7 @@ const Navbar = () => {
     { name: 'Team', path: '/team' },
     { name: 'Alumni', path: '/alumni' },
     { name: 'Partners', path: '/partners' },
-    { name: 'Support Us', path: '/support-us' },
+    { name: 'Support', path: '/support-us' },
     { name: 'Contact', path: '/contact' },
   ];
 

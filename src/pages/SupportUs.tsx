@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
+import { ChevronDown } from 'lucide-react';
 
 import useScrollReveal from '../hooks/useScrollReveal';
 import './SupportUs.css';
@@ -145,14 +146,20 @@ const SupportUs = () => {
   return (
     <div className="support-us-page animate-fade-in">
       
-      <section className="support-hero">
+      <header className="page-header page-header--photo support-header">
         <div className="container">
-          <h1 className="page-title text-center" style={{ textTransform: 'none' }}>Fund the Future of CRISS</h1>
-          <p className="page-subtitle text-center">
+          <h1 className="page-title animate-slide-up" style={{ textTransform: 'none' }}>Fund the Future of CRISS</h1>
+          <p className="page-subtitle animate-slide-up delay-100">
             Since 2017, CRISS Robotics has been entirely student-run. Today, we're building the first Martian-analog drone from India and preparing for the Australian Rover Challenge. We need your help to get there.
           </p>
         </div>
-      </section>
+        <div
+          className="scroll-indicator"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <ChevronDown size={32} strokeWidth={1.5} />
+        </div>
+      </header>
 
       <section className="fundraising-section">
         <div className="container" style={{ maxWidth: '1200px' }}>
