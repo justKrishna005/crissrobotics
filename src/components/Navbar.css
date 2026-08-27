@@ -49,6 +49,7 @@
 }
 
 .nav-link {
+  position: relative;
   font-size: 0.8125rem;
   font-weight: 400;
   letter-spacing: 0.05em;
@@ -62,6 +63,19 @@
 .nav-link.active {
   opacity: 1;
   color: #ffffff;
+}
+
+/* Underline on the current page's link. Drawn as a pseudo-element so it never
+   shifts the row, and scoped to the desktop menu — the mobile rows are
+   full-width, where a rule spanning the row reads as a divider. */
+.desktop-menu .nav-link.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.4rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 

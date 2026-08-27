@@ -474,6 +474,8 @@ const management: TeamMember[] = [
     name: 'Atharv Agarwal',
     role: 'Member',
     image: '/team images/26 batch/atharv.webp',
+    linkedin: `https://www.linkedin.com/in/atharv-agarwal-156340292/`,
+    github: 'https://github.com/Emptiedfull',
     
   },
 ];
