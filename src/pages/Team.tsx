@@ -367,7 +367,7 @@ const verticals: VerticalData[] = [
     ],
     lead: {
       name: 'Jhanvi Matta',
-      role: 'Payload Lead',
+      role: 'Lead',
       image: '/team images/24 Batch/Jhanvi.webp',
       linkedin: 'https://www.linkedin.com/in/jhanvimatta/',
       github: 'https://github.com/jhanvimatta',
@@ -467,6 +467,17 @@ const excomm: TeamMember[] = [
   }
 ];
 
+// ─── Management ───────────────────────────────────────────────────────────────
+// Add management members here.
+const management: TeamMember[] = [
+  {
+    name: 'Atharv Agarwal',
+    role: 'Member',
+    image: '/team images/26 batch/atharv.webp',
+    
+  },
+];
+
 const facultyAdvisor: TeamMember = {
   name: 'Dr. M.S. Dasgupta',
   role: 'Faculty Advisor',
@@ -530,6 +541,7 @@ const Team = () => {
         {verticals.map(v => (
           <button key={v.id} className={`team-nav-btn ${activeSection === v.id ? 'active' : ''}`} onClick={(e) => handleTabClick(v.id, e)}>{v.name}</button>
         ))}
+        <button className={`team-nav-btn ${activeSection === 'management' ? 'active' : ''}`} onClick={(e) => handleTabClick('management', e)}>Management</button>
       </nav>
 
       <div id="team-content" className="container" style={{ padding: '4rem 1rem' }}>
@@ -557,8 +569,22 @@ const Team = () => {
           </section>
         )}
 
+        {/* ── Management Section ── */}
+        {activeSection === 'management' && (
+          <section id="management" className="team-section animate-fade-in" style={{ marginBottom: '6rem' }}>
+            <div className="section-header-centered" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+              <h3 style={{ fontSize: '2.5rem', color: 'var(--text-primary)', fontFamily: 'var(--font-heading)', margin: '0 0 1rem 0' }}>Management</h3>
+            </div>
+            <div className="leadership-row leadership-row--top">
+              {management.map((member, i) => (
+                <MemberCard key={i} member={member} index={i} />
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* ── Subsystems Section ── */}
-        {activeSection !== 'leadership' && (
+        {activeSection !== 'leadership' && activeSection !== 'management' && (
           <section id="subsystems" className="team-section">
             <div className="subsystems-stack" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
               {verticals.filter(v => v.id === activeSection).map((vertical) => (
